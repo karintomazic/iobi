@@ -7,7 +7,7 @@ export default function Home() {
       <section>
         <Header/>
       </section>
-      <main className="">
+      <main className="bg-white">
       </main>
     </>
   );
