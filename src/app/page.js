@@ -1,14 +1,27 @@
-import Image from "next/image";
-import Header from '../app/header.js'
+import Hero from "./components/Hero.js";
+import Navigation from "./components/Navigation.js";
+import Categories from "./components/Categories.js";
+import Contact from "./components/Contact.js";
+import Footer from "./components/Footer.js";
+
+import { GoogleMapsEmbed } from "@next/third-parties/google";
 
 export default function Home() {
   return (
     <>
-      <section>
-        <Header/>
+      <section className="bg-white">
+        <Navigation />
+        <Hero />
       </section>
       <main className="bg-white">
+        <section>
+          <Categories />
+        </section>
+        <section>
+          <Contact />
+        </section>
       </main>
+      <Footer />
     </>
   );
 }
