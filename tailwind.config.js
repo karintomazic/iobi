@@ -16,9 +16,15 @@ module.exports = {
         inter: ['var(--font-inter)', 'sans-serif'],
         'playfair-display': ['var(--font-playfair-display)', 'serif'],
       },
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        accent: 'var(--color-accent)',
+      },
     },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
   ],
 };

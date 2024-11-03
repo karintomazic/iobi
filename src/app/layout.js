@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${opensans.className}`}>{children}</body>
+      <body className={`bg-white ${inter.className} ${opensans.className}`}>{children}</body>
     </html>
   );
 }
