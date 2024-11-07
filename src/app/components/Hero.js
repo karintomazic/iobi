@@ -31,14 +31,14 @@ export default function Hero() {
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
                       href="#"
-                      className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                      className="rounded-md bg-primary px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                     >
                       Oglej si izdelke
                     </a>
 
                     <a
                       href="#"
-                      className="text-sm font-semibold leading-6 text-gray-900"
+                      className="text-base font-semibold leading-6 text-gray-900"
                     >
                       Kako do nas <span aria-hidden="true">→</span>
                     </a>
