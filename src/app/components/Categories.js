@@ -1,10 +1,19 @@
+import { playfairDisplay } from "../layout";
+
 export default function Categories() {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="sm:flex sm:items-baseline sm:justify-between">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900">Kategorije</h2>
-          <a href="#" className="hidden text-base font-semibold text-gray-900 hover:text-secondary sm:block">
+          <h2
+            className={`text-4xl font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
+          >
+            Kategorije
+          </h2>
+          <a
+            href="#"
+            className="hidden text-base font-semibold text-gray-900 hover:text-secondary sm:block"
+          >
             Browse all categories
             <span aria-hidden="true"> &rarr;</span>
           </a>
@@ -17,7 +26,10 @@ export default function Categories() {
               alt="Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
               className="object-cover object-center group-hover:opacity-75"
             />
-            <div aria-hidden="true" className="bg-gradient-to-b from-transparent to-black opacity-50" />
+            <div
+              aria-hidden="true"
+              className="bg-gradient-to-b from-transparent to-black opacity-50"
+            />
             <div className="flex items-end p-6">
               <div>
                 <h3 className="font-semibold text-white">
@@ -34,7 +46,7 @@ export default function Categories() {
           </div>
           <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-none sm:relative sm:h-full">
             <img
-               src="/img/category-1.jpg"
+              src="/img/category-1.jpg"
               alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
               className="object-cover object-center group-hover:opacity-75 sm:absolute sm:inset-0 sm:h-full sm:w-full"
             />
@@ -58,7 +70,7 @@ export default function Categories() {
           </div>
           <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-none sm:relative sm:h-full">
             <img
-               src="/img/category-3.jpg"
+              src="/img/category-3.jpg"
               alt="Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
               className="object-cover object-center group-hover:opacity-75 sm:absolute sm:inset-0 sm:h-full sm:w-full"
             />
@@ -83,12 +95,15 @@ export default function Categories() {
         </div>
 
         <div className="mt-6 sm:hidden">
-          <a href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+          <a
+            href="#"
+            className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
+          >
             Browse all categories
             <span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

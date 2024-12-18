@@ -6,20 +6,21 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const playfairDisplay = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-playfairdisplay',
-  weight: '400',
-  display: 'swap'
- });
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfairdisplay",
+  weight: "400",
+  display: "swap",
+});
 
- const opensans = Open_Sans({ 
-  subsets: ['latin'],
-  variable: '--font-opensans',
-  weight: '400',
-  display: 'swap'
- });
+const opensans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-opensans",
+  weight: "400",
+  display: "swap",
+});
 
+export { playfairDisplay };
 
 export const metadata = {
   title: "Create Next App",
@@ -29,7 +30,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-white ${inter.className} ${opensans.className}`}>{children}</body>
+      <body className={`${opensans.className}`}>{children}</body>
     </html>
   );
 }

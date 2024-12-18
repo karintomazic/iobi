@@ -12,13 +12,7 @@ export default function Products() {
       </section>
       <main className="bg-white">
         <section>
-          <p className="text-center mt-4">
-            Here you can find all our amazing products.
-          </p>
-
           <ProductList />
-       
-
         </section>
       </main>
       <Footer />
