@@ -1,34 +1,23 @@
 export default function CategoryCard({
-  title,
-  description,
-  image,
+  src,
   alt,
-  aspect,
+  overlayText,
+  classes1,
+  classes2,
+  imgClass,
 }) {
   return (
-    <div
-      className={`group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg ${aspect}`}
-    >
-      <img
-        src={image}
-        alt={alt}
-        className="object-cover object-center group-hover:opacity-75"
-      />
+    <div className={`relative cursor-pointer group ${classes1}`}>
       <div
-        aria-hidden="true"
-        className="bg-gradient-to-b from-transparent to-black opacity-50 sm:absolute sm:inset-0"
-      />
-      <div className="flex items-end p-6 sm:absolute sm:inset-0">
-        <div>
-          <h3 className="font-semibold text-white">
-            <a href="#">
-              <span className="absolute inset-0" />
-              {title}
-            </a>
-          </h3>
-          <p aria-hidden="true" className="mt-1 text-sm text-white">
-            {description}
-          </p>
+        className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] ${classes2}`}
+      >
+        <img className={`${imgClass}`} src={src} alt={alt} />
+        <div
+          className={`absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 flex items-center justify-center overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] ${classes2}`}
+        >
+          <span className="text-white text-lg font-semibold">
+            {overlayText}
+          </span>
         </div>
       </div>
     </div>

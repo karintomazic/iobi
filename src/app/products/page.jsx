@@ -1,6 +1,6 @@
 import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/Footer";
-import ProductList from "../components/ProductList";
+import ProductList from "./ProductList";
 
 export default function Products() {
   return (

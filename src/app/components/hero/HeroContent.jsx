@@ -18,14 +18,19 @@ export default function HeroContent() {
       <div className="mt-10 flex items-center gap-x-6">
         <a
           href="#"
-          className="rounded-md bg-primary px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="rounded-md bg-primary px-3.5 py-2.5 text-base font-semibold transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Oglej si izdelke
         </a>
 
-        <a href="#" className="rounded-md px-3.5 py-2.5 shadow-sm border border-gray-400 text-base font-semibold leading-6 text-gray-900">
+        <a
+          href="#"
+          className="rounded-md px-3.5 py-2.5 shadow-sm border border-gray-400 text-base font-semibold leading-6 text-gray-900"
+        >
           Kako do nas
-          <span className="pl-4" aria-hidden="true"><FontAwesomeIcon className="text-gray-500" icon={faArrowRight} /></span>
+          <span className="pl-4" aria-hidden="true">
+            <FontAwesomeIcon className="text-gray-500" icon={faArrowRight} />
+          </span>
         </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Hero from "./components/hero/Hero";
 import Navigation from "./components/navigation/Navigation";
 import Categories from "./components/categories/Categories";
-import Contact from "./components/Contact";
+import Contact from "./components/contact/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
