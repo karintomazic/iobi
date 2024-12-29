@@ -1,6 +1,45 @@
 import { playfairDisplay } from "../../utils/fonts";
+import CategoryCard from "./CategoryCard";
 
 export default function Categories() {
+  const categories = [
+    {
+      src: "/img/category-2.jpg",
+      alt: "Category 2",
+      overlayText: "Lorem Ipsum",
+      classes1: "lg:row-span-2",
+      classes2: "lg:rounded-l-[calc(2rem+1px)]",
+      imgClass: "size-full object-cover object-top",
+    },
+    {
+      src: "/img/category-1.jpg",
+      alt: "Category 1",
+      overlayText: "Lorem Ipsum",
+      classes1: "max-lg:row-start-1",
+      classes2: "max-lg:rounded-t-[calc(2rem+1px)]",
+      imgClass:
+        "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
+    },
+    {
+      src: "/img/category-6.jpg",
+      alt: "Category 6",
+      overlayText: "Lorem Ipsum",
+      classes1: "max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
+      classes2: "",
+      imgClass:
+        "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
+    },
+    {
+      src: "/img/category-5.jpg",
+      alt: "Category 5",
+      overlayText: "Lorem Ipsum",
+      classes1: "lg:row-span-2",
+      classes2:
+        "max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)",
+      imgClass: "size-full object-cover object-top",
+    },
+  ];
+
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -15,50 +54,17 @@ export default function Categories() {
               Kategorije
             </h2>
             <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-              <div className="relative lg:row-span-2 cursor-pointer">
-                <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-                  <img
-                    className="size-full object-cover object-top"
-                    src="/img/category-2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
-              </div>
-              <div className="relative max-lg:row-start-1 cursor-pointer">
-                <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
-                  <img
-                    className="w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full"
-                    src="/img/category-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
-              </div>
-              <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2 cursor-pointer">
-                <div className="absolute inset-px rounded-lg bg-white"></div>
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-                  <img
-                    className="w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full"
-                    src="/img/category-6.jpeg"
-                    alt=""
-                  />
-                </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
-              </div>
-              <div className="relative lg:row-span-2 cursor-pointer">
-                <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-                  <img
-                    className="size-full object-cover object-top"
-                    src="/img/category-5.jpeg"
-                    alt=""
-                  />
-                </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-              </div>
+              {categories.map((category, index) => (
+                <CategoryCard
+                  key={index}
+                  src={category.src}
+                  alt={category.alt}
+                  overlayText={category.overlayText}
+                  classes1={category.classes1}
+                  classes2={category.classes2}
+                  imgClass={category.imgClass}
+                />
+              ))}
             </div>
           </div>
         </div>
