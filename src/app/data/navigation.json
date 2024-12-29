@@ -1,6 +1,5 @@
 [
   { "name": "Domov", "href": "/" },
   { "name": "Izdelki", "href": "/products" },
-  { "name": "Katalog (PDF)", "href": "#" },
-  { "name": "Kontakt", "href": "#" }
+  { "name": "Kontakt", "href": "/#contact" }
 ]

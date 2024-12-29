@@ -1,8 +1,8 @@
 export default function CategoryFilters({
   categories,
   selectedCategory,
-  onSetSelectedCategory,
-  onSetCurrentPage,
+  setSelectedCategory,
+  setCurrentPage,
 }) {
   return (
     <div className="mt-8 flex-1 flex flex-col">
@@ -20,8 +20,8 @@ export default function CategoryFilters({
             value=""
             checked={selectedCategory === ""}
             onChange={() => {
-              onSetSelectedCategory(""); // Clear filters
-              onSetCurrentPage(1); // Reset to first page
+              setSelectedCategory(""); // Clear filters
+              setCurrentPage(1); // Reset to first page
             }}
             className="mr-2 hidden"
           />
@@ -50,8 +50,8 @@ export default function CategoryFilters({
               onChange={() => {
                 const updatedCategory =
                   selectedCategory === cat.id ? "" : cat.id;
-                onSetSelectedCategory(updatedCategory); // Clear selection if the same category is clicked
-                onSetCurrentPage(1); // Reset to first page when filters change
+                setSelectedCategory(updatedCategory); // Clear selection if the same category is clicked
+                setCurrentPage(1); // Reset to first page when filters change
               }}
               className="mr-2 hidden"
             />

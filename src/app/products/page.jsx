@@ -1,19 +1,114 @@
+"use client";
+import { useEffect, useState } from "react";
+import PocketBase from "pocketbase";
+
 import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/Footer";
 import ProductList from "./ProductList";
 
+const isDev = process.env.NEXT_PUBLIC_ENVIRONMENT === "dev";
+const pb = new PocketBase(
+  isDev
+    ? `${process.env.NEXT_PUBLIC_POCKETBASE_URL}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`
+    : process.env.NEXT_PUBLIC_POCKETBASE_URL
+);
+
 export default function Products() {
+  const [items, setItems] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const PAGE_SIZE = 20;
+
+  // Fetch categories on component mount
+  useEffect(() => {
+    const fetchCategories = async () => {
+      setLoading(true);
+      try {
+        const categoryRecords = await pb.collection("category").getList(1, 50, {
+          $autoCancel: false,
+        });
+        setCategories(categoryRecords.items);
+      } catch (err) {
+        console.error("Error fetching categories:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  // Fetch products whenever selectedCategory or currentPage changes
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      try {
+        const filter = selectedCategory
+          ? `category.id ?= "${selectedCategory}"`
+          : "";
+
+        const records = await pb
+          .collection("products")
+          .getList(currentPage, PAGE_SIZE, {
+            $autoCancel: false,
+            filter: filter,
+          });
+
+        setItems(records.items);
+        setTotalPages(
+          records.totalPages || Math.ceil(records.totalItems / PAGE_SIZE)
+        );
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, [selectedCategory, currentPage]);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
   return (
-    <>
+    <div className={`${loading && "fixed overflow-y-hidden inset-0"}`}>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-50">
+          <img src="/img/loading.gif" alt="Loading..." className="h-20 w-20" />
+        </div>
+      )}
       <section className="bg-gray-50">
         <Navigation />
       </section>
       <main className="bg-gray-50">
         <section>
-          <ProductList />
+          <ProductList
+            onNextPage={handleNextPage}
+            onPreviousPage={handlePreviousPage}
+            loading={loading}
+            totalPages={totalPages}
+            currentPage={currentPage}
+            items={items}
+            categories={categories}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            setCurrentPage={setCurrentPage}
+          />
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

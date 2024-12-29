@@ -9,7 +9,7 @@ import ContactCard from "./ContactCard";
 
 export default function Contact() {
   return (
-    <div className="relative isolate">
+    <div className="relative isolate" id="contact">
       <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
