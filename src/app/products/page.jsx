@@ -5,11 +5,10 @@ import ProductList from "./ProductList";
 export default function Products() {
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-gray-50">
         <Navigation />
-        <h1 className="text-3xl font-bold text-center mt-8">Our Products</h1>
       </section>
-      <main className="bg-white">
+      <main className="bg-gray-50">
         <section>
           <ProductList />
         </section>
