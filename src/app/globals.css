@@ -41,3 +41,8 @@ body {
     text-wrap: balance;
   }
 }
+
+/* globals.css or your main CSS file */
+.pswp__img {
+  @apply object-contain;
+}
