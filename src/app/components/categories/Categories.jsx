@@ -1,7 +1,14 @@
+"use client";
+
 import { playfairDisplay } from "../../utils/fonts";
 import CategoryCard from "./CategoryCard";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
 export default function Categories() {
+  const { language } = useLanguage();
+  const categroyText = translations[language].categories;
+
   const categories = [
     {
       src: "/img/category-2.jpg",
@@ -46,12 +53,12 @@ export default function Categories() {
         <div>
           <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
             <h2 className="text-center pb-2 text-base/7 font-semibold text-primary">
-              filtritajte po izdelkih
+              {categroyText.subtitle}
             </h2>
             <h2
               className={`text-5xl text-center font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
             >
-              Kategorije
+              {categroyText.title}
             </h2>
             <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
               {categories.map((category, index) => (

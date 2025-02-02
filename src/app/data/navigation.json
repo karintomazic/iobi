@@ -1,5 +1,17 @@
 [
-  { "name": "Domov", "href": "/" },
-  { "name": "Izdelki", "href": "/products" },
-  { "name": "Kontakt", "href": "/#contact" }
+  {
+    "id": "home",
+    "name": { "sl": "Domov", "de": "Startseite" },
+    "href": "/"
+  },
+  {
+    "id": "about",
+    "name": { "sl": "O nas", "de": "Über uns" },
+    "href": "/about"
+  },
+  {
+    "id": "contact",
+    "name": { "sl": "Kontakt", "de": "Kontakt" },
+    "href": "/contact"
+  }
 ]

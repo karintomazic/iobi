@@ -1,17 +1,14 @@
-import { useState } from "react";
-export default function LanguageSwitcher() {
-  const [language, setLanguage] = useState("sl");
+import { useLanguage } from "../../context/LanguageContext";
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "sl" ? "de" : "sl"));
-  };
+export default function LanguageSwitcher() {
+  const { language, toggleLanguage } = useLanguage();
 
   return (
     <button
       onClick={toggleLanguage}
       className="text-sm font-semibold leading-6 text-gray-900"
     >
-      {language === "sl" ? "Slovensko" : "German"}
+      {language === "sl" ? "Slovensko" : "Deutsch"}
     </button>
   );
 }
