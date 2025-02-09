@@ -23,19 +23,16 @@ export default function HeroContent() {
       <div className="mt-10 flex items-center gap-x-6">
         <a
           href="#"
-          className="rounded-md bg-primary px-3.5 py-2.5 text-base font-semibold transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="rounded-md bg-primary px-4 py-2 text-base transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           {navText.heroButton}
         </a>
 
         <a
           href="#"
-          className="rounded-md px-3.5 py-2.5 shadow-sm border border-gray-400 text-base font-semibold leading-6 text-gray-900"
+          className="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
         >
           {navText.heroButton2}
-          <span className="pl-4" aria-hidden="true">
-            <FontAwesomeIcon className="text-gray-500" icon={faArrowRight} />
-          </span>
         </a>
       </div>
     </div>

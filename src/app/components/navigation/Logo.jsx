@@ -1,6 +1,6 @@
 export default function Logo() {
   return (
-    <a href="#">
+    <a href="/">
       <span className="sr-only">IOBI</span>
       <img
         className="h-20 w-auto"

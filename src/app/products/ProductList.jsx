@@ -4,6 +4,8 @@ import { playfairDisplay } from "../utils/fonts";
 import ProductPagination from "./ProductPagination";
 import ProductCards from "./ProductCards";
 import CategoryFilters from "./CategoryFilters";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../data/translations";
 
 export default function ProductList({
   onNextPage,
@@ -16,15 +18,19 @@ export default function ProductList({
   setSelectedCategory,
   setCurrentPage,
 }) {
+
+  const { language } = useLanguage();
+  const categoriesText = translations[language].categories;
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:py-20 lg:px-8 text-black">
       <h2 className="text-center pb-2 text-base/7 font-semibold text-primary">
-        Filtritajte po izdelkih
+        {categoriesText.subtitle}
       </h2>
       <h2
         className={`text-5xl text-center font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
       >
-        Kategorije
+        {categoriesText.title}
       </h2>
 
       <div className="flex pt-8 gap-6 flex-col">

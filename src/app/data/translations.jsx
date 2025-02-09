@@ -15,6 +15,15 @@ export const translations = {
     categories: {
       title: "Kategorije",
       subtitle: "filtritajte po izdelkih",
+      categories: {
+        allProducts: "Vsi izdelki",
+        animals: "Zivali",
+        fountains: "Fontane",
+        korita: "Korita",
+        palcki: "Palcki",
+        angelcki: "Angelcki",
+        kipci: "Kipci",
+      }
     },
     contact: {
       title: "Kontakti",
@@ -44,6 +53,15 @@ export const translations = {
     categories: {
       title: "Kategorien",
       subtitle: "filtern nach Produkten",
+      categories: {
+        allProducts: "Alle Produkte",
+        animals: "Tiere",
+        fountains: "Fontanen",
+        korita: "Korita",
+        palcki: "Palcki",
+        angelcki: "Angelcki",
+        kipci: "Kipci",
+      }
     },
     contact: {
       title: "Kontakte",

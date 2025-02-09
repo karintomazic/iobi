@@ -1,9 +1,15 @@
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../data/translations";
+
 export default function CategoryFilters({
   categories,
   selectedCategory,
   setSelectedCategory,
   setCurrentPage,
 }) {
+  const { language } = useLanguage();
+  const categoriesText = translations[language].categories;
+
   return (
     <div className="mt-8 flex-1 flex flex-col">
       <div className="p-2 flex justify-center flex-wrap gap-4">
@@ -29,7 +35,7 @@ export default function CategoryFilters({
             htmlFor="no-filter"
             className="font-medium cursor-pointer capitalize"
           >
-            Vsi izdelki
+            {categoriesText.categories.allProducts}
           </label>
         </div>
 

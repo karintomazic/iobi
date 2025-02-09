@@ -5,13 +5,13 @@
     "href": "/"
   },
   {
-    "id": "about",
-    "name": { "sl": "O nas", "de": "Über uns" },
-    "href": "/about"
+    "id": "izdelki",
+    "name": { "sl": "Izdelki", "de": "Produkte" },
+    "href": "/products"
   },
   {
     "id": "contact",
     "name": { "sl": "Kontakt", "de": "Kontakt" },
-    "href": "/contact"
+    "href": "#contact"
   }
 ]

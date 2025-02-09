@@ -9,8 +9,6 @@ export default function NavigationLinks({ className }) {
   const pathname = usePathname();
   const { language } = useLanguage();
 
-  console.log(language);
-
   return (
     <>
       {navigationData.map((item) => {
