@@ -46,3 +46,7 @@ body {
 .pswp__img {
   @apply object-contain;
 }
+
+.swiper-pagination-bullet-active{
+  background: #60914A!important;
+}

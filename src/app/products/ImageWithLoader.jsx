@@ -28,9 +28,8 @@ export default function ImageWithLoader({ item }) {
   const images = Array.isArray(item.product_image) ? item.product_image : [item.product_image];
 
   return (
-    <div className="group">
-      <h3 className="mb-4 text-sm text-gray-700">{item.product_name}</h3>
-      <div className=" w-full overflow-hidden rounded-lg bg-gray-200">
+    <div className="group border border-gray-100 rounded-[20px] p-4 bg-gray-100">
+      <div className=" w-full overflow-hidden rounded-lg bg-gray-100">
         {hasError ? (
           <div className="flex items-center justify-center h-full">
             <span>Error loading image</span>
@@ -38,13 +37,12 @@ export default function ImageWithLoader({ item }) {
         ) : (
           <Swiper
             modules={[Navigation, Pagination]}
-            navigation
             pagination={{ clickable: true }}
             spaceBetween={10}
             slidesPerView={1}
           >
             {images.map((image, index) => (
-              <SwiperSlide key={index} className="pb-8 bg-gray-50">
+              <SwiperSlide key={index} className="pb-12 bg-gray-10">
                 <Item
                   original={getImageUrl(image)}
                   thumbnail={getImageUrl(image)}
@@ -63,7 +61,7 @@ export default function ImageWithLoader({ item }) {
                         onClick={open}
                         src={getImageUrl(image)}
                         alt={`${item.product_name} - Image ${index + 1}`}
-                        className={`h-[400px] w-full object-cover object-center cursor-pointer ${
+                        className={`h-[400px] w-full object-cover object-center cursor-pointer rounded-[16px] ${
                           isLoading ? "opacity-0" : "opacity-100"
                         }`}
                         loading="lazy"
@@ -78,7 +76,7 @@ export default function ImageWithLoader({ item }) {
           </Swiper>
         )}
       </div>
-      <h3 className="mt-4 text-sm text-gray-700">{item.product_name}</h3>
+      <h3 className="mt-0 text-gray-700 text-center font-bold text-[1.2rem] mb-2">{item.product_name}</h3>
     </div>
   );
 }
