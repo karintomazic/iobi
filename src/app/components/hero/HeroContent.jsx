@@ -11,9 +11,9 @@ export default function HeroContent() {
   const navText = translations[language].hero;
 
   return (
-    <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+    <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl lg:w-1/3">
       <h1
-        className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ${playfairDisplay.className}`}
+        className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl ${playfairDisplay.className}`}
       >
         {navText.title}
       </h1>

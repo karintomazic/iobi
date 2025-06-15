@@ -34,7 +34,7 @@ export const translations = {
       workHours: "Delovni čas",
     },
     footerText: {
-      text: "&copy; 2020 Stojan Tomažič s.p. - Vse pravice pridržane!",
+      text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
     }
   },
   de: {
