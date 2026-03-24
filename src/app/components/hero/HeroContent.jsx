@@ -1,8 +1,6 @@
 "use client";
 
 import { playfairDisplay } from "../../utils/fonts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
 
@@ -22,14 +20,14 @@ export default function HeroContent() {
       </p>
       <div className="mt-10 flex items-center gap-x-6">
         <a
-          href="#"
+          href="/products"
           className="rounded-md bg-primary px-4 py-2 text-base transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           {navText.heroButton}
         </a>
 
         <a
-          href="#"
+          href="#contact"
           className="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
         >
           {navText.heroButton2}

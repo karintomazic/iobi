@@ -20,6 +20,7 @@ export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const PAGE_SIZE = 20;
 
@@ -34,6 +35,7 @@ export default function Products() {
         setCategories(categoryRecords.items);
       } catch (err) {
         console.error("Error fetching categories:", err);
+        setError("Napaka pri nalaganju kategorij. Prosimo, poskusite znova.");
       } finally {
         setLoading(false);
       }
@@ -63,6 +65,7 @@ export default function Products() {
         );
       } catch (err) {
         console.error("Error fetching products:", err);
+        setError("Napaka pri nalaganju izdelkov. Prosimo, poskusite znova.");
       } finally {
         setLoading(false);
       }
@@ -93,6 +96,13 @@ export default function Products() {
         <Navigation />
       </section>
       <main className="bg-gray-50">
+        {error && (
+          <div className="mx-auto max-w-7xl px-6 py-8">
+            <div className="rounded-md bg-red-50 border border-red-200 p-4 text-red-700 text-sm">
+              {error}
+            </div>
+          </div>
+        )}
         <section>
           <ProductList
             onNextPage={handleNextPage}

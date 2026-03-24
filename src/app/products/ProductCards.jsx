@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react"; // Import useState
-import { Gallery, Item } from "react-photoswipe-gallery";
+import { Gallery } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import ImageWithLoader from "./ImageWithLoader";
 

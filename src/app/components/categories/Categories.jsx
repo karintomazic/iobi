@@ -61,9 +61,9 @@ export default function Categories() {
               {categroyText.title}
             </h2>
             <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-              {categories.map((category, index) => (
+              {categories.map((category) => (
                 <CategoryCard
-                  key={index}
+                  key={category.src}
                   src={category.src}
                   alt={category.alt}
                   overlayText={category.overlayText}

@@ -47,6 +47,6 @@ body {
   @apply object-contain;
 }
 
-.swiper-pagination-bullet-active{
-  background: #60914A!important;
+.swiper .swiper-pagination-bullet-active {
+  background: #60914A;
 }

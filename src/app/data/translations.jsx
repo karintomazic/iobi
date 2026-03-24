@@ -14,7 +14,7 @@ export const translations = {
     },
     categories: {
       title: "Kategorije",
-      subtitle: "filtritajte po izdelkih",
+      subtitle: "filtrirajte po izdelkih",
       categories: {
         allProducts: "Vsi izdelki",
         animals: "Zivali",
@@ -72,7 +72,7 @@ export const translations = {
       workHours: "Arbeitszeit",
     },
     footerText: {
-      text: "&copy; 2020 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
+      text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
     }
   },
 };
