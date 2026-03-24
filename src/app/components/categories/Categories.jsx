@@ -7,7 +7,7 @@ import { translations } from "../../data/translations";
 
 export default function Categories() {
   const { language } = useLanguage();
-  const categroyText = translations[language].categories;
+  const categoryText = translations[language].categories;
 
   const categories = [
     {
@@ -53,12 +53,12 @@ export default function Categories() {
         <div>
           <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
             <h2 className="text-center pb-2 text-base/7 font-semibold text-primary">
-              {categroyText.subtitle}
+              {categoryText.subtitle}
             </h2>
             <h2
               className={`text-5xl text-center font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
             >
-              {categroyText.title}
+              {categoryText.title}
             </h2>
             <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
               {categories.map((category) => (

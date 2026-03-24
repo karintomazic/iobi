@@ -65,7 +65,7 @@ export default function CategoryFilters({
               htmlFor={`category-${cat.id}`}
               className="font-medium cursor-pointer capitalize"
             >
-              {cat.category}
+              {categoriesText.categories[cat.category] || cat.category}
             </label>
           </div>
         ))}

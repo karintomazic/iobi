@@ -32,9 +32,19 @@ export const translations = {
       phone: "Telefon",
       email: "E-pošta",
       workHours: "Delovni čas",
+      workHoursContent: "Pon - Pet: 08:00 - 17:00",
+    },
+    errors: {
+      imageLoad: "Napaka pri nalaganju slike",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
+    },
+    pagination: {
+      previous: "Nazaj",
+      next: "Naprej",
+      page: "Stran",
+      of: "od",
     }
   },
   de: {
@@ -70,9 +80,19 @@ export const translations = {
       phone: "Telefon",
       email: "E-Mail",
       workHours: "Arbeitszeit",
+      workHoursContent: "Mo - Fr: 08:00 - 17:00",
+    },
+    errors: {
+      imageLoad: "Fehler beim Laden des Bildes",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
+    },
+    pagination: {
+      previous: "Zurück",
+      next: "Weiter",
+      page: "Seite",
+      of: "von",
     }
   },
 };

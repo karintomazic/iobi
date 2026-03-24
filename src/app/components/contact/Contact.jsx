@@ -52,7 +52,7 @@ export default function Contact() {
               link=""
               icon={faClock}
               title={contactText.workHours}
-              content="Pon - Pet: 08:00 - 17:00"
+              content={contactText.workHoursContent}
             />
           </div>
         </div>

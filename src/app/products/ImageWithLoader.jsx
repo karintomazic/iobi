@@ -1,5 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { Item } from "react-photoswipe-gallery";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../data/translations";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -12,6 +16,9 @@ const baseUrl = isDev
   : process.env.NEXT_PUBLIC_POCKETBASE_URL;
 
 export default function ImageWithLoader({ item }) {
+  const { language } = useLanguage();
+  const t = translations[language].errors;
+
   const images = Array.isArray(item.product_image) ? item.product_image : [item.product_image];
 
   const [loadingStates, setLoadingStates] = useState(() => images.map(() => true));
@@ -37,7 +44,7 @@ export default function ImageWithLoader({ item }) {
       <div className=" w-full overflow-hidden rounded-lg bg-gray-100">
         {hasError ? (
           <div className="flex items-center justify-center h-full">
-            <span>Error loading image</span>
+            <span>{t.imageLoad}</span>
           </div>
         ) : (
           <Swiper
