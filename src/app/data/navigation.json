@@ -12,6 +12,6 @@
   {
     "id": "contact",
     "name": { "sl": "Kontakt", "de": "Kontakt" },
-    "href": "#contact"
+    "href": "/#contact"
   }
 ]

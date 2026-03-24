@@ -1,9 +1,13 @@
 import { Dialog } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import NavigationLinks from "./NavigationLinks";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
+
 export default function MobileMenu({ isOpen, onClose }) {
+  const { language } = useLanguage();
   return (
     <>
       <Dialog as="div" className="lg:hidden" open={isOpen} onClose={onClose}>
@@ -36,8 +40,24 @@ export default function MobileMenu({ isOpen, onClose }) {
               <div className="space-y-2 py-6">
                 <NavigationLinks className="-mx-3 block px-3 py-2 leading-7 hover:bg-gray-50" />
               </div>
-              <div className="py-6">
+              <div className="py-6 flex flex-col gap-4">
                 <LanguageSwitcher />
+                <a
+                  href="tel:+38641814262"
+                  className="flex items-center gap-2 text-sm font-medium text-primary"
+                >
+                  <FontAwesomeIcon icon={faPhone} className="h-3 w-3" />
+                  <span>{translations[language].navigation.callUs}: +386 41 814 262</span>
+                </a>
+                <a
+                  href="https://maps.google.com/?q=Drvanja+29,+2234+Benedikt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-primary"
+                >
+                  <FontAwesomeIcon icon={faLocationDot} className="h-3 w-3" />
+                  <span>Drvanja 29, 2234 Benedikt</span>
+                </a>
               </div>
             </div>
           </div>

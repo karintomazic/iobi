@@ -18,6 +18,7 @@ const baseUrl = isDev
 export default function ImageWithLoader({ item }) {
   const { language } = useLanguage();
   const t = translations[language].errors;
+  const tp = translations[language].products;
 
   const images = Array.isArray(item.product_image) ? item.product_image : [item.product_image];
 
@@ -54,7 +55,7 @@ export default function ImageWithLoader({ item }) {
             slidesPerView={1}
           >
             {images.map((image, index) => (
-              <SwiperSlide key={image} className="pb-12 bg-gray-10">
+              <SwiperSlide key={image} className="bg-gray-10">
                 <Item
                   original={getImageUrl(image)}
                   thumbnail={getImageUrl(image)}
@@ -88,7 +89,21 @@ export default function ImageWithLoader({ item }) {
           </Swiper>
         )}
       </div>
-      <h3 className="mt-0 text-gray-700 text-center font-bold text-[1.2rem] mb-2">{item.product_name}</h3>
+      <div className="mt-3 px-1">
+        <h3 className="text-gray-800 font-bold text-[1.1rem]">{item.product_name}</h3>
+        <p className="text-sm text-gray-500 mt-1">
+          {tp.dimensions}: <span className="text-gray-700">{item.dimensions || "50 × 30 × 25 cm"}</span>
+        </p>
+        <div className="flex items-center justify-between mt-3">
+          <p className="text-primary font-semibold text-lg">{item.price || "od 45 €"}</p>
+          <a
+            href={`mailto:tomazics@gmail.com?subject=${encodeURIComponent(item.product_name)}`}
+            className="text-sm px-3 py-1.5 rounded-lg bg-primary text-white hover:bg-secondary transition-colors duration-150"
+          >
+            {tp.inquire}
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

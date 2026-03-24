@@ -4,9 +4,10 @@ export const translations = {
       home: "Domov",
       about: "Izdelki",
       contact: "Kontakt",
+      callUs: "Pokličite nas",
     },
     hero: {
-      title: "Izdelovanje Okrasnih Betonskih Izdelkov",
+      title: "Okrasni Betonski Izdelki Za Vaš Dom",
       subtitle:
         "Odkrijte našo raznoliko ponudbo, ki bodo obogatili vaš dom in ustvarili čarobno okolico. V našem izboru boste našli kakovostne betonske klopi, žare, fontane ter druge manjše okrasne izdelke.",
       heroButton: "Oglej si izdelke",
@@ -14,19 +15,19 @@ export const translations = {
     },
     categories: {
       title: "Kategorije",
-      subtitle: "filtrirajte po izdelkih",
+      subtitle: "Filtrirajte po kategorijah",
       categories: {
         allProducts: "Vsi izdelki",
-        animals: "Zivali",
+        animals: "Živali",
         fountains: "Fontane",
         korita: "Korita",
-        palcki: "Palcki",
-        angelcki: "Angelcki",
+        palcki: "Palčki",
+        angelcki: "Angelčki",
         kipci: "Kipci",
       }
     },
     contact: {
-      title: "Kontakti",
+      title: "Kontakt",
       subtitle: "Obiščite nas ali nas pokličite",
       adress: "Naslov",
       phone: "Telefon",
@@ -36,6 +37,11 @@ export const translations = {
     },
     errors: {
       imageLoad: "Napaka pri nalaganju slike",
+    },
+    products: {
+      price: "Cena",
+      dimensions: "Dimenzije",
+      inquire: "Povpraševanje",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
@@ -52,9 +58,10 @@ export const translations = {
       home: "Startseite",
       about: "Produkte",
       contact: "Kontakt",
+      callUs: "Rufen Sie uns an",
     },
     hero: {
-      title: "Herstellung dekorativer Betonprodukte",
+      title: "Dekorative Betonprodukte für Ihr Zuhause",
       subtitle:
         "Entdecken Sie unser vielfältiges Sortiment, das Ihr Zuhause bereichert und eine zauberhafte Umgebung schafft. In unserem Sortiment finden Sie hochwertige Betonbänke, Grills, Brunnen und andere kleine Dekoprodukte.",
       heroButton: "Produkte anzeigen",
@@ -62,19 +69,19 @@ export const translations = {
     },
     categories: {
       title: "Kategorien",
-      subtitle: "filtern nach Produkten",
+      subtitle: "Nach Kategorien filtern",
       categories: {
         allProducts: "Alle Produkte",
         animals: "Tiere",
-        fountains: "Fontanen",
+        fountains: "Fontänen",
         korita: "Korita",
-        palcki: "Palcki",
-        angelcki: "Angelcki",
+        palcki: "Palčki",
+        angelcki: "Angelčki",
         kipci: "Kipci",
       }
     },
     contact: {
-      title: "Kontakte",
+      title: "Kontakt",
       subtitle: "Besuchen Sie uns oder rufen Sie uns an",
       adress: "Adresse",
       phone: "Telefon",
@@ -84,6 +91,11 @@ export const translations = {
     },
     errors: {
       imageLoad: "Fehler beim Laden des Bildes",
+    },
+    products: {
+      price: "Preis",
+      dimensions: "Abmessungen",
+      inquire: "Anfrage",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
