@@ -45,7 +45,7 @@ export default function Testimonials() {
   const t = translations[language].testimonials;
 
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section id="testimonials" className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="pb-2 text-base/7 font-semibold text-primary">

@@ -16,7 +16,7 @@ export default function GardenGallery() {
   const t = translations[language].gardenGallery;
 
   return (
-    <section className="bg-gray-50 py-16 sm:py-24">
+    <section id="gallery" className="bg-gray-50 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="pb-2 text-base/7 font-semibold text-primary">

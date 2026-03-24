@@ -10,6 +10,16 @@
     "href": "/products"
   },
   {
+    "id": "gallery",
+    "name": { "sl": "Galerija", "de": "Galerie" },
+    "href": "/#gallery"
+  },
+  {
+    "id": "testimonials",
+    "name": { "sl": "Mnenja", "de": "Bewertungen" },
+    "href": "/#testimonials"
+  },
+  {
     "id": "contact",
     "name": { "sl": "Kontakt", "de": "Kontakt" },
     "href": "/#contact"
