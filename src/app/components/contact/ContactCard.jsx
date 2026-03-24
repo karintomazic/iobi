@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ContactCard({ link, icon, title, content }) {
   const wrapperClass =
-    "bg-white hover:scale-110 transform transition-transform duration-100 rounded-lg p-4 flex items-center gap-4 lg:flex-col flex-row";
+    "bg-white hover:scale-105 hover:shadow-md transform transition-all duration-200 rounded-lg p-4 flex items-center gap-4 lg:flex-col flex-row";
 
   const inner = (
     <>

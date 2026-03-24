@@ -28,7 +28,7 @@ export default function Categories() {
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
     },
     {
-      src: "/img/category-6.jpg",
+      src: "/img/category-3.jpg",
       alt: "Category 6",
       overlayText: "Lorem Ipsum",
       classes1: "max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
@@ -37,7 +37,7 @@ export default function Categories() {
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
     },
     {
-      src: "/img/category-5.jpg",
+      src: "/img/category-4.jpg",
       alt: "Category 5",
       overlayText: "Lorem Ipsum",
       classes1: "lg:row-span-2",

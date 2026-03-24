@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section>
       <main>
-        <div className="relative isolate">
+        <div className="relative isolate bg-white">
           <BackgroundShape />
           <div className="overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-10 lg:px-8">

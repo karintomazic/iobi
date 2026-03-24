@@ -8,9 +8,9 @@ export default function Footer() {
   const footerText = translations[language].footerText;
 
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-10 sm:pt-10 lg:px-8 lg:pt-10">
-        <p className="text-xs leading-5 text-gray-500">{footerText.text}</p>
+    <footer className="bg-white border-t border-gray-100" aria-labelledby="footer-heading">
+      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+        <p className="text-xs leading-5 text-gray-500 text-center">{footerText.text}</p>
       </div>
     </footer>
   );

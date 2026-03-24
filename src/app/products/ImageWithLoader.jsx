@@ -40,7 +40,7 @@ export default function ImageWithLoader({ item }) {
   };
 
   return (
-    <div className="group border border-gray-100 rounded-[20px] p-4 bg-gray-100">
+    <div className="group border border-gray-200 rounded-[20px] p-4 bg-gray-100">
       <div className=" w-full overflow-hidden rounded-lg bg-gray-100">
         {hasError ? (
           <div className="flex items-center justify-center h-full">
@@ -65,7 +65,7 @@ export default function ImageWithLoader({ item }) {
                     <div className="relative h-full w-full">
                       {loadingStates[index] && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-8 h-8 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
+                          <div className="w-8 h-8 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
                         </div>
                       )}
                       <img

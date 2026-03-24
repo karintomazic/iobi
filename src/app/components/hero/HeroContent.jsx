@@ -18,17 +18,17 @@ export default function HeroContent() {
       <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
         {navText.subtitle}
       </p>
-      <div className="mt-10 flex items-center gap-x-6">
+      <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
         <a
           href="/products"
-          className="rounded-md bg-primary px-4 py-2 text-base transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="w-full sm:w-auto text-center rounded-md bg-primary px-4 py-2 text-base transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           {navText.heroButton}
         </a>
 
         <a
           href="#contact"
-          className="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          className="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary"
         >
           {navText.heroButton2}
         </a>
