@@ -15,7 +15,7 @@ export default function Categories() {
       alt: "Category 2",
       overlayText: "Lorem Ipsum",
       classes1: "lg:row-span-2",
-      classes2: "lg:rounded-l-[calc(2rem+1px)]",
+      classes2: "",
       imgClass: "size-full object-cover object-top",
     },
     {
@@ -23,7 +23,7 @@ export default function Categories() {
       alt: "Category 1",
       overlayText: "Lorem Ipsum",
       classes1: "max-lg:row-start-1",
-      classes2: "max-lg:rounded-t-[calc(2rem+1px)]",
+      classes2: "",
       imgClass:
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
     },
@@ -41,8 +41,7 @@ export default function Categories() {
       alt: "Category 5",
       overlayText: "Lorem Ipsum",
       classes1: "lg:row-span-2",
-      classes2:
-        "max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)",
+      classes2: "",
       imgClass: "size-full object-cover object-top",
     },
   ];
@@ -60,7 +59,7 @@ export default function Categories() {
             >
               {categoryText.title}
             </h2>
-            <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+            <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2 lg:max-h-[900px]">
               {categories.map((category) => (
                 <CategoryCard
                   key={category.src}

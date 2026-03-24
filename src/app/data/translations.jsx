@@ -43,6 +43,15 @@ export const translations = {
       dimensions: "Dimenzije",
       inquire: "Povpraševanje",
     },
+    testimonials: {
+      title: "Kaj pravijo naši kupci",
+      subtitle: "Mnenja strank",
+    },
+    gardenGallery: {
+      title: "Naši izdelki v vaših vrtovih",
+      subtitle: "Navdih za vaš dom",
+      description: "Poglejte, kako naši betonski izdelki izgledajo v resničnih vrtovih. Vsak kos je ročno izdelan in prilagojen vašim željam.",
+    },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
     },
@@ -96,6 +105,15 @@ export const translations = {
       price: "Preis",
       dimensions: "Abmessungen",
       inquire: "Anfrage",
+    },
+    testimonials: {
+      title: "Was unsere Kunden sagen",
+      subtitle: "Kundenmeinungen",
+    },
+    gardenGallery: {
+      title: "Unsere Produkte in Ihren Gärten",
+      subtitle: "Inspiration für Ihr Zuhause",
+      description: "Sehen Sie, wie unsere Betonprodukte in echten Gärten aussehen. Jedes Stück wird handgefertigt und nach Ihren Wünschen angepasst.",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
