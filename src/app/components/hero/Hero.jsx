@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="relative isolate bg-white">
           <BackgroundShape />
           <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl px-6 pb-32 pt-10 lg:px-8">
+            <div className="mx-auto max-w-7xl px-6 pb-16 sm:pb-32 pt-10 lg:px-8">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <HeroContent />
                 <HeroImages />

@@ -13,7 +13,7 @@ export default function ProductPagination({
   const t = translations[language].pagination;
 
   return (
-    <div className="mt-8 flex justify-between">
+    <div className="mt-10 flex justify-between">
       <button
         onClick={onPreviousPage}
         disabled={currentPage === 1}

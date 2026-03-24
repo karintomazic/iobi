@@ -23,7 +23,7 @@ export default function ProductList({
   const categoriesText = translations[language].categories;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:py-20 lg:px-8 text-black">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:py-16 lg:px-8 text-black">
       <h2 className="text-center pb-2 text-base/7 font-semibold text-primary">
         {categoriesText.subtitle}
       </h2>

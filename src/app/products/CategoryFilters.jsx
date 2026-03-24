@@ -11,11 +11,11 @@ export default function CategoryFilters({
   const categoriesText = translations[language].categories;
 
   return (
-    <div className="mt-8 flex-1 flex flex-col">
+    <div className="flex-1 flex flex-col">
       <div className="p-2 flex justify-center flex-wrap gap-4">
         {/* All items */}
         <div
-          className={`flex items-center mb-2 border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
+          className={`flex items-center border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
             selectedCategory === "" ? "bg-primary text-white" : ""
           } `}
         >
@@ -43,7 +43,7 @@ export default function CategoryFilters({
         {categories.map((cat) => (
           <div
             key={cat.id}
-            className={`flex items-center mb-2 border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
+            className={`flex items-center border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
               selectedCategory === cat.id ? "bg-primary text-white" : ""
             }`}
           >
