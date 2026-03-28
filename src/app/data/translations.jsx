@@ -29,11 +29,13 @@ export const translations = {
     contact: {
       title: "Kontakt",
       subtitle: "Obiščite nas ali nas pokličite",
+      description: "Smo v Benediktu v Slovenskih goricah. Dobrodošli ste, da nas obiščete osebno, pokličete ali nam pišete — z veseljem vam pomagamo pri izbiri pravega izdelka.",
       adress: "Naslov",
       phone: "Telefon",
       email: "E-pošta",
       workHours: "Delovni čas",
       workHoursContent: "Pon - Pet: 08:00 - 17:00",
+      directionsLabel: "Odpri v Google Zemljevidih",
     },
     errors: {
       imageLoad: "Napaka pri nalaganju slike",
@@ -93,11 +95,13 @@ export const translations = {
     contact: {
       title: "Kontakt",
       subtitle: "Besuchen Sie uns oder rufen Sie uns an",
+      description: "Wir befinden uns in Benedikt in den Slowenischen Hügeln. Sie sind herzlich eingeladen, uns persönlich zu besuchen, anzurufen oder zu schreiben — wir helfen Ihnen gerne bei der Auswahl des richtigen Produkts.",
       adress: "Adresse",
       phone: "Telefon",
       email: "E-Mail",
       workHours: "Arbeitszeit",
       workHoursContent: "Mo - Fr: 08:00 - 17:00",
+      directionsLabel: "In Google Maps öffnen",
     },
     errors: {
       imageLoad: "Fehler beim Laden des Bildes",
