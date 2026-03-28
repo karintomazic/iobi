@@ -90,7 +90,7 @@ export default function ImageWithLoader({ item }) {
         )}
       </div>
       <div className="mt-3 px-1">
-        <h3 className="text-gray-800 dark:text-gray-100 font-bold text-[1.1rem]">{item.product_name}</h3>
+        <h3 className="text-gray-800 dark:text-gray-100 font-bold text-[1.1rem] capitalize">{item.product_name}</h3>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           {tp.dimensions}: <span className="text-gray-700 dark:text-gray-200">{item.dimensions || "50 × 30 × 25 cm"}</span>
         </p>
