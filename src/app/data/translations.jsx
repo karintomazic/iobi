@@ -51,6 +51,7 @@ export const translations = {
       title: "Naši izdelki v vaših vrtovih",
       subtitle: "Navdih za vaš dom",
       description: "Poglejte, kako naši betonski izdelki izgledajo v resničnih vrtovih. Vsak kos je ročno izdelan in prilagojen vašim željam.",
+      viewAll: "Oglej si celotno galerijo",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
@@ -114,6 +115,7 @@ export const translations = {
       title: "Unsere Produkte in Ihren Gärten",
       subtitle: "Inspiration für Ihr Zuhause",
       description: "Sehen Sie, wie unsere Betonprodukte in echten Gärten aussehen. Jedes Stück wird handgefertigt und nach Ihren Wünschen angepasst.",
+      viewAll: "Gesamte Galerie ansehen",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
