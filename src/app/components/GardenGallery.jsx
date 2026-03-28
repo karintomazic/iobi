@@ -16,17 +16,17 @@ export default function GardenGallery() {
   const t = translations[language].gardenGallery;
 
   return (
-    <section id="gallery" className="bg-gray-50 py-16 sm:py-24">
+    <section id="gallery" className="bg-gray-50 dark:bg-gray-900 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div className="max-w-2xl">
             <h2 className="pb-2 text-base/7 font-semibold text-primary">
               {t.subtitle}
             </h2>
-            <h2 className={`text-5xl font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}>
+            <h2 className={`text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
               {t.title}
             </h2>
-            <p className="mt-4 text-lg text-gray-600">{t.description}</p>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">{t.description}</p>
           </div>
           <a
             href="/gallery"
@@ -39,7 +39,7 @@ export default function GardenGallery() {
           {galleryImages.map((image) => (
             <div
               key={image.src}
-              className={`relative overflow-hidden rounded-2xl bg-gray-200 ${image.span}`}
+              className={`relative overflow-hidden rounded-2xl bg-gray-200 dark:bg-gray-700 ${image.span}`}
             >
               <img
                 src={image.src}
@@ -47,9 +47,8 @@ export default function GardenGallery() {
                 className="h-64 w-full object-cover object-center lg:h-72"
                 onError={(e) => { e.target.style.display = "none"; }}
               />
-              {/* Placeholder shown until real images are added */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-200 -z-10">
-                <p className="text-gray-400 text-sm">{image.alt}</p>
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700 -z-10">
+                <p className="text-gray-400 dark:text-gray-500 text-sm">{image.alt}</p>
               </div>
             </div>
           ))}

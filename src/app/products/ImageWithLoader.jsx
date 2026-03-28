@@ -41,10 +41,10 @@ export default function ImageWithLoader({ item }) {
   };
 
   return (
-    <div className="group border border-gray-200 rounded-[20px] p-4 bg-gray-100">
-      <div className=" w-full overflow-hidden rounded-lg bg-gray-100">
+    <div className="group border border-gray-200 dark:border-gray-700 rounded-[20px] p-4 bg-gray-100 dark:bg-gray-800">
+      <div className="w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
         {hasError ? (
-          <div className="flex items-center justify-center h-full">
+          <div className="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
             <span>{t.imageLoad}</span>
           </div>
         ) : (
@@ -55,7 +55,7 @@ export default function ImageWithLoader({ item }) {
             slidesPerView={1}
           >
             {images.map((image, index) => (
-              <SwiperSlide key={image} className="bg-gray-10">
+              <SwiperSlide key={image} className="bg-gray-100 dark:bg-gray-800">
                 <Item
                   original={getImageUrl(image)}
                   thumbnail={getImageUrl(image)}
@@ -66,7 +66,7 @@ export default function ImageWithLoader({ item }) {
                     <div className="relative h-full w-full">
                       {loadingStates[index] && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-8 h-8 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+                          <div className="w-8 h-8 border-4 border-gray-200 dark:border-gray-600 border-t-primary rounded-full animate-spin"></div>
                         </div>
                       )}
                       <img
@@ -90,9 +90,9 @@ export default function ImageWithLoader({ item }) {
         )}
       </div>
       <div className="mt-3 px-1">
-        <h3 className="text-gray-800 font-bold text-[1.1rem]">{item.product_name}</h3>
-        <p className="text-sm text-gray-500 mt-1">
-          {tp.dimensions}: <span className="text-gray-700">{item.dimensions || "50 × 30 × 25 cm"}</span>
+        <h3 className="text-gray-800 dark:text-gray-100 font-bold text-[1.1rem]">{item.product_name}</h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          {tp.dimensions}: <span className="text-gray-700 dark:text-gray-200">{item.dimensions || "50 × 30 × 25 cm"}</span>
         </p>
         <div className="flex items-center justify-between mt-3">
           <p className="text-primary font-semibold text-lg">{item.price || "od 45 €"}</p>

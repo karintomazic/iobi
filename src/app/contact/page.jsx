@@ -24,10 +24,10 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-gray-50">
+      <section className="bg-gray-50 dark:bg-gray-900">
         <Navigation />
       </section>
-      <main className="bg-gray-50">
+      <main className="bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
           {/* Header */}
           <div className="mb-12 max-w-2xl">
@@ -35,11 +35,11 @@ export default function ContactPage() {
               {t.subtitle}
             </h2>
             <h1
-              className={`text-5xl font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
+              className={`text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}
             >
               {t.title}
             </h1>
-            <p className="mt-4 text-lg text-gray-600">{t.description}</p>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">{t.description}</p>
           </div>
 
           {/* Two-column layout */}
@@ -71,25 +71,25 @@ export default function ContactPage() {
                 content={t.workHoursContent}
               />
             </div>
+
+            {/* Map card */}
             <a
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
+              className="group flex flex-col justify-between rounded-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
             >
-              {/* Decorative top band */}
-              <div className="bg-primary/10 px-8 pt-10 pb-6 flex-1 flex flex-col items-center justify-center gap-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20">
+              <div className="bg-primary/10 dark:bg-primary/20 px-8 pt-10 pb-6 flex-1 flex flex-col items-center justify-center gap-4 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30">
                   <FontAwesomeIcon icon={faLocationDot} className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-gray-900">Drvanja 29</p>
-                  <p className="text-gray-600">2234 Benedikt</p>
-                  <p className="text-gray-600">Slovenija</p>
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">Drvanja 29</p>
+                  <p className="text-gray-600 dark:text-gray-300">2234 Benedikt</p>
+                  <p className="text-gray-600 dark:text-gray-300">Slovenija</p>
                 </div>
               </div>
 
-              {/* CTA strip */}
               <div className="flex items-center justify-center gap-2 bg-primary px-6 py-4 text-sm font-medium text-white group-hover:bg-secondary transition-colors duration-150">
                 <span>{t.directionsLabel}</span>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3.5 w-3.5" />

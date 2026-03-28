@@ -24,7 +24,7 @@ export default function Contact() {
               {contactText.subtitle}
             </h2>
             <h2
-              className={`text-5xl font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
+              className={`text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}
             >
               {contactText.title}
             </h2>

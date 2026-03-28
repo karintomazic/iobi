@@ -88,14 +88,14 @@ export default function Products() {
   return (
     <div className={`${loading && "fixed overflow-y-hidden inset-0"}`}>
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-50">
+        <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75 z-50">
           <img src="/img/loading.gif" alt="Loading..." className="h-20 w-20" />
         </div>
       )}
-      <section className="bg-gray-50">
+      <section className="bg-gray-50 dark:bg-gray-900">
         <Navigation />
       </section>
-      <main className="bg-gray-50">
+      <main className="bg-gray-50 dark:bg-gray-900">
         {error && (
           <div className="mx-auto max-w-7xl px-6 py-8">
             <div className="rounded-md bg-red-50 border border-red-200 p-4 text-red-700 text-sm">

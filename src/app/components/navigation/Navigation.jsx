@@ -6,6 +6,7 @@ import NavigationLinks from "./NavigationLinks";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileMenu from "./MobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "../../context/LanguageContext";
@@ -38,7 +39,7 @@ export default function Navigation() {
           </a>
         </div>
       </div>
-      <header className="bg-white">
+      <header className="bg-white dark:bg-gray-900 border-b border-transparent dark:border-gray-800">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
           aria-label="Global"
@@ -55,7 +56,8 @@ export default function Navigation() {
             <NavigationLinks className="leading-6" />
           </div>
 
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-2">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </nav>

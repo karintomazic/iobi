@@ -45,13 +45,13 @@ export default function Testimonials() {
   const t = translations[language].testimonials;
 
   return (
-    <section id="testimonials" className="bg-white py-16 sm:py-24">
+    <section id="testimonials" className="bg-white dark:bg-gray-800 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="pb-2 text-base/7 font-semibold text-primary">
             {t.subtitle}
           </h2>
-          <h2 className={`text-5xl font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}>
+          <h2 className={`text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
             {t.title}
           </h2>
         </div>
@@ -59,13 +59,13 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="flex flex-col gap-4 rounded-2xl bg-gray-50 p-6 border border-gray-100"
+              className="flex flex-col gap-4 rounded-2xl bg-gray-50 dark:bg-gray-700 p-6 border border-gray-100 dark:border-gray-600"
             >
               <StarRating count={t.rating} />
-              <p className="text-gray-600 leading-7 flex-1">"{t.quote}"</p>
+              <p className="text-gray-600 dark:text-gray-300 leading-7 flex-1">"{t.quote}"</p>
               <div>
-                <p className="font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
+                <p className="font-semibold text-gray-900 dark:text-white">{t.name}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{t.location}</p>
               </div>
             </div>
           ))}

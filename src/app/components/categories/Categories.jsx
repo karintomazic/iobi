@@ -55,7 +55,7 @@ export default function Categories() {
               {categoryText.subtitle}
             </h2>
             <h2
-              className={`text-5xl text-center font-bold tracking-tight text-gray-900 ${playfairDisplay.className}`}
+              className={`text-5xl text-center font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}
             >
               {categoryText.title}
             </h2>

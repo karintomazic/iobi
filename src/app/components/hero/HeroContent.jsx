@@ -11,11 +11,11 @@ export default function HeroContent() {
   return (
     <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl lg:w-1/3">
       <h1
-        className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl ${playfairDisplay.className}`}
+        className={`text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl ${playfairDisplay.className}`}
       >
         {navText.title}
       </h1>
-      <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+      <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:max-w-md lg:max-w-none">
         {navText.subtitle}
       </p>
       <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
@@ -28,7 +28,7 @@ export default function HeroContent() {
 
         <a
           href="#contact"
-          className="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary"
+          className="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900 focus:ring-primary"
         >
           {navText.heroButton2}
         </a>
