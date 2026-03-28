@@ -42,8 +42,10 @@ export const translations = {
     },
     products: {
       price: "Cena",
-      dimensions: "Dimenzije",
+      size: "Velikost",
+      weight: "Teža",
       inquire: "Povpraševanje",
+      productId: "Šifra",
     },
     testimonials: {
       title: "Kaj pravijo naši kupci",
@@ -108,8 +110,10 @@ export const translations = {
     },
     products: {
       price: "Preis",
-      dimensions: "Abmessungen",
+      size: "Größe",
+      weight: "Gewicht",
       inquire: "Anfrage",
+      productId: "Artikelnummer",
     },
     testimonials: {
       title: "Was unsere Kunden sagen",

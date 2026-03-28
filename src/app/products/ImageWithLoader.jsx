@@ -90,10 +90,18 @@ export default function ImageWithLoader({ item }) {
         )}
       </div>
       <div className="mt-3 px-1">
-        <h3 className="text-gray-800 dark:text-gray-100 font-bold text-[1.1rem] capitalize">{item.product_name}</h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          {tp.dimensions}: <span className="text-gray-700 dark:text-gray-200">{item.dimensions || "50 × 30 × 25 cm"}</span>
-        </p>
+        <div className="flex items-baseline justify-between gap-2">
+          <h3 className="text-gray-800 dark:text-gray-100 font-bold text-[1.1rem] capitalize">{item.product_name}</h3>
+          <span className="text-xs text-gray-400 dark:text-gray-500 shrink-0">{tp.productId}: {item.id}</span>
+        </div>
+        <div className="mt-2 flex flex-col gap-0.5">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {tp.size}: <span className="text-gray-700 dark:text-gray-200">{item.size || "50 × 30 × 25 cm"}</span>
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {tp.weight}: <span className="text-gray-700 dark:text-gray-200">{item.weight || "12 kg"}</span>
+          </p>
+        </div>
         <div className="flex items-center justify-between mt-3">
           <p className="text-primary font-semibold text-lg">{item.price || "od 45 €"}</p>
           <a
