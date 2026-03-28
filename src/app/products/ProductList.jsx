@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { playfairDisplay } from "../utils/fonts";
 import ProductPagination from "./ProductPagination";
 import ProductCards from "./ProductCards";
@@ -13,14 +14,21 @@ export default function ProductList({
   totalPages,
   currentPage,
   items,
+  loading,
   categories,
   selectedCategory,
   setSelectedCategory,
   setCurrentPage,
 }) {
-
   const { language } = useLanguage();
   const categoriesText = translations[language].categories;
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    setVisible(false);
+    const timer = setTimeout(() => setVisible(true), 200);
+    return () => clearTimeout(timer);
+  }, [items]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:py-16 lg:px-8 text-black dark:text-white">
@@ -40,14 +48,22 @@ export default function ProductList({
           setSelectedCategory={setSelectedCategory}
           setCurrentPage={setCurrentPage}
         />
-        <div className="flex-auto">
-          <ProductCards items={items} />
-          <ProductPagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onNextPage={onNextPage}
-            onPreviousPage={onPreviousPage}
-          />
+
+        <div className="relative flex-auto min-h-[200px]">
+          {loading && (
+            <div className="absolute inset-0 flex items-start justify-center pt-16 z-10">
+              <div className="w-8 h-8 border-4 border-gray-200 dark:border-gray-700 border-t-primary rounded-full animate-spin" />
+            </div>
+          )}
+          <div className={`transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}>
+            <ProductCards items={items} />
+            <ProductPagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onNextPage={onNextPage}
+              onPreviousPage={onPreviousPage}
+            />
+          </div>
         </div>
       </div>
     </div>

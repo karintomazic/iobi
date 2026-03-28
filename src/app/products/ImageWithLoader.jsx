@@ -74,7 +74,7 @@ export default function ImageWithLoader({ item }) {
                         onClick={open}
                         src={getImageUrl(image)}
                         alt={`${item.product_name} - Image ${index + 1}`}
-                        className={`h-[400px] w-full object-cover object-center cursor-pointer rounded-[16px] ${
+                        className={`h-[400px] w-full object-cover object-center cursor-pointer rounded-[16px] transition-opacity duration-300 ${
                           loadingStates[index] ? "opacity-0" : "opacity-100"
                         }`}
                         loading="lazy"

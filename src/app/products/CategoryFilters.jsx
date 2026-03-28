@@ -10,66 +10,38 @@ export default function CategoryFilters({
   const { language } = useLanguage();
   const categoriesText = translations[language].categories;
 
-  return (
-    <div className="flex-1 flex flex-col">
-      <div className="p-2 flex justify-center flex-wrap gap-4">
-        {/* All items */}
-        <div
-          className={`flex items-center border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
-            selectedCategory === "" ? "bg-primary text-white" : ""
-          } `}
-        >
-          <input
-            type="radio"
-            id="no-filter"
-            name="category-filter"
-            value=""
-            checked={selectedCategory === ""}
-            onChange={() => {
-              setSelectedCategory(""); // Clear filters
-              setCurrentPage(1); // Reset to first page
-            }}
-            className="mr-2 hidden"
-          />
-          <label
-            htmlFor="no-filter"
-            className="font-medium cursor-pointer capitalize"
-          >
-            {categoriesText.categories.allProducts}
-          </label>
-        </div>
+  const handleSelect = (value) => {
+    const next = selectedCategory === value ? "" : value;
+    setSelectedCategory(next);
+    setCurrentPage(1);
+  };
 
-        {/* Category Radio Buttons */}
-        {categories.map((cat) => (
-          <div
-            key={cat.id}
-            className={`flex items-center border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
-              selectedCategory === cat.id ? "bg-primary text-white" : ""
+  const allFilters = [
+    { id: "", label: categoriesText.categories.allProducts },
+    ...categories.map((cat) => ({
+      id: cat.id,
+      label: categoriesText.categories[cat.category] || cat.category,
+    })),
+  ];
+
+  return (
+    <div className="flex flex-wrap justify-center items-center gap-2">
+      {allFilters.map((filter) => {
+        const isActive = selectedCategory === filter.id;
+        return (
+          <button
+            key={filter.id}
+            onClick={() => handleSelect(filter.id)}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-150 border ${
+              isActive
+                ? "bg-primary border-primary text-white shadow-sm"
+                : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-primary dark:hover:border-primary hover:text-primary dark:hover:text-primary"
             }`}
           >
-            <input
-              type="radio"
-              id={`category-${cat.id}`}
-              name="category-filter"
-              value={cat.id}
-              checked={selectedCategory === cat.id}
-              onChange={() => {
-                const updatedCategory =
-                  selectedCategory === cat.id ? "" : cat.id;
-                setSelectedCategory(updatedCategory); // Clear selection if the same category is clicked
-                setCurrentPage(1); // Reset to first page when filters change
-              }}
-              className="mr-2 hidden"
-            />
-            <label
-              htmlFor={`category-${cat.id}`}
-              className="font-medium cursor-pointer capitalize"
-            >
-              {categoriesText.categories[cat.category] || cat.category}
-            </label>
-          </div>
-        ))}
-      </div>
+            {filter.label}
+          </button>
+        );
+      })}
     </div>
   );
 }
