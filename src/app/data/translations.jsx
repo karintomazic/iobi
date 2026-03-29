@@ -67,6 +67,74 @@ export const translations = {
       of: "od",
     }
   },
+  en: {
+    navigation: {
+      home: "Home",
+      about: "Products",
+      contact: "Contact",
+      callUs: "Call us",
+    },
+    hero: {
+      title: "Decorative Concrete Products For Your Home",
+      subtitle:
+        "Discover our diverse range of products that will enrich your home and create a magical surroundings. In our selection you will find quality concrete benches, grills, fountains and other small decorative items.",
+      heroButton: "View products",
+      heroButton2: "How to find us",
+    },
+    categories: {
+      title: "Categories",
+      subtitle: "Filter by category",
+      categories: {
+        allProducts: "All products",
+        animals: "Animals",
+        fountains: "Fountains",
+        korita: "Troughs",
+        palcki: "Gnomes",
+        angelcki: "Angels",
+        kipci: "Figurines",
+      }
+    },
+    contact: {
+      title: "Contact",
+      subtitle: "Visit us or give us a call",
+      description: "We are located in Benedikt in the Slovenian Hills. You are welcome to visit us in person, call, or write to us — we are happy to help you choose the right product.",
+      adress: "Address",
+      phone: "Phone",
+      email: "Email",
+      workHours: "Working hours",
+      workHoursContent: "Mon - Fri: 08:00 - 17:00",
+      directionsLabel: "Open in Google Maps",
+    },
+    errors: {
+      imageLoad: "Error loading image",
+    },
+    products: {
+      price: "Price",
+      size: "Size",
+      weight: "Weight",
+      inquire: "Inquire",
+      productId: "Product ID",
+    },
+    testimonials: {
+      title: "What our customers say",
+      subtitle: "Customer reviews",
+    },
+    gardenGallery: {
+      title: "Our products in your gardens",
+      subtitle: "Inspiration for your home",
+      description: "See how our concrete products look in real gardens. Each piece is handmade and tailored to your wishes.",
+      viewAll: "View full gallery",
+    },
+    footerText: {
+      text: "© 2025 Stojan Tomažič s.p. - All rights reserved",
+    },
+    pagination: {
+      previous: "Previous",
+      next: "Next",
+      page: "Page",
+      of: "of",
+    }
+  },
   de: {
     navigation: {
       home: "Startseite",

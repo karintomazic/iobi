@@ -2,12 +2,11 @@ export default function CategoryCard({
   src,
   alt,
   overlayText,
-  classes1,
-  classes2,
+  classes,
   imgClass,
 }) {
   return (
-    <div className={`relative cursor-pointer group ${classes1}`}>
+    <div className={`relative cursor-pointer group ${classes}`}>
       <div
         className="relative flex h-full flex-col overflow-hidden rounded-2xl"
       >

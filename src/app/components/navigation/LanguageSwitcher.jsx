@@ -4,6 +4,7 @@ import { useLanguage } from '../../context/LanguageContext';
 const languages = [
   { code: 'sl', name: 'Slovenščina' },
   { code: 'de', name: 'Deutsch' },
+  { code: 'en', name: 'English' },
 ];
 
 export default function LanguageDropdown() {

@@ -14,16 +14,14 @@ export default function Categories() {
       src: "/img/category-2.jpg",
       alt: "Category 2",
       overlayText: "Lorem Ipsum",
-      classes1: "lg:row-span-2",
-      classes2: "",
+      classes: "lg:row-span-2",
       imgClass: "size-full object-cover object-top",
     },
     {
       src: "/img/category-1.jpg",
       alt: "Category 1",
       overlayText: "Lorem Ipsum",
-      classes1: "max-lg:row-start-1",
-      classes2: "",
+      classes: "max-lg:row-start-1",
       imgClass:
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
     },
@@ -31,8 +29,7 @@ export default function Categories() {
       src: "/img/category-3.jpg",
       alt: "Category 6",
       overlayText: "Lorem Ipsum",
-      classes1: "max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
-      classes2: "",
+      classes: "max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
       imgClass:
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
     },
@@ -40,8 +37,7 @@ export default function Categories() {
       src: "/img/category-4.jpg",
       alt: "Category 5",
       overlayText: "Lorem Ipsum",
-      classes1: "lg:row-span-2",
-      classes2: "",
+      classes: "lg:row-span-2",
       imgClass: "size-full object-cover object-top",
     },
   ];
@@ -66,8 +62,7 @@ export default function Categories() {
                   src={category.src}
                   alt={category.alt}
                   overlayText={category.overlayText}
-                  classes1={category.classes1}
-                  classes2={category.classes2}
+                  classes={category.classes}
                   imgClass={category.imgClass}
                 />
               ))}
