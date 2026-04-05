@@ -2,6 +2,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+### PocketBase (Backend)
+
+Run PocketBase with Docker:
+
+```bash
+docker compose up
+```
+
+### Frontend
+
 First, run the development server:
 
 ```bash
