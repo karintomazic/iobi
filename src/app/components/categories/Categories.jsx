@@ -13,14 +13,16 @@ export default function Categories() {
     {
       src: "/img/category-2.jpg",
       alt: "Category 2",
-      overlayText: "Lorem Ipsum",
+      overlayText: categoryText.categories.fountains,
+      categoryKey: "fontane",
       classes: "lg:row-span-2",
       imgClass: "size-full object-cover object-top",
     },
     {
       src: "/img/category-1.jpg",
       alt: "Category 1",
-      overlayText: "Lorem Ipsum",
+      overlayText: categoryText.categories.korita,
+      categoryKey: "korita",
       classes: "max-lg:row-start-1",
       imgClass:
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
@@ -28,7 +30,8 @@ export default function Categories() {
     {
       src: "/img/category-3.jpg",
       alt: "Category 6",
-      overlayText: "Lorem Ipsum",
+      overlayText: categoryText.categories.palcki,
+      categoryKey: "palcki",
       classes: "max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
       imgClass:
         "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
@@ -36,7 +39,8 @@ export default function Categories() {
     {
       src: "/img/category-4.jpg",
       alt: "Category 5",
-      overlayText: "Lorem Ipsum",
+      overlayText: categoryText.categories.animals,
+      categoryKey: "zivali",
       classes: "lg:row-span-2",
       imgClass: "size-full object-cover object-top",
     },
@@ -64,6 +68,7 @@ export default function Categories() {
                   overlayText={category.overlayText}
                   classes={category.classes}
                   imgClass={category.imgClass}
+                  href={`/products?category=${category.categoryKey}`}
                 />
               ))}
             </div>

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import PocketBase from "pocketbase";
 
 import Navigation from "../components/navigation/Navigation";
@@ -14,6 +15,7 @@ const pb = new PocketBase(
 );
 
 export default function Products() {
+  const searchParams = useSearchParams();
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -33,6 +35,16 @@ export default function Products() {
           $autoCancel: false,
         });
         setCategories(categoryRecords.items);
+
+        const categoryParam = searchParams.get("category");
+
+        if (categoryParam) {
+          const match = categoryRecords.items.find(
+            (cat) => cat.category === categoryParam
+          );
+
+          if (match) setSelectedCategory(match.id);
+        }
       } catch (err) {
         console.error("Error fetching categories:", err);
         setError("Napaka pri nalaganju kategorij. Prosimo, poskusite znova.");
