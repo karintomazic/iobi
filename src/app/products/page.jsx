@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PocketBase from "pocketbase";
 
-import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/Footer";
 import ProductList from "./ProductList";
 
@@ -99,9 +98,6 @@ export default function Products() {
 
   return (
     <div>
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <Navigation />
-      </section>
       <main className="bg-gray-50 dark:bg-gray-900">
         {error && (
           <div className="mx-auto max-w-7xl px-6 py-8">

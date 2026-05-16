@@ -1,6 +1,5 @@
 "use client";
 
-import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/Footer";
 import { playfairDisplay } from "../utils/fonts";
 import { useLanguage } from "../context/LanguageContext";
@@ -21,9 +20,6 @@ export default function GalleryPage() {
 
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <Navigation />
-      </section>
       <main className="bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
           <div className="mb-12">

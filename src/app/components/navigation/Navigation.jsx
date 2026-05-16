@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Logo from "./Logo";
+import { useState, useEffect } from "react";
 import NavigationLinks from "./NavigationLinks";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileMenu from "./MobileMenu";
@@ -9,34 +8,46 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../data/translations";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { language } = useLanguage();
-  const navText = translations[language].navigation;
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white dark:bg-gray-900 border-b border-stone-100 dark:border-gray-800">
-      <div className="h-0.5 bg-primary w-full" />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 lg:px-8 ${
+        scrolled ? "pt-0 pb-0" : "pt-3 pb-1"
+      }`}
+    >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+        className={`mx-auto max-w-7xl flex items-center justify-between px-4 lg:px-5 py-2 rounded-full transition-all duration-300 ${
+          scrolled
+            ? "shadow-md shadow-black/10 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
+            : "shadow-md shadow-black/5 bg-white dark:bg-gray-900"
+        }`}
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
-          <Logo />
-        </div>
+        <a href="/" className="flex-shrink-0">
+          <div className="w-11 h-11 rounded-full bg-[#EEF2E8] dark:bg-gray-800 flex items-center justify-center">
+            <img src="/img/iobi_logo.png" alt="IOBI" className="h-8 w-8 object-contain" />
+          </div>
+        </a>
 
         <div className="flex lg:hidden">
           <MobileMenuButton onClick={() => setMobileMenuOpen(true)} />
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-10">
+        <div className="hidden lg:flex lg:gap-x-8">
           <NavigationLinks />
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           <a
             href="tel:+38641814262"
             className="flex items-center gap-1.5 text-xs text-stone-400 dark:text-gray-500 hover:text-primary transition-colors duration-150"
