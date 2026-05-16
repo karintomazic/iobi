@@ -20,6 +20,7 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -71,6 +72,7 @@ export default function Products() {
           });
 
         setItems(records.items);
+        setTotalItems(records.totalItems);
         setTotalPages(
           records.totalPages || Math.ceil(records.totalItems / PAGE_SIZE)
         );
@@ -112,6 +114,7 @@ export default function Products() {
             onPreviousPage={handlePreviousPage}
             loading={loading}
             totalPages={totalPages}
+            totalItems={totalItems}
             currentPage={currentPage}
             items={items}
             categories={categories}

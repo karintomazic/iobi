@@ -1,38 +1,65 @@
 "use client";
 
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
-
 export default function ProductPagination({
   currentPage,
   totalPages,
   onNextPage,
   onPreviousPage,
 }) {
-  const { language } = useLanguage();
-  const t = translations[language].pagination;
+  if (totalPages <= 1) return null;
 
-  const btnClass =
-    "inline-flex items-center gap-2 rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-stone-300 disabled:hover:text-stone-600";
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  const getVisiblePages = () => {
+    if (totalPages <= 7) return pages;
+    if (currentPage <= 4) return [...pages.slice(0, 5), "...", totalPages];
+    if (currentPage >= totalPages - 3) return [1, "...", ...pages.slice(totalPages - 5)];
+    return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages];
+  };
+
+  const visiblePages = getVisiblePages();
 
   return (
-    <div className="mt-12 flex items-center justify-between border-t border-stone-200 dark:border-gray-800 pt-8">
-      <button onClick={onPreviousPage} disabled={currentPage === 1} className={btnClass}>
-        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+    <div className="mt-12 flex items-center justify-center gap-1.5">
+      <button
+        onClick={onPreviousPage}
+        disabled={currentPage === 1}
+        className="w-9 h-9 rounded-full border-2 border-stone-300 bg-white flex items-center justify-center text-stone-500 hover:border-primary hover:text-primary transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-stone-300 disabled:hover:text-stone-500"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
-        {t.previous}
       </button>
 
-      <span className="text-sm font-medium text-stone-500 dark:text-gray-400">
-        <span className="text-gray-900 dark:text-white font-semibold">{currentPage}</span>
-        <span className="mx-1.5">/</span>
-        <span>{totalPages}</span>
-      </span>
+      {visiblePages.map((p, i) =>
+        p === "..." ? (
+          <span key={`ellipsis-${i}`} className="w-9 h-9 flex items-center justify-center text-stone-400 text-sm">
+            …
+          </span>
+        ) : (
+          <button
+            key={p}
+            onClick={() => {
+              if (p > currentPage) onNextPage();
+              else if (p < currentPage) onPreviousPage();
+            }}
+            className={`w-9 h-9 rounded-full text-sm font-semibold transition-colors duration-200 ${
+              p === currentPage
+                ? "bg-primary text-white"
+                : "bg-white border-2 border-stone-300 text-stone-600 hover:border-primary hover:text-primary"
+            }`}
+          >
+            {p}
+          </button>
+        )
+      )}
 
-      <button onClick={onNextPage} disabled={currentPage === totalPages} className={btnClass}>
-        {t.next}
-        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+      <button
+        onClick={onNextPage}
+        disabled={currentPage === totalPages}
+        className="w-9 h-9 rounded-full border-2 border-stone-300 bg-white flex items-center justify-center text-stone-500 hover:border-primary hover:text-primary transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-stone-300 disabled:hover:text-stone-500"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
       </button>
