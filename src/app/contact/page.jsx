@@ -23,25 +23,23 @@ export default function ContactPage() {
 
   return (
     <>
-      <main className="bg-gray-50 dark:bg-gray-900">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+      <main className="bg-[#EDF2E8] dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-6 py-10 lg:py-16 lg:px-8">
+
           {/* Header */}
-          <div className="mb-12 max-w-2xl">
-            <h2 className="pb-2 text-base/7 font-semibold text-primary">
-              {t.subtitle}
-            </h2>
-            <h1
-              className={`text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}
-            >
+          <div className="mb-10 max-w-2xl">
+            <p className="text-base font-semibold text-primary mb-1">{t.subtitle}</p>
+            <h1 className={`text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
               {t.title}
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">{t.description}</p>
+            <p className="mt-3 text-base text-stone-600 dark:text-gray-300">{t.description}</p>
           </div>
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+
             {/* Contact cards */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 content-start">
               <ContactCard
                 link={MAPS_URL}
                 icon={faLocationDot}
@@ -73,24 +71,23 @@ export default function ContactPage() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between rounded-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
+              className="group flex flex-col rounded-2xl bg-white dark:bg-gray-800 border border-stone-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
             >
-              <div className="bg-primary/10 dark:bg-primary/20 px-8 pt-10 pb-6 flex-1 flex flex-col items-center justify-center gap-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30">
+              <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center px-8 py-10">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
                   <FontAwesomeIcon icon={faLocationDot} className="h-7 w-7 text-primary" />
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900 dark:text-white">Drvanja 29</p>
-                  <p className="text-gray-600 dark:text-gray-300">2234 Benedikt</p>
-                  <p className="text-gray-600 dark:text-gray-300">Slovenija</p>
+                  <p className="text-stone-500 dark:text-gray-300 text-sm mt-0.5">2234 Benedikt, Slovenija</p>
+                </div>
+                <div className="mt-2 inline-flex items-center gap-2 rounded-full border-2 border-primary text-primary px-5 py-2 text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+                  <span>{t.directionsLabel}</span>
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3 w-3" />
                 </div>
               </div>
-
-              <div className="flex items-center justify-center gap-2 bg-primary px-6 py-4 text-sm font-medium text-white group-hover:bg-secondary transition-colors duration-150">
-                <span>{t.directionsLabel}</span>
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3.5 w-3.5" />
-              </div>
             </a>
+
           </div>
         </div>
       </main>
