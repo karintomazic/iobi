@@ -45,27 +45,33 @@ export default function Testimonials() {
   const t = translations[language].testimonials;
 
   return (
-    <section id="testimonials" className="bg-white dark:bg-gray-800 py-16 sm:py-24">
+    <section id="testimonials" className="bg-[#EDF2E8] dark:bg-gray-800 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="pb-2 text-base/7 font-semibold text-primary">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-3">
             {t.subtitle}
-          </h2>
-          <h2 className={`text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
+          </p>
+          <h2
+            className={`text-4xl sm:text-5xl font-bold tracking-tight text-stone-800 dark:text-white ${playfairDisplay.className}`}
+          >
             {t.title}
           </h2>
         </div>
-        <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {testimonials.map((t) => (
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {testimonials.map((item) => (
             <div
-              key={t.name}
-              className="flex flex-col gap-4 rounded-2xl bg-gray-50 dark:bg-gray-700 p-6 border border-gray-100 dark:border-gray-600"
+              key={item.name}
+              className="flex flex-col gap-5 rounded-3xl bg-white dark:bg-gray-700 p-8 shadow-sm"
             >
-              <StarRating count={t.rating} />
-              <p className="text-gray-600 dark:text-gray-300 leading-7 flex-1">"{t.quote}"</p>
-              <div>
-                <p className="font-semibold text-gray-900 dark:text-white">{t.name}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{t.location}</p>
+              <span className={`text-5xl leading-none text-primary/30 font-serif ${playfairDisplay.className}`}>"</span>
+              <p className="text-stone-600 dark:text-gray-300 leading-7 flex-1 -mt-4">{item.quote}"</p>
+              <div className="pt-2 border-t border-stone-100 dark:border-gray-600 flex items-center justify-between">
+                <div>
+                  <p className="font-semibold text-stone-800 dark:text-white text-sm">{item.name}</p>
+                  <p className="text-xs text-stone-400 dark:text-gray-400">{item.location}</p>
+                </div>
+                <StarRating count={item.rating} />
               </div>
             </div>
           ))}

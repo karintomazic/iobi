@@ -7,6 +7,7 @@ export const translations = {
       callUs: "Pokličite nas",
     },
     hero: {
+      badge: "Ročno Izdelano",
       title: "Okrasni Betonski Izdelki Za Vaš Dom",
       subtitle:
         "Odkrijte našo raznoliko ponudbo, ki bodo obogatili vaš dom in ustvarili čarobno okolico. V našem izboru boste našli kakovostne betonske klopi, žare, fontane ter druge manjše okrasne izdelke.",
@@ -15,7 +16,8 @@ export const translations = {
     },
     categories: {
       title: "Kategorije",
-      subtitle: "Filtrirajte po kategorijah",
+      subtitle: "Odkrijte naše izdelke",
+      viewCategory: "Poglej",
       categories: {
         allProducts: "Vsi izdelki",
         animals: "Živali",
@@ -24,7 +26,13 @@ export const translations = {
         palcki: "Palčki",
         angelcki: "Angelčki",
         kipci: "Kipci",
-      }
+      },
+      descriptions: {
+        fountains: "Okrasne vodne fontane za vrt",
+        korita: "Betonska korita in posode",
+        palcki: "Ročno izdelani palčki",
+        animals: "Figure in kipci živali",
+      },
     },
     contact: {
       title: "Kontakt",
@@ -75,6 +83,7 @@ export const translations = {
       callUs: "Call us",
     },
     hero: {
+      badge: "Handcrafted",
       title: "Decorative Concrete Products For Your Home",
       subtitle:
         "Discover our diverse range of products that will enrich your home and create a magical surroundings. In our selection you will find quality concrete benches, grills, fountains and other small decorative items.",
@@ -83,7 +92,8 @@ export const translations = {
     },
     categories: {
       title: "Categories",
-      subtitle: "Filter by category",
+      subtitle: "Discover our products",
+      viewCategory: "View",
       categories: {
         allProducts: "All products",
         animals: "Animals",
@@ -92,7 +102,13 @@ export const translations = {
         palcki: "Gnomes",
         angelcki: "Angels",
         kipci: "Figurines",
-      }
+      },
+      descriptions: {
+        fountains: "Decorative water fountains",
+        korita: "Concrete troughs and planters",
+        palcki: "Handcrafted garden gnomes",
+        animals: "Animal figures and statues",
+      },
     },
     contact: {
       title: "Contact",
@@ -143,6 +159,7 @@ export const translations = {
       callUs: "Rufen Sie uns an",
     },
     hero: {
+      badge: "Handgefertigt",
       title: "Dekorative Betonprodukte für Ihr Zuhause",
       subtitle:
         "Entdecken Sie unser vielfältiges Sortiment, das Ihr Zuhause bereichert und eine zauberhafte Umgebung schafft. In unserem Sortiment finden Sie hochwertige Betonbänke, Grills, Brunnen und andere kleine Dekoprodukte.",
@@ -151,7 +168,8 @@ export const translations = {
     },
     categories: {
       title: "Kategorien",
-      subtitle: "Nach Kategorien filtern",
+      subtitle: "Entdecken Sie unsere Produkte",
+      viewCategory: "Ansehen",
       categories: {
         allProducts: "Alle Produkte",
         animals: "Tiere",
@@ -160,7 +178,13 @@ export const translations = {
         palcki: "Palčki",
         angelcki: "Angelčki",
         kipci: "Kipci",
-      }
+      },
+      descriptions: {
+        fountains: "Dekorative Wasserfontänen",
+        korita: "Betonkübel und Pflanzgefäße",
+        palcki: "Handgefertigte Gartenzwerge",
+        animals: "Tierfiguren und Statuen",
+      },
     },
     contact: {
       title: "Kontakt",

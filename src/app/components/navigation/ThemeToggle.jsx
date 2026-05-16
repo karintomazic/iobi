@@ -10,13 +10,10 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-150"
+      className="text-stone-400 dark:text-gray-500 hover:text-stone-600 dark:hover:text-gray-300 transition-colors duration-150"
       aria-label="Toggle dark mode"
     >
-      <FontAwesomeIcon
-        icon={theme === "dark" ? faSun : faMoon}
-        className="h-4 w-4"
-      />
+      <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} className="h-3.5 w-3.5" />
     </button>
   );
 }

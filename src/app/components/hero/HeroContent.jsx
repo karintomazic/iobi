@@ -6,31 +6,34 @@ import { translations } from "../../data/translations";
 
 export default function HeroContent() {
   const { language } = useLanguage();
-  const navText = translations[language].hero;
+  const t = translations[language].hero;
 
   return (
-    <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl lg:w-1/3">
+    <div className="relative w-full lg:w-1/2 lg:shrink-0">
+      <div className="inline-flex items-center gap-2 border border-primary/40 text-primary text-xs tracking-[0.18em] uppercase px-4 py-1.5 rounded-full mb-8">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+        {t.badge}
+      </div>
       <h1
-        className={`text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl ${playfairDisplay.className}`}
+        className={`text-5xl sm:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight text-stone-800 dark:text-white ${playfairDisplay.className}`}
       >
-        {navText.title}
+        {t.title}
       </h1>
-      <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:max-w-md lg:max-w-none">
-        {navText.subtitle}
+      <p className="mt-6 text-base leading-relaxed text-stone-500 dark:text-gray-400 max-w-md">
+        {t.subtitle}
       </p>
-      <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
+      <div className="mt-10 flex flex-wrap gap-4">
         <a
           href="/products"
-          className="w-full sm:w-auto text-center rounded-md bg-primary px-4 py-2 text-base transition-all duration-100 ease text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="rounded-full bg-primary px-8 py-3 text-sm font-medium text-white hover:bg-secondary transition-colors duration-200"
         >
-          {navText.heroButton}
+          {t.heroButton}
         </a>
-
         <a
           href="/contact"
-          className="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900 focus:ring-primary"
+          className="rounded-full border border-stone-300 dark:border-gray-600 px-8 py-3 text-sm font-medium text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
         >
-          {navText.heroButton2}
+          {t.heroButton2}
         </a>
       </div>
     </div>

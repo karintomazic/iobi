@@ -19,8 +19,8 @@ export default function NavigationLinks({ className }) {
           <Link
             key={item.id}
             href={item.href}
-            className={`pb-1 text-base font-semibold text-gray-900 dark:text-gray-100 text-[1.2rem] border-b-[3px] hover:border-primary transition-all duration-100 ease ${className} ${
-              isActive ? "border-primary" : "border-transparent"
+            className={`pb-0.5 text-base font-medium tracking-wide text-stone-600 dark:text-gray-300 border-b hover:text-primary hover:border-primary transition-all duration-150 ${className} ${
+              isActive ? "border-primary text-primary" : "border-transparent"
             }`}
           >
             {linkText}

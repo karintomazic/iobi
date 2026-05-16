@@ -8,16 +8,51 @@ export default function Footer() {
   const footerText = translations[language].footerText;
 
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800" aria-labelledby="footer-heading">
-      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8 flex items-center justify-between">
-        <div className="flex-1" />
-        <p className="text-xs leading-5 text-gray-500 dark:text-gray-400 text-center flex-1">{footerText.text}</p>
-        <div className="flex-1 flex justify-end">
+    <footer className="bg-[#7A9A6B] dark:bg-gray-950" aria-labelledby="footer-heading">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-14 pb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+          <div>
+            <img src="/img/iobi_logo.png" alt="IOBI" className="h-16 w-auto brightness-0 invert opacity-90" />
+            <p className="mt-4 text-sm text-white/40 leading-relaxed max-w-xs">
+              Ročno izdelani betonski okrasni izdelki iz Benedikta v Slovenskih goricah.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xs tracking-[0.18em] uppercase text-white/30 mb-4">Kontakt</h3>
+            <ul className="space-y-2 text-sm text-white/50">
+              <li>
+                <a href="https://maps.google.com/?q=Drvanja+29,+2234+Benedikt" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">
+                  Drvanja 29, 2234 Benedikt
+                </a>
+              </li>
+              <li>
+                <a href="tel:+38641814262" className="hover:text-white/80 transition-colors">+386 41 814 262</a>
+              </li>
+              <li>
+                <a href="mailto:tomazics@gmail.com" className="hover:text-white/80 transition-colors">tomazics@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs tracking-[0.18em] uppercase text-white/30 mb-4">Strani</h3>
+            <ul className="space-y-2 text-sm text-white/50">
+              <li><a href="/" className="hover:text-white/80 transition-colors">Domov</a></li>
+              <li><a href="/products" className="hover:text-white/80 transition-colors">Izdelki</a></li>
+              <li><a href="/gallery" className="hover:text-white/80 transition-colors">Galerija</a></li>
+              <li><a href="/contact" className="hover:text-white/80 transition-colors">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-8 flex items-center justify-between">
+          <p className="text-xs text-white/25">{footerText.text}</p>
           <a
             href="https://www.facebook.com/tomazicstojan/?locale=sl_SI"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-primary transition-colors duration-200"
+            className="text-white/25 hover:text-white/60 transition-colors duration-200"
             aria-label="Facebook"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">

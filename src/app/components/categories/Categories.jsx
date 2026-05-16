@@ -7,74 +7,77 @@ import { translations } from "../../data/translations";
 
 export default function Categories() {
   const { language } = useLanguage();
-  const categoryText = translations[language].categories;
+  const t = translations[language].categories;
 
   const categories = [
     {
       src: "/img/category-2.jpg",
-      alt: "Category 2",
-      overlayText: categoryText.categories.fountains,
-      categoryKey: "fontane",
+      alt: "Fontane",
+      overlayText: t.categories.fountains,
+      description: t.descriptions.fountains,
+      href: "/products?category=fontane",
       classes: "lg:row-span-2",
-      imgClass: "size-full object-cover object-top",
     },
     {
       src: "/img/category-1.jpg",
-      alt: "Category 1",
-      overlayText: categoryText.categories.korita,
-      categoryKey: "korita",
-      classes: "max-lg:row-start-1",
-      imgClass:
-        "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
+      alt: "Korita",
+      overlayText: t.categories.korita,
+      description: t.descriptions.korita,
+      href: "/products?category=korita",
+      classes: "",
     },
     {
       src: "/img/category-3.jpg",
-      alt: "Category 6",
-      overlayText: categoryText.categories.palcki,
-      categoryKey: "palcki",
-      classes: "max-lg:row-start-3 lg:col-start-2 lg:row-start-2",
-      imgClass:
-        "w-full h-full max-w-full object-cover sm:max-h-90 lg:max-h-full",
+      alt: "Palčki",
+      overlayText: t.categories.palcki,
+      description: t.descriptions.palcki,
+      href: "/products?category=palcki",
+      classes: "",
     },
     {
       src: "/img/category-4.jpg",
-      alt: "Category 5",
-      overlayText: categoryText.categories.animals,
-      categoryKey: "zivali",
-      classes: "lg:row-span-2",
-      imgClass: "size-full object-cover object-top",
+      alt: "Živali",
+      overlayText: t.categories.animals,
+      description: t.descriptions.animals,
+      href: "/products?category=zivali",
+      classes: "",
     },
   ];
 
   return (
-    <div>
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div>
-          <div className="mx-auto max-w-2xl px-0 lg:max-w-7xl lg:px-8">
-            <h2 className="text-center pb-2 text-base/7 font-semibold text-primary">
-              {categoryText.subtitle}
-            </h2>
-            <h2
-              className={`text-5xl text-center font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}
-            >
-              {categoryText.title}
-            </h2>
-            <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2 lg:max-h-[900px]">
-              {categories.map((category) => (
-                <CategoryCard
-                  key={category.src}
-                  src={category.src}
-                  alt={category.alt}
-                  overlayText={category.overlayText}
-                  classes={category.classes}
-                  imgClass={category.imgClass}
-                  href={`/products?category=${category.categoryKey}`}
-                />
-              ))}
+    <section className="bg-white dark:bg-gray-800 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+        {/* Bento grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:h-[580px]">
+          <CategoryCard {...categories[0]} />
+
+          <CategoryCard {...categories[1]} />
+
+          {/* Editorial text + CTA panel */}
+          <div className="rounded-2xl bg-[#EDF2E8] dark:bg-gray-700 p-8 flex flex-col justify-between min-h-[220px]">
+            <div>
+              <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-4">
+                {t.subtitle}
+              </p>
+              <h2 className={`text-4xl font-bold leading-tight text-stone-800 dark:text-white ${playfairDisplay.className}`}>
+                {t.title}
+              </h2>
             </div>
+            <a
+              href="/products"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-secondary transition-colors duration-200 w-fit mt-6"
+            >
+              {t.categories.allProducts} &rarr;
+            </a>
           </div>
+
+          <CategoryCard {...categories[2]} />
+
+          <CategoryCard {...categories[3]} />
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }

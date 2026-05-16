@@ -2,18 +2,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ContactCard({ link, icon, title, content }) {
   const wrapperClass =
-    "bg-white dark:bg-gray-800 hover:scale-105 hover:shadow-md transform transition-all duration-200 rounded-lg p-4 flex items-center gap-4 lg:flex-col flex-row";
+    "group rounded-2xl border border-stone-100 dark:border-gray-700 bg-[#F8F5F0] dark:bg-gray-800 p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:shadow-sm transition-all duration-200";
 
   const inner = (
     <>
-      <div>
-        <FontAwesomeIcon icon={icon} className="text-primary w-10 h-8" />
+      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+        <FontAwesomeIcon icon={icon} className="text-primary w-4 h-4" />
       </div>
-      <div className="lg:text-center text-left">
-        <h3 className="font-semibold text-gray-900 dark:text-white">{title}</h3>
-        <address className="pt-0 md:pt-2 not-italic text-gray-600 dark:text-gray-300">
-          <p>{content}</p>
-        </address>
+      <div>
+        <h3 className="text-xs tracking-[0.15em] uppercase text-stone-400 dark:text-gray-400 font-medium mb-1">{title}</h3>
+        <p className="text-stone-700 dark:text-gray-200 font-medium text-sm">{content}</p>
       </div>
     </>
   );

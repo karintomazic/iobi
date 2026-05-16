@@ -3,23 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --color-primary: #60914A;
-  --color-secondary: #2F4858;
-  --color-accent: #1C2B36;
-  --color-text: #1C2B36;
-}
-
-[data-theme="dark"] {
-  --color-primary: #4F46E5; /* Dark mode primary color */
-  --color-secondary: #22D3EE; /* Dark mode secondary color */
-  --color-accent: #FCD34D; /* Dark mode accent color */
+  --color-primary: #7A9A6B;
+  --color-secondary: #5C7A4E;
+  --color-accent: #C4956A;
 }
 
 body {
-  @apply bg-gray-50 dark:bg-gray-900 transition-colors duration-200;
+  @apply bg-[#F8F5F0] dark:bg-gray-900 transition-colors duration-200;
 }
 
 @layer utilities {
@@ -34,5 +24,5 @@ body {
 }
 
 .swiper .swiper-pagination-bullet-active {
-  background: #60914A;
+  background: #7A9A6B;
 }

@@ -9,11 +9,11 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
+      <section className="bg-[#F8F5F0] dark:bg-gray-900">
         <Navigation />
         <Hero />
       </section>
-      <main className="bg-gray-50 dark:bg-gray-900">
+      <main>
         <section>
           <Categories />
         </section>
