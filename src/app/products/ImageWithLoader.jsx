@@ -41,8 +41,8 @@ export default function ImageWithLoader({ item }) {
   };
 
   return (
-    <div className="group border border-gray-200 dark:border-gray-700 rounded-[20px] p-4 bg-gray-100 dark:bg-gray-800">
-      <div className="w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+    <div className="group border border-stone-200 dark:border-gray-700 rounded-[20px] p-4 bg-white dark:bg-gray-800">
+      <div className="w-full overflow-hidden rounded-lg bg-stone-100 dark:bg-gray-700">
         {hasError ? (
           <div className="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
             <span>{t.imageLoad}</span>

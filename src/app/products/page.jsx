@@ -98,7 +98,7 @@ export default function Products() {
 
   return (
     <div>
-      <main className="bg-gray-50 dark:bg-gray-900">
+      <main className="bg-[#EDF2E8] dark:bg-gray-900">
         {error && (
           <div className="mx-auto max-w-7xl px-6 py-8">
             <div className="rounded-md bg-red-50 border border-red-200 p-4 text-red-700 text-sm">

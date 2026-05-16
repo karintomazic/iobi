@@ -25,17 +25,17 @@ export default function CategoryFilters({
   ];
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-2">
+    <div className="flex flex-wrap gap-2">
       {allFilters.map((filter) => {
         const isActive = selectedCategory === filter.id;
         return (
           <button
             key={filter.id}
             onClick={() => handleSelect(filter.id)}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-150 border ${
+            className={`rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 ${
               isActive
-                ? "bg-primary border-primary text-white shadow-sm"
-                : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-primary dark:hover:border-primary hover:text-primary dark:hover:text-primary"
+                ? "bg-primary text-white border-2 border-primary"
+                : "bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary"
             }`}
           >
             {filter.label}

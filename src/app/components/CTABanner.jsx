@@ -10,7 +10,7 @@ export default function CTABanner() {
   const t = translations[language].ctaBanner;
 
   return (
-    <section className="bg-[#F8F5F0] dark:bg-gray-800 py-16 sm:py-20">
+    <section className="bg-white dark:bg-gray-800 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-8">
         <div>
           <h2 className={`text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white ${playfairDisplay.className}`}>
@@ -21,13 +21,13 @@ export default function CTABanner() {
         <div className="flex gap-3 shrink-0">
           <Link
             href="/products"
-            className="px-5 py-3 rounded-full bg-primary text-white font-semibold text-sm hover:bg-secondary transition-colors duration-150"
+            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-secondary transition-colors duration-200"
           >
             {t.button1}
           </Link>
           <Link
             href="/contact"
-            className="px-5 py-3 rounded-full border border-primary text-primary font-semibold text-sm hover:bg-primary/10 transition-colors duration-150"
+            className="rounded-full bg-white border-2 border-stone-300 px-6 py-3 text-sm font-semibold text-stone-600 hover:border-primary hover:text-primary transition-colors duration-200"
           >
             {t.button2}
           </Link>

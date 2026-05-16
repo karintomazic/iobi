@@ -35,7 +35,7 @@ export default function WhyUs() {
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {t.features.map((feature, i) => (
-            <div key={feature.title} className="flex flex-col gap-4 p-8 rounded-2xl bg-[#F8F5F0] dark:bg-gray-800">
+            <div key={feature.title} className="flex flex-col gap-4 p-8 rounded-2xl bg-[#EDF2E8] dark:bg-gray-800">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 {icons[i]}
               </div>

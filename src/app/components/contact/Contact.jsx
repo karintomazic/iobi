@@ -59,7 +59,7 @@ export default function Contact() {
           </div>
 
           {/* Right contact details */}
-          <div className="lg:col-span-3 bg-[#F8F5F0] dark:bg-gray-800 p-10 lg:p-14 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+          <div className="lg:col-span-3 bg-[#EDF2E8] dark:bg-gray-800 p-10 lg:p-14 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
             <ContactItem
               icon={faLocationDot}
               title={t.adress}

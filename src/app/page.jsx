@@ -9,21 +9,18 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <section className="bg-[#F8F5F0] dark:bg-gray-900">
+      <section className="bg-[#EDF2E8] dark:bg-gray-900">
         <Hero />
       </section>
       <main>
         <section>
-          <FeaturedProducts />
-        </section>
-        <section>
           <Categories />
         </section>
         <section>
-          <GardenGallery />
+          <FeaturedProducts />
         </section>
         <section>
-          <Testimonials />
+          <GardenGallery />
         </section>
         <CTABanner />
       </main>

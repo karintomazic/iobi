@@ -45,12 +45,9 @@ export default function FeaturedProducts() {
           </div>
           <Link
             href="/products"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-secondary transition-colors duration-150"
+            className="hidden sm:inline-flex rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
           >
             {t.viewAll}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
-            </svg>
           </Link>
         </div>
 
@@ -73,12 +70,9 @@ export default function FeaturedProducts() {
         <div className="mt-10 sm:hidden text-center">
           <Link
             href="/products"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-secondary transition-colors duration-150"
+            className="inline-flex rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
           >
             {t.viewAll}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
-            </svg>
           </Link>
         </div>
       </div>

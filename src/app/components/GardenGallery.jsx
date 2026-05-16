@@ -16,7 +16,7 @@ export default function GardenGallery() {
   const t = translations[language].gardenGallery;
 
   return (
-    <section id="gallery" className="bg-[#F8F5F0] dark:bg-gray-900 py-16 sm:py-24">
+    <section id="gallery" className="bg-[#EDF2E8] dark:bg-gray-900 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Header */}
@@ -32,7 +32,7 @@ export default function GardenGallery() {
           </div>
           <a
             href="/gallery"
-            className="shrink-0 rounded-full border border-stone-300 dark:border-gray-600 px-6 py-2.5 text-sm font-medium text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
+            className="shrink-0 rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
           >
             {t.viewAll}
           </a>
