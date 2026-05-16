@@ -8,7 +8,7 @@ export default function LanguageSwitcher() {
   const { language, changeLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center gap-1.5 text-xs tracking-widest uppercase">
+    <div className="flex items-center gap-1.5 text-sm tracking-widest uppercase">
       {languages.map((code, i) => (
         <span key={code} className="flex items-center gap-1.5">
           <button

@@ -65,6 +65,26 @@ export const translations = {
       description: "Poglejte, kako naši betonski izdelki izgledajo v resničnih vrtovih. Vsak kos je ročno izdelan in prilagojen vašim željam.",
       viewAll: "Oglej si celotno galerijo",
     },
+    featuredProducts: {
+      subtitle: "Iz naše ponudbe",
+      title: "Izpostavljeni izdelki",
+      viewAll: "Vsi izdelki",
+    },
+    whyUs: {
+      subtitle: "Zakaj mi",
+      title: "Ročno z ljubeznijo",
+      features: [
+        { title: "Ročno Izdelano", description: "Vsak kos oblikujemo z rokami — brez množične proizvodnje, brez kompromisov." },
+        { title: "Lokalni Obrtnik", description: "Družinska obrt iz Benedikta v Slovenskih goricah, zakoreninjena v skupnosti." },
+        { title: "Kakovostni Beton", description: "Vremensko odporen beton, ki zdrži leta in leta na prostem brez težav." },
+      ],
+    },
+    ctaBanner: {
+      title: "Iščete kaj posebnega?",
+      subtitle: "Oglejte si celotno ponudbo ali nas kontaktirajte za povpraševanje.",
+      button1: "Vsi izdelki",
+      button2: "Kontaktirajte nas",
+    },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
     },
@@ -141,6 +161,26 @@ export const translations = {
       description: "See how our concrete products look in real gardens. Each piece is handmade and tailored to your wishes.",
       viewAll: "View full gallery",
     },
+    featuredProducts: {
+      subtitle: "From our range",
+      title: "Featured Products",
+      viewAll: "All products",
+    },
+    whyUs: {
+      subtitle: "Why us",
+      title: "Handcrafted with care",
+      features: [
+        { title: "Handmade", description: "Every piece is shaped by hand — no mass production, no compromises." },
+        { title: "Local Craftsman", description: "A family business from Benedikt in the Slovenian Hills, rooted in the community." },
+        { title: "Quality Concrete", description: "Weather-resistant concrete that lasts for years outdoors without issue." },
+      ],
+    },
+    ctaBanner: {
+      title: "Looking for something special?",
+      subtitle: "Browse our full range or get in touch for a custom inquiry.",
+      button1: "All products",
+      button2: "Contact us",
+    },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - All rights reserved",
     },
@@ -216,6 +256,26 @@ export const translations = {
       subtitle: "Inspiration für Ihr Zuhause",
       description: "Sehen Sie, wie unsere Betonprodukte in echten Gärten aussehen. Jedes Stück wird handgefertigt und nach Ihren Wünschen angepasst.",
       viewAll: "Gesamte Galerie ansehen",
+    },
+    featuredProducts: {
+      subtitle: "Aus unserem Sortiment",
+      title: "Ausgewählte Produkte",
+      viewAll: "Alle Produkte",
+    },
+    whyUs: {
+      subtitle: "Warum wir",
+      title: "Handgefertigt mit Liebe",
+      features: [
+        { title: "Handgefertigt", description: "Jedes Stück wird von Hand geformt — keine Massenproduktion, keine Kompromisse." },
+        { title: "Lokaler Handwerker", description: "Ein Familienbetrieb aus Benedikt in den Slowenischen Hügeln, verwurzelt in der Gemeinschaft." },
+        { title: "Qualitätsbeton", description: "Wetterfester Beton, der jahrelang problemlos im Freien hält." },
+      ],
+    },
+    ctaBanner: {
+      title: "Suchen Sie etwas Besonderes?",
+      subtitle: "Stöbern Sie in unserem Sortiment oder kontaktieren Sie uns für eine Anfrage.",
+      button1: "Alle Produkte",
+      button2: "Kontakt",
     },
     footerText: {
       text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",

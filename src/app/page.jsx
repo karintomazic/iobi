@@ -1,8 +1,9 @@
 import Hero from "./components/hero/Hero";
+import FeaturedProducts from "./components/FeaturedProducts";
 import Categories from "./components/categories/Categories";
 import GardenGallery from "./components/GardenGallery";
 import Testimonials from "./components/Testimonials";
-import Contact from "./components/contact/Contact";
+import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       </section>
       <main>
         <section>
+          <FeaturedProducts />
+        </section>
+        <section>
           <Categories />
         </section>
         <section>
@@ -21,9 +25,7 @@ export default function Home() {
         <section>
           <Testimonials />
         </section>
-        <section>
-          <Contact />
-        </section>
+        <CTABanner />
       </main>
       <Footer />
     </>
