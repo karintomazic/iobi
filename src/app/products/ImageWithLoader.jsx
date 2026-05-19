@@ -103,7 +103,7 @@ export default function ImageWithLoader({ item }) {
           </p>
         </div>
         <div className="flex items-center justify-between mt-3">
-          <p className="text-primary font-semibold text-lg">{item.price || "od 45 €"}</p>
+          <p className="text-primary font-semibold text-lg">{item.price} €</p>
           <a
             href={`mailto:tomazics@gmail.com?subject=${encodeURIComponent(`${item.product_name} - Šifra: ${item.id}`)}`}
             className="text-sm px-3 py-1.5 rounded-lg bg-primary text-white hover:bg-secondary transition-colors duration-150"
