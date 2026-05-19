@@ -13,8 +13,8 @@ export default function Categories() {
     {
       src: "/img/category-2.jpg",
       alt: "Fontane",
-      overlayText: t.categories.fountains,
-      description: t.descriptions.fountains,
+      overlayText: t.categories.fontane,
+      description: t.descriptions.fontane,
       href: "/products?category=fontane",
       classes: "lg:row-span-2",
     },
@@ -37,8 +37,8 @@ export default function Categories() {
     {
       src: "/img/category-4.jpg",
       alt: "Živali",
-      overlayText: t.categories.animals,
-      description: t.descriptions.animals,
+      overlayText: t.categories.zivali,
+      description: t.descriptions.zivali,
       href: "/products?category=zivali",
       classes: "",
     },

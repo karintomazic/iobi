@@ -56,6 +56,7 @@ export default function ProductList({
 }) {
   const { language } = useLanguage();
   const t = translations[language].categories;
+  const tp = translations[language].products;
   const [visible, setVisible] = useState(true);
   const topRef = useRef(null);
 
@@ -103,7 +104,7 @@ export default function ProductList({
             <div className="mt-3 inline-flex items-center gap-2 bg-white dark:bg-gray-800 border border-stone-200 dark:border-gray-700 rounded-full px-3 py-1 w-fit">
               <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
               <span className="text-xs font-semibold text-stone-600 dark:text-gray-300">
-                {totalItems} {totalItems === 1 ? "izdelek" : "izdelkov"}
+                {totalItems} {totalItems === 1 ? tp.itemSingular : tp.itemPlural}
                 {activeCategory && (
                   <span className="text-stone-400 font-normal"> · {t.categories[activeCategory.category] || activeCategory.category}</span>
                 )}
