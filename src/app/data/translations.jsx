@@ -61,10 +61,6 @@ export const translations = {
       itemSingular: "izdelek",
       itemPlural: "izdelkov",
     },
-    testimonials: {
-      title: "Kaj pravijo naši kupci",
-      subtitle: "Mnenja strank",
-    },
     gardenGallery: {
       title: "Naši izdelki v vaših vrtovih",
       subtitle: "Navdih za vaš dom",
@@ -75,15 +71,6 @@ export const translations = {
       subtitle: "Iz naše ponudbe",
       title: "Izpostavljeni izdelki",
       viewAll: "Vsi izdelki",
-    },
-    whyUs: {
-      subtitle: "Zakaj mi",
-      title: "Ročno z ljubeznijo",
-      features: [
-        { title: "Ročno Izdelano", description: "Vsak kos oblikujemo z rokami — brez množične proizvodnje, brez kompromisov." },
-        { title: "Lokalni Obrtnik", description: "Družinska obrt iz Benedikta v Slovenskih goricah, zakoreninjena v skupnosti." },
-        { title: "Kakovostni Beton", description: "Vremensko odporen beton, ki zdrži leta in leta na prostem brez težav." },
-      ],
     },
     ctaBanner: {
       title: "Iščete kaj posebnega?",
@@ -163,10 +150,6 @@ export const translations = {
       itemSingular: "product",
       itemPlural: "products",
     },
-    testimonials: {
-      title: "What our customers say",
-      subtitle: "Customer reviews",
-    },
     gardenGallery: {
       title: "Our products in your gardens",
       subtitle: "Inspiration for your home",
@@ -177,15 +160,6 @@ export const translations = {
       subtitle: "From our range",
       title: "Featured Products",
       viewAll: "All products",
-    },
-    whyUs: {
-      subtitle: "Why us",
-      title: "Handcrafted with care",
-      features: [
-        { title: "Handmade", description: "Every piece is shaped by hand — no mass production, no compromises." },
-        { title: "Local Craftsman", description: "A family business from Benedikt in the Slovenian Hills, rooted in the community." },
-        { title: "Quality Concrete", description: "Weather-resistant concrete that lasts for years outdoors without issue." },
-      ],
     },
     ctaBanner: {
       title: "Looking for something special?",
@@ -265,10 +239,6 @@ export const translations = {
       itemSingular: "Produkt",
       itemPlural: "Produkte",
     },
-    testimonials: {
-      title: "Was unsere Kunden sagen",
-      subtitle: "Kundenmeinungen",
-    },
     gardenGallery: {
       title: "Unsere Produkte in Ihren Gärten",
       subtitle: "Inspiration für Ihr Zuhause",
@@ -279,15 +249,6 @@ export const translations = {
       subtitle: "Aus unserem Sortiment",
       title: "Ausgewählte Produkte",
       viewAll: "Alle Produkte",
-    },
-    whyUs: {
-      subtitle: "Warum wir",
-      title: "Handgefertigt mit Liebe",
-      features: [
-        { title: "Handgefertigt", description: "Jedes Stück wird von Hand geformt — keine Massenproduktion, keine Kompromisse." },
-        { title: "Lokaler Handwerker", description: "Ein Familienbetrieb aus Benedikt in den Slowenischen Hügeln, verwurzelt in der Gemeinschaft." },
-        { title: "Qualitätsbeton", description: "Wetterfester Beton, der jahrelang problemlos im Freien hält." },
-      ],
     },
     ctaBanner: {
       title: "Suchen Sie etwas Besonderes?",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import NavigationLinks from "./NavigationLinks";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileMenu from "./MobileMenu";
@@ -33,11 +34,11 @@ export default function Navigation() {
         }`}
         aria-label="Global"
       >
-        <a href="/" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0">
           <div className="w-11 h-11 rounded-full bg-[#EEF2E8] dark:bg-gray-800 flex items-center justify-center">
             <img src="/img/iobi_logo.png" alt="IOBI" className="h-8 w-8 object-contain" />
           </div>
-        </a>
+        </Link>
 
         <div className="flex lg:hidden">
           <MobileMenuButton onClick={() => setMobileMenuOpen(true)} />

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "../../context/LanguageContext";
 
-export default function NavigationLinks({ className }) {
+export default function NavigationLinks({ className, onNavigate }) {
   const pathname = usePathname();
   const { language } = useLanguage();
 
@@ -19,6 +19,7 @@ export default function NavigationLinks({ className }) {
           <Link
             key={item.id}
             href={item.href}
+            onClick={onNavigate}
             className={`pb-0.5 text-base font-medium tracking-wide text-stone-600 dark:text-gray-300 border-b-2 hover:text-primary hover:border-primary transition-all duration-150 ${className} ${
               isActive ? "border-primary text-primary" : "border-transparent"
             }`}

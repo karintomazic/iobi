@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PocketBase from "pocketbase";
 
@@ -13,7 +13,7 @@ const pb = new PocketBase(
     : process.env.NEXT_PUBLIC_POCKETBASE_URL
 );
 
-export default function Products() {
+function ProductsContent() {
   const searchParams = useSearchParams();
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -126,5 +126,15 @@ export default function Products() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+// useSearchParams() only works in the browser. Suspense tells Next.js to
+// build the rest of the page ahead of time and fill this part in there.
+export default function Products() {
+  return (
+    <Suspense>
+      <ProductsContent />
+    </Suspense>
   );
 }

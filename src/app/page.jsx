@@ -2,7 +2,6 @@ import Hero from "./components/hero/Hero";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Categories from "./components/categories/Categories";
 import GardenGallery from "./components/GardenGallery";
-import Testimonials from "./components/Testimonials";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
 

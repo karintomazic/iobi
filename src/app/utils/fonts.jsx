@@ -1,8 +1,5 @@
-import { Inter } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import { Open_Sans } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -18,7 +15,5 @@ const opensans = Open_Sans({
   display: "swap",
 });
 
-export { inter };
 export { playfairDisplay };
 export { opensans };
-
