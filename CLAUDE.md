@@ -1,72 +1,86 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code (claude.ai/code) when working in this repository.
+
+The site is being upgraded step by step. **See `PLAN.md`** for what's done, what's next
+and the known bugs. Some of the details below change as the plan moves on, so check them
+against the code.
 
 ## Stack
 
-- **Frontend**: Next.js 15 (App Router), React 18, Tailwind CSS
-- **Backend**: PocketBase v0.23.3 (self-hosted via Docker)
-- **Language**: JavaScript only (no TypeScript)
+- **Frontend**: Next.js 16 (App Router, Turbopack), React 19, Tailwind CSS v4
+- **Backend**: PocketBase (v0.42 on the server, SDK `pocketbase` 0.29), hosted on Coolify
+- **Language**: JavaScript for now. TypeScript is step 3 in `PLAN.md`.
+- **Libraries**: Headless UI 2 (mobile menu dialog), Swiper (product image slider),
+  react-photoswipe-gallery (lightbox), Font Awesome 7 (icons)
 
-## Development Setup
+## Development
 
-### Backend (PocketBase)
 ```bash
-docker compose up
-```
-Requires a `.env` file (copy from `.env.example`). PocketBase runs on port `8082` locally, admin UI at `http://127.0.0.1:8082/_/`.
-
-The `./data` directory is bind-mounted to `/pb/pb_data` inside the container — all PocketBase data persists there.
-
-### Frontend
-```bash
-npm run dev    # http://localhost:3000
+npm run dev     # http://localhost:3000
 npm run build
-npm run lint
+npm run lint    # eslint . (flat config in eslint.config.mjs)
 ```
 
-## Environment Variables
+### PocketBase
 
-`NEXT_PUBLIC_ENVIRONMENT=dev` switches PocketBase URL construction to append the local port:
-```js
-const pb = new PocketBase(
-  isDev
-    ? `${process.env.NEXT_PUBLIC_POCKETBASE_URL}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`
-    : process.env.NEXT_PUBLIC_POCKETBASE_URL
-);
+Development uses the hosted PocketBase at `https://iobipb.karintomazic.com` (admin at `/_/`).
+`.env.local` (not in git):
+
 ```
-In production, `NEXT_PUBLIC_POCKETBASE_URL` is used alone (no port).
+NEXT_PUBLIC_ENVIRONMENT=production
+NEXT_PUBLIC_POCKETBASE_URL=https://iobipb.karintomazic.com
+```
+
+With `NEXT_PUBLIC_ENVIRONMENT=dev`, the code adds `NEXT_PUBLIC_PB_LOCAL_PORT` to the URL.
+That's for a local Docker PocketBase (`docker compose up`), which isn't used right now.
+
+- `pocketbase/pb_schema.json`: the collections. Import it with **Settings → Import collections**,
+  and always turn on **"Merge with the existing collections"**. Without it, PocketBase deletes
+  every collection not in the file, including the system ones.
+- `scripts/seed-test-data.mjs`: adds the 7 categories and 3 TEST products. It asks for a
+  superuser login: `node scripts/seed-test-data.mjs`.
+- Never change records in the hosted PocketBase without asking. The client will add the
+  real products there.
 
 ## Architecture
 
-### PocketBase Collections
-The app expects two collections:
-- `products` — fields: `product_name`, `product_image` (file, multiple), `price`, `size`, `weight`, `category` (relation to `category`)
-- `category` — fields: `category` (text, used as the URL filter key e.g. `fontane`, `zivali`)
+### PocketBase collections
+
+- `category`: `category` (text, unique). The key used in URLs and translations:
+  `fontane, korita, palcki, zivali, angelcki, kipci, stebri`
+- `products`: `product_name` (text, required), `product_image` (files, up to 10, thumbs
+  600x0 and 1200x0), `price` (number), `size` (text), `weight` (text), `category`
+  (relation, required), `featured` (bool)
+
+Rules: everyone can read, only superusers can write.
 
 ### Pages
-- `/` — static homepage: Hero, Categories, GardenGallery, Testimonials, Contact
-- `/products` — dynamic, fetches from PocketBase with pagination (20/page) and category filtering via URL param `?category=<key>`
-- `/gallery` — static grid of local `/public/img/` images
-- `/contact` — static contact info
+
+- `/`: Hero, Categories, FeaturedProducts, GardenGallery, CTABanner, Footer
+- `/products`: products from PocketBase, 20 per page, category filter from `?category=<key>`
+- `/gallery`: static images from `public/img/`
+- `/contact`: contact details and the map link
 
 ### i18n
-All UI strings live in `src/app/data/translations.jsx` as a plain object keyed by language code (`sl`, `en`, `de`). The active language is stored in `localStorage` and provided via `LanguageContext`. Default language is Slovenian (`sl`).
 
-To add a new string: add it to all three language objects in `translations.jsx`, then consume via `const t = translations[language].section`.
+UI strings are in `src/app/data/translations.jsx`, keyed by `sl`, `en`, `de`. The language
+is kept in `localStorage` through `LanguageContext` (default `sl`). Use them with
+`translations[language].section`. Menu labels are in `src/app/data/navigation.json`.
+Moving languages into the URL is step 5 in `PLAN.md`.
 
-### Theming
-Dark mode uses Tailwind's `class` strategy. `ThemeContext` toggles the `dark` class on `<html>` and persists to `localStorage`. Brand colors are CSS variables in `globals.css` (`--color-primary: #60914A`, `--color-secondary`, `--color-accent`).
+### Styling
 
-### Fonts
-Defined in `src/app/utils/fonts.jsx`. Open Sans is the body font (applied in `layout.jsx`); Playfair Display is used for headings and applied per-component via `playfairDisplay.className`.
+- Tailwind v4 config lives in `src/app/globals.css` (there's no `tailwind.config.js`).
+- Theme tokens: `bg-primary`, `text-secondary`, `bg-accent`, `bg-surface` (light green page
+  background). Use them instead of hex codes.
+- Fonts: `font-sans` (Open Sans, body) and `font-display` (Playfair Display, headings). They
+  come from `next/font` in `src/app/utils/fonts.jsx`.
+- Dark mode: the `dark` class on `<html>`, set by `ThemeContext`.
+- Icons: use `src/app/components/Icon.jsx`, not `FontAwesomeIcon` directly. It turns off Font
+  Awesome's own CSS, which globals.css loads in Tailwind's base layer instead.
 
-### Product Images
-Images are served directly from PocketBase using:
-```js
-`${baseUrl}/api/files/${item.collectionId}/${item.id}/${image}`
-```
-Each product card uses Swiper for multi-image slideshows and `react-photoswipe-gallery` for lightbox zoom.
+### Product images
 
-### Category Filtering
-Homepage category cards link to `/products?category=<categoryKey>` (e.g. `fontane`, `zivali`). The products page reads the `category` URL param, finds the matching category record by its `category` field, then filters products by that category's ID.
+PocketBase file URL: `${baseUrl}/api/files/${record.collectionId}/${record.id}/${fileName}`.
+Product cards use Swiper for several images and Photoswipe for the lightbox.
