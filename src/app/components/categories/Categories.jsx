@@ -1,6 +1,5 @@
 "use client";
 
-import { playfairDisplay } from "../../utils/fonts";
 import CategoryCard from "./CategoryCard";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
@@ -55,12 +54,12 @@ export default function Categories() {
           <CategoryCard {...categories[1]} />
 
           {/* Editorial text + CTA panel */}
-          <div className="rounded-2xl bg-[#EDF2E8] dark:bg-gray-700 p-8 flex flex-col justify-between min-h-[220px]">
+          <div className="rounded-2xl bg-surface dark:bg-gray-700 p-8 flex flex-col justify-between min-h-[220px]">
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-4">
                 {t.subtitle}
               </p>
-              <h2 className={`text-4xl font-bold leading-tight text-stone-800 dark:text-white ${playfairDisplay.className}`}>
+              <h2 className={`text-4xl font-bold leading-tight text-stone-800 dark:text-white font-display`}>
                 {t.title}
               </h2>
             </div>

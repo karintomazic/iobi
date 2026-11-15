@@ -1,19 +1,20 @@
-import { Playfair_Display } from "next/font/google";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Playfair_Display } from "next/font/google";
 
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfairdisplay",
-  weight: "400",
+// Each font becomes a CSS variable (put on <html> in layout.jsx).
+// globals.css turns them into Tailwind fonts: font-sans and font-display.
+
+/** Headings */
+export const playfairDisplay = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-playfair-display",
+  weight: ["400", "700"],
   display: "swap",
 });
 
-const opensans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-opensans",
+/** Body text */
+export const openSans = Open_Sans({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-open-sans",
   weight: ["400", "600", "700"],
   display: "swap",
 });
-
-export { playfairDisplay };
-export { opensans };

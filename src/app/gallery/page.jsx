@@ -3,7 +3,6 @@
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import Footer from "../components/Footer";
-import { playfairDisplay } from "../utils/fonts";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
@@ -26,13 +25,13 @@ export default function GalleryPage() {
 
   return (
     <>
-      <main className="bg-[#EDF2E8] dark:bg-gray-900 min-h-screen">
+      <main className="bg-surface dark:bg-gray-900 min-h-screen">
         <div className="mx-auto max-w-7xl px-6 py-10 lg:py-16 lg:px-8">
 
           {/* Header */}
           <div className="mb-10">
             <p className="text-base font-semibold text-primary mb-1">{t.subtitle}</p>
-            <h1 className={`text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
+            <h1 className={`text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white font-display`}>
               {t.title}
             </h1>
             <p className="mt-3 text-base text-stone-600 dark:text-gray-300 max-w-2xl">{t.description}</p>
@@ -54,11 +53,11 @@ export default function GalleryPage() {
                     <div
                       ref={ref}
                       onClick={open}
-                      className={`relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300 ${
+                      className={`relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 cursor-pointer group shadow-xs hover:shadow-md transition-shadow duration-300 ${
                         i === 0 || i === 6 ? "sm:col-span-2 lg:col-span-1" : ""
                       }`}
                     >
-                      <div className="aspect-[4/3] overflow-hidden">
+                      <div className="aspect-4/3 overflow-hidden">
                         <img
                           src={image.src}
                           alt={image.alt}

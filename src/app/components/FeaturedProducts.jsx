@@ -5,7 +5,6 @@ import PocketBase from "pocketbase";
 import { Gallery } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import Link from "next/link";
-import { playfairDisplay } from "../utils/fonts";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 import ImageWithLoader from "../products/ImageWithLoader";
@@ -25,7 +24,7 @@ export default function FeaturedProducts() {
 
   useEffect(() => {
     pb.collection("products")
-      .getList(1, 4, { $autoCancel: false })
+      .getList(1, 4, { requestKey: null })
       .then((res) => setItems(res.items))
       .catch(console.error)
       .finally(() => setLoading(false));
@@ -39,7 +38,7 @@ export default function FeaturedProducts() {
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="text-base font-semibold text-primary">{t.subtitle}</p>
-            <h2 className={`mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
+            <h2 className={`mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white font-display`}>
               {t.title}
             </h2>
           </div>

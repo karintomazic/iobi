@@ -5,11 +5,11 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 
 const images = [
-  { src: "/img/hero_img6.jpg", alt: "Okrasni betonski izdelek", className: "absolute top-4 left-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg -rotate-[2deg]" },
-  { src: "/img/hero_img2.jpg", alt: "Betonska klop",            className: "absolute top-4 right-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg rotate-[2deg]" },
+  { src: "/img/hero_img6.jpg", alt: "Okrasni betonski izdelek", className: "absolute top-4 left-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg -rotate-2" },
+  { src: "/img/hero_img2.jpg", alt: "Betonska klop",            className: "absolute top-4 right-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg rotate-2" },
   { src: "/img/hero_img3.jpg", alt: "Betonska fontana",         className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-56 rounded-3xl overflow-hidden shadow-xl" },
   { src: "/img/hero_img4.jpg", alt: "Betonski žar",             className: "absolute bottom-4 left-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg rotate-[1.5deg]" },
-  { src: "/img/hero_img5.jpg", alt: "Okrasni kip",              className: "absolute bottom-4 right-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg -rotate-[1.5deg]" },
+  { src: "/img/hero_img5.jpg", alt: "Okrasni kip",              className: "absolute bottom-4 right-4 w-40 h-52 rounded-3xl overflow-hidden shadow-lg rotate-[-1.5deg]" },
 ];
 
 const mobileImages = [

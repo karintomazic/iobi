@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "../Icon";
 
 export default function ContactCard({ link, icon, title, content }) {
   const wrapperClass =
@@ -7,7 +7,7 @@ export default function ContactCard({ link, icon, title, content }) {
   const inner = (
     <>
       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-        <FontAwesomeIcon icon={icon} className="text-primary w-4 h-4" />
+        <Icon icon={icon} className="text-primary w-4 h-4" />
       </div>
       <div>
         <h3 className="text-xs tracking-[0.15em] uppercase text-stone-400 dark:text-gray-400 font-medium mb-1">{title}</h3>

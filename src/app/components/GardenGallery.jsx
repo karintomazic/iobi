@@ -1,6 +1,5 @@
 "use client";
 
-import { playfairDisplay } from "../utils/fonts";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
@@ -16,7 +15,7 @@ export default function GardenGallery() {
   const t = translations[language].gardenGallery;
 
   return (
-    <section id="gallery" className="bg-[#EDF2E8] dark:bg-gray-900 py-16 sm:py-24">
+    <section id="gallery" className="bg-surface dark:bg-gray-900 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Header */}
@@ -25,7 +24,7 @@ export default function GardenGallery() {
             <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-3">
               {t.subtitle}
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-bold tracking-tight text-stone-800 dark:text-white ${playfairDisplay.className}`}>
+            <h2 className={`text-4xl sm:text-5xl font-bold tracking-tight text-stone-800 dark:text-white font-display`}>
               {t.title}
             </h2>
             <p className="mt-4 text-base text-stone-500 dark:text-gray-400 leading-relaxed max-w-md">{t.description}</p>

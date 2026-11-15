@@ -9,17 +9,17 @@ export default function CategoryCard({ src, alt, overlayText, description, class
           alt={alt}
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
 
         <div className="absolute bottom-0 left-0 right-0 p-5">
           {description && (
             <p className="text-white/60 text-xs uppercase tracking-widest mb-2">{description}</p>
           )}
           <div className="flex items-center justify-between">
-            <span className="text-white text-xl font-semibold drop-shadow">
+            <span className="text-white text-xl font-semibold drop-shadow-sm">
               {overlayText}
             </span>
-            <span className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs whitespace-nowrap">
+            <span className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-white/20 backdrop-blur-xs rounded-full px-3 py-1 text-white text-xs whitespace-nowrap">
               Poglej &rarr;
             </span>
           </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { playfairDisplay } from "../../utils/fonts";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
 
@@ -15,7 +14,7 @@ export default function HeroContent() {
         {t.badge}
       </div>
       <h1
-        className={`text-5xl sm:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight text-stone-800 dark:text-white ${playfairDisplay.className}`}
+        className={`text-5xl sm:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight text-stone-800 dark:text-white font-display`}
       >
         {t.title}
       </h1>

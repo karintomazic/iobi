@@ -2,19 +2,18 @@
 
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
-import { playfairDisplay } from "../utils/fonts";
 
 export default function Footer() {
   const { language } = useLanguage();
   const footerText = translations[language].footerText;
 
   return (
-    <footer className="bg-[#7A9A6B] dark:bg-gray-950">
+    <footer className="bg-primary dark:bg-gray-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-8 flex flex-col items-center text-center">
         <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6">
           <img src="/img/iobi_logo.png" alt="IOBI" className="h-12 w-12 object-contain" />
         </div>
-        <p className={`text-2xl font-bold text-white mb-3 ${playfairDisplay.className}`}>Ročno z ljubeznijo</p>
+        <p className={`text-2xl font-bold text-white mb-3 font-display`}>Ročno z ljubeznijo</p>
         <p className="text-sm text-white/70 max-w-xs leading-relaxed mb-10">
           Ročno izdelani betonski okrasni izdelki iz Benedikta v Slovenskih goricah.
         </p>

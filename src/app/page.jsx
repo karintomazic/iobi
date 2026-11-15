@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <section className="bg-[#EDF2E8] dark:bg-gray-900">
+      <section className="bg-surface dark:bg-gray-900">
         <Hero />
       </section>
       <main>

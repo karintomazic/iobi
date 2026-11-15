@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "../Icon";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 export default function MobileMenuButton({ onClick }) {
   return (
@@ -9,7 +9,7 @@ export default function MobileMenuButton({ onClick }) {
         onClick={onClick}
       >
         <span className="sr-only">Open main menu</span>
-        <FontAwesomeIcon className="h-6 w-6" aria-hidden="true" icon={faBars} />
+        <Icon className="h-6 w-6" aria-hidden="true" icon={faBars} />
       </button>
     </>
   );

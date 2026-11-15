@@ -1,28 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-svg-core/styles.css" layer(base);
 
-:root {
-  --color-primary: #7A9A6B;
-  --color-secondary: #5C7A4E;
-  --color-accent: #C4956A;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-open-sans), sans-serif;
+  --font-display: var(--font-playfair-display), serif;
 }
 
-body {
-  @apply bg-[#EDF2E8] dark:bg-gray-900 transition-colors duration-200;
+@theme {
+  --color-primary: #7a9a6b;
+  --color-secondary: #5c7a4e;
+  --color-accent: #c4956a;
+  --color-surface: #edf2e8;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  body {
+    @apply bg-surface dark:bg-gray-900 transition-colors duration-200;
   }
 }
 
-/* globals.css or your main CSS file */
 .pswp__img {
   @apply object-contain;
 }
 
 .swiper .swiper-pagination-bullet-active {
-  background: #7A9A6B;
+  background: var(--color-primary);
 }

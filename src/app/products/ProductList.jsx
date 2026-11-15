@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { playfairDisplay } from "../utils/fonts";
 import ProductPagination from "./ProductPagination";
 import ProductCards from "./ProductCards";
 import CategoryFilters from "./CategoryFilters";
@@ -14,11 +13,11 @@ function SkeletonGrid() {
       {[...Array(6)].map((_, i) => (
         <div key={i} className="rounded-[20px] border border-stone-200 bg-white p-4 animate-pulse">
           <div className="rounded-lg bg-stone-200 h-64 w-full mb-4" />
-          <div className="h-4 bg-stone-200 rounded w-3/4 mb-2" />
-          <div className="h-3 bg-stone-200 rounded w-1/2 mb-1" />
-          <div className="h-3 bg-stone-200 rounded w-1/3 mb-4" />
+          <div className="h-4 bg-stone-200 rounded-sm w-3/4 mb-2" />
+          <div className="h-3 bg-stone-200 rounded-sm w-1/2 mb-1" />
+          <div className="h-3 bg-stone-200 rounded-sm w-1/3 mb-4" />
           <div className="flex justify-between items-center">
-            <div className="h-5 bg-stone-200 rounded w-16" />
+            <div className="h-5 bg-stone-200 rounded-sm w-16" />
             <div className="h-8 bg-stone-200 rounded-lg w-28" />
           </div>
         </div>
@@ -80,7 +79,7 @@ export default function ProductList({
       {/* Mobile filters */}
       <div className="lg:hidden mb-6">
         <p className="text-base font-semibold text-primary mb-1">{t.subtitle}</p>
-        <h1 className={`text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4 ${playfairDisplay.className}`}>
+        <h1 className={`text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4 font-display`}>
           {t.title}
         </h1>
         <CategoryFilters
@@ -97,7 +96,7 @@ export default function ProductList({
         {/* Sidebar */}
         <aside className="hidden lg:flex flex-col w-44 shrink-0 sticky top-[76px]">
           <p className="text-sm font-semibold text-primary">{t.subtitle}</p>
-          <h1 className={`mt-1 text-3xl font-bold tracking-tight text-gray-900 dark:text-white ${playfairDisplay.className}`}>
+          <h1 className={`mt-1 text-3xl font-bold tracking-tight text-gray-900 dark:text-white font-display`}>
             {t.title}
           </h1>
           {!loading && (

@@ -7,7 +7,7 @@ import MobileMenuButton from "./MobileMenuButton";
 import MobileMenu from "./MobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "../Icon";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navigation() {
@@ -34,8 +34,8 @@ export default function Navigation() {
         }`}
         aria-label="Global"
       >
-        <Link href="/" className="flex-shrink-0">
-          <div className="w-11 h-11 rounded-full bg-[#EEF2E8] dark:bg-gray-800 flex items-center justify-center">
+        <Link href="/" className="shrink-0">
+          <div className="w-11 h-11 rounded-full bg-surface dark:bg-gray-800 flex items-center justify-center">
             <img src="/img/iobi_logo.png" alt="IOBI" className="h-8 w-8 object-contain" />
           </div>
         </Link>
@@ -53,7 +53,7 @@ export default function Navigation() {
             href="tel:+38641814262"
             className="flex items-center gap-1.5 text-sm text-stone-400 dark:text-gray-500 hover:text-primary transition-colors duration-150"
           >
-            <FontAwesomeIcon icon={faPhone} className="h-2.5 w-2.5" />
+            <Icon icon={faPhone} className="h-2.5 w-2.5" />
             <span>+386 41 814 262</span>
           </a>
           <span className="w-px h-4 bg-stone-200 dark:bg-gray-700" />

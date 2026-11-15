@@ -1,5 +1,5 @@
 import "./globals.css";
-import { opensans } from "./utils/fonts";
+import { openSans, playfairDisplay } from "./utils/fonts";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navigation from "./components/navigation/Navigation";
@@ -11,8 +11,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sl">
-      <body className={opensans.className}>
+    <html
+      lang="sl"
+      className={`${openSans.variable} ${playfairDisplay.variable}`}
+    >
+      <body className="font-sans">
         <ThemeProvider>
           <LanguageProvider>
             <Navigation />

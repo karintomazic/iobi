@@ -32,7 +32,7 @@ function ProductsContent() {
       setLoading(true);
       try {
         const categoryRecords = await pb.collection("category").getList(1, 50, {
-          $autoCancel: false,
+          requestKey: null,
         });
         setCategories(categoryRecords.items);
 
@@ -67,7 +67,7 @@ function ProductsContent() {
         const records = await pb
           .collection("products")
           .getList(currentPage, PAGE_SIZE, {
-            $autoCancel: false,
+            requestKey: null,
             filter: filter,
           });
 
@@ -100,7 +100,7 @@ function ProductsContent() {
 
   return (
     <div>
-      <main className="bg-[#EDF2E8] dark:bg-gray-900">
+      <main className="bg-surface dark:bg-gray-900">
         {error && (
           <div className="mx-auto max-w-7xl px-6 py-8">
             <div className="rounded-md bg-red-50 border border-red-200 p-4 text-red-700 text-sm">
