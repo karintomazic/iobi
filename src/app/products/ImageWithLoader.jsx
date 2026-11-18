@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Item } from "react-photoswipe-gallery";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 import { getImageUrl as getProductImageUrl } from "@/lib/pocketbase";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function ImageWithLoader({ item }) {
   const { language } = useLanguage();
@@ -37,10 +37,10 @@ export default function ImageWithLoader({ item }) {
   };
 
   return (
-    <div className="group border border-stone-200 dark:border-gray-700 rounded-[20px] p-4 bg-white dark:bg-gray-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+    <div className="group rounded-[20px] border border-stone-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
       <div className="w-full overflow-hidden rounded-lg bg-stone-100 dark:bg-gray-700">
         {hasError ? (
-          <div className="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
+          <div className="flex h-full items-center justify-center text-gray-500 dark:text-gray-400">
             <span>{t.imageLoad}</span>
           </div>
         ) : (
@@ -62,7 +62,7 @@ export default function ImageWithLoader({ item }) {
                     <div className="relative h-full w-full">
                       {loadingStates[index] && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-8 h-8 border-4 border-gray-200 dark:border-gray-600 border-t-primary rounded-full animate-spin"></div>
+                          <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-primary dark:border-gray-600"></div>
                         </div>
                       )}
                       <img
@@ -70,7 +70,7 @@ export default function ImageWithLoader({ item }) {
                         onClick={open}
                         src={getImageUrl(image)}
                         alt={`${item.product_name} - Image ${index + 1}`}
-                        className={`h-[400px] w-full object-cover object-center cursor-pointer rounded-[16px] transition-opacity duration-300 ${
+                        className={`h-[400px] w-full cursor-pointer rounded-[16px] object-cover object-center transition-opacity duration-300 ${
                           loadingStates[index] ? "opacity-0" : "opacity-100"
                         }`}
                         loading="lazy"
@@ -87,22 +87,30 @@ export default function ImageWithLoader({ item }) {
       </div>
       <div className="mt-3 px-1">
         <div className="flex items-baseline justify-between gap-2">
-          <h3 className="text-gray-800 dark:text-gray-100 font-bold text-[1.1rem] capitalize">{item.product_name}</h3>
-          <span className="text-xs text-gray-400 dark:text-gray-500 shrink-0">{tp.productId}: {item.id}</span>
+          <h3 className="text-[1.1rem] font-bold text-gray-800 capitalize dark:text-gray-100">
+            {item.product_name}
+          </h3>
+          <span className="shrink-0 text-xs text-gray-400 dark:text-gray-500">
+            {tp.productId}: {item.id}
+          </span>
         </div>
         <div className="mt-2 flex flex-col gap-0.5">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            {tp.size}: <span className="text-gray-700 dark:text-gray-200">{item.size || "50 × 30 × 25 cm"}</span>
+            {tp.size}:{" "}
+            <span className="text-gray-700 dark:text-gray-200">
+              {item.size || "50 × 30 × 25 cm"}
+            </span>
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            {tp.weight}: <span className="text-gray-700 dark:text-gray-200">{item.weight || "12 kg"}</span>
+            {tp.weight}:{" "}
+            <span className="text-gray-700 dark:text-gray-200">{item.weight || "12 kg"}</span>
           </p>
         </div>
-        <div className="flex items-center justify-between mt-3">
-          <p className="text-primary font-semibold text-lg">{item.price} €</p>
+        <div className="mt-3 flex items-center justify-between">
+          <p className="text-lg font-semibold text-primary">{item.price} €</p>
           <a
             href={`mailto:tomazics@gmail.com?subject=${encodeURIComponent(`${item.product_name} - Šifra: ${item.id}`)}`}
-            className="text-sm px-3 py-1.5 rounded-lg bg-primary text-white hover:bg-secondary transition-colors duration-150"
+            className="rounded-lg bg-primary px-3 py-1.5 text-sm text-white transition-colors duration-150 hover:bg-secondary"
           >
             {tp.inquire}
           </a>

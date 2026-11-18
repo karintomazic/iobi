@@ -31,9 +31,7 @@ function ProductsContent() {
         const categoryParam = searchParams.get("category");
 
         if (categoryParam) {
-          const match = categoryRecords.items.find(
-            (cat) => cat.category === categoryParam
-          );
+          const match = categoryRecords.items.find((cat) => cat.category === categoryParam);
 
           if (match) setSelectedCategory(match.id);
         }
@@ -52,22 +50,16 @@ function ProductsContent() {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const filter = selectedCategory
-          ? `category.id ?= "${selectedCategory}"`
-          : "";
+        const filter = selectedCategory ? `category.id ?= "${selectedCategory}"` : "";
 
-        const records = await pb
-          .collection("products")
-          .getList(currentPage, PAGE_SIZE, {
-            requestKey: null,
-            filter: filter,
-          });
+        const records = await pb.collection("products").getList(currentPage, PAGE_SIZE, {
+          requestKey: null,
+          filter: filter,
+        });
 
         setItems(records.items);
         setTotalItems(records.totalItems);
-        setTotalPages(
-          records.totalPages || Math.ceil(records.totalItems / PAGE_SIZE)
-        );
+        setTotalPages(records.totalPages || Math.ceil(records.totalItems / PAGE_SIZE));
       } catch (err) {
         console.error("Error fetching products:", err);
         setError("Napaka pri nalaganju izdelkov. Prosimo, poskusite znova.");
@@ -95,7 +87,7 @@ function ProductsContent() {
       <main className="bg-surface dark:bg-gray-900">
         {error && (
           <div className="mx-auto max-w-7xl px-6 py-8">
-            <div className="rounded-md bg-red-50 border border-red-200 p-4 text-red-700 text-sm">
+            <div className="rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
               {error}
             </div>
           </div>

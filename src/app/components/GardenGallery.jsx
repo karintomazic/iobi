@@ -15,61 +15,69 @@ export default function GardenGallery() {
   const t = translations[language].gardenGallery;
 
   return (
-    <section id="gallery" className="bg-surface dark:bg-gray-900 py-16 sm:py-24">
+    <section id="gallery" className="bg-surface py-16 sm:py-24 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
+        <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
-            <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-3">
+            <p className="mb-3 text-xs font-medium tracking-[0.2em] text-primary uppercase">
               {t.subtitle}
             </p>
-            <h2 className={`text-4xl sm:text-5xl font-bold tracking-tight text-stone-800 dark:text-white font-display`}>
+            <h2
+              className={`font-display text-4xl font-bold tracking-tight text-stone-800 sm:text-5xl dark:text-white`}
+            >
               {t.title}
             </h2>
-            <p className="mt-4 text-base text-stone-500 dark:text-gray-400 leading-relaxed max-w-md">{t.description}</p>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-stone-500 dark:text-gray-400">
+              {t.description}
+            </p>
           </div>
           <a
             href="/gallery"
-            className="shrink-0 rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
+            className="shrink-0 rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
           >
             {t.viewAll}
           </a>
         </div>
 
         {/* Image grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {/* Left: large feature image */}
-          <div className="lg:col-span-2 rounded-2xl overflow-hidden h-72 lg:h-[480px]">
+          <div className="h-72 overflow-hidden rounded-2xl lg:col-span-2 lg:h-[480px]">
             <img
               src={galleryImages[0].src}
               alt={galleryImages[0].alt}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              onError={(e) => { e.target.style.display = "none"; }}
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              onError={(e) => {
+                e.target.style.display = "none";
+              }}
             />
           </div>
 
           {/* Right: two stacked images */}
           <div className="flex flex-col gap-4">
-            <div className="rounded-2xl overflow-hidden h-48 lg:h-[232px]">
+            <div className="h-48 overflow-hidden rounded-2xl lg:h-[232px]">
               <img
                 src={galleryImages[1].src}
                 alt={galleryImages[1].alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                onError={(e) => { e.target.style.display = "none"; }}
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
               />
             </div>
-            <div className="rounded-2xl overflow-hidden h-48 lg:h-[232px]">
+            <div className="h-48 overflow-hidden rounded-2xl lg:h-[232px]">
               <img
                 src={galleryImages[2].src}
                 alt={galleryImages[2].alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                onError={(e) => { e.target.style.display = "none"; }}
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
               />
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

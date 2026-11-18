@@ -28,7 +28,7 @@ export default function CategoryFilters({
   if (sidebar) {
     return (
       <nav className="flex flex-col gap-1">
-        <p className="text-xs font-semibold tracking-[0.15em] uppercase text-stone-400 mb-3">
+        <p className="mb-3 text-xs font-semibold tracking-[0.15em] text-stone-400 uppercase">
           {categoriesText.title}
         </p>
         {allFilters.map((filter) => {
@@ -37,10 +37,10 @@ export default function CategoryFilters({
             <button
               key={filter.id}
               onClick={() => handleSelect(filter.id)}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 ${
+              className={`rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors duration-150 ${
                 isActive
-                  ? "bg-primary/10 text-primary font-semibold"
-                  : "text-stone-600 dark:text-gray-300 hover:bg-white hover:text-stone-900"
+                  ? "bg-primary/10 font-semibold text-primary"
+                  : "text-stone-600 hover:bg-white hover:text-stone-900 dark:text-gray-300"
               }`}
             >
               {filter.label}
@@ -61,8 +61,8 @@ export default function CategoryFilters({
             onClick={() => handleSelect(filter.id)}
             className={`rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 ${
               isActive
-                ? "bg-primary text-white border-2 border-primary"
-                : "bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary"
+                ? "border-2 border-primary bg-primary text-white"
+                : "border-2 border-stone-300 bg-white text-stone-600 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
             }`}
           >
             {filter.label}

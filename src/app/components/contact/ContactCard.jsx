@@ -6,12 +6,14 @@ export default function ContactCard({ link, icon, title, content }) {
 
   const inner = (
     <>
-      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-        <Icon icon={icon} className="text-primary w-4 h-4" />
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+        <Icon icon={icon} className="h-4 w-4 text-primary" />
       </div>
       <div>
-        <h3 className="text-xs tracking-[0.15em] uppercase text-stone-400 dark:text-gray-400 font-medium mb-1">{title}</h3>
-        <p className="text-stone-700 dark:text-gray-200 font-medium text-sm">{content}</p>
+        <h3 className="mb-1 text-xs font-medium tracking-[0.15em] text-stone-400 uppercase dark:text-gray-400">
+          {title}
+        </h3>
+        <p className="text-sm font-medium text-stone-700 dark:text-gray-200">{content}</p>
       </div>
     </>
   );
@@ -21,7 +23,12 @@ export default function ContactCard({ link, icon, title, content }) {
   }
 
   return (
-    <a className={`${wrapperClass} cursor-pointer`} href={link} rel="noopener noreferrer" target="_blank">
+    <a
+      className={`${wrapperClass} cursor-pointer`}
+      href={link}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       {inner}
     </a>
   );

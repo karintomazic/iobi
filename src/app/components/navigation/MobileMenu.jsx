@@ -14,14 +14,10 @@ export default function MobileMenu({ isOpen, onClose }) {
     <>
       <Dialog as="div" className="lg:hidden" open={isOpen} onClose={onClose}>
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-white/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-white/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5" onClick={onClose}>
-              <img
-                className="h-20 w-auto"
-                src="/img/iobi_logo.png"
-                alt="IOBI"
-              />
+              <img className="h-20 w-auto" src="/img/iobi_logo.png" alt="IOBI" />
             </Link>
             <button
               type="button"
@@ -29,11 +25,7 @@ export default function MobileMenu({ isOpen, onClose }) {
               onClick={onClose}
             >
               <span className="sr-only">Close menu</span>
-              <Icon
-                className="h-6 w-6"
-                aria-hidden="true"
-                icon={faXmark}
-              />
+              <Icon className="h-6 w-6" aria-hidden="true" icon={faXmark} />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -44,7 +36,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                   onNavigate={onClose}
                 />
               </div>
-              <div className="py-6 flex flex-col gap-4">
+              <div className="flex flex-col gap-4 py-6">
                 <div className="flex items-center gap-3">
                   <LanguageSwitcher />
                   <ThemeToggle />

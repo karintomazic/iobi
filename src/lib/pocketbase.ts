@@ -23,9 +23,7 @@ interface TypedPocketBase extends PocketBase {
 function getPocketBaseUrl(): string {
   const url = process.env.NEXT_PUBLIC_POCKETBASE_URL;
   if (!url) {
-    throw new Error(
-      "NEXT_PUBLIC_POCKETBASE_URL is missing. Add it to .env.local",
-    );
+    throw new Error("NEXT_PUBLIC_POCKETBASE_URL is missing. Add it to .env.local");
   }
   return process.env.NEXT_PUBLIC_ENVIRONMENT === "dev"
     ? `${url}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`

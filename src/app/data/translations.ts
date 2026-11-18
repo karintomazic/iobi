@@ -40,7 +40,8 @@ const sl = {
   contact: {
     title: "Kontakt",
     subtitle: "Obiščite nas ali nas pokličite",
-    description: "Smo v Benediktu v Slovenskih goricah. Dobrodošli ste, da nas obiščete osebno, pokličete ali nam pišete — z veseljem vam pomagamo pri izbiri pravega izdelka.",
+    description:
+      "Smo v Benediktu v Slovenskih goricah. Dobrodošli ste, da nas obiščete osebno, pokličete ali nam pišete — z veseljem vam pomagamo pri izbiri pravega izdelka.",
     adress: "Naslov",
     phone: "Telefon",
     email: "E-pošta",
@@ -63,7 +64,8 @@ const sl = {
   gardenGallery: {
     title: "Naši izdelki v vaših vrtovih",
     subtitle: "Navdih za vaš dom",
-    description: "Poglejte, kako naši betonski izdelki izgledajo v resničnih vrtovih. Vsak kos je ročno izdelan in prilagojen vašim željam.",
+    description:
+      "Poglejte, kako naši betonski izdelki izgledajo v resničnih vrtovih. Vsak kos je ročno izdelan in prilagojen vašim željam.",
     viewAll: "Oglej si celotno galerijo",
   },
   featuredProducts: {
@@ -85,7 +87,7 @@ const sl = {
     next: "Naprej",
     page: "Stran",
     of: "od",
-  }
+  },
 };
 
 export type Translation = typeof sl;
@@ -132,7 +134,8 @@ const en: Translation = {
   contact: {
     title: "Contact",
     subtitle: "Visit us or give us a call",
-    description: "We are located in Benedikt in the Slovenian Hills. You are welcome to visit us in person, call, or write to us — we are happy to help you choose the right product.",
+    description:
+      "We are located in Benedikt in the Slovenian Hills. You are welcome to visit us in person, call, or write to us — we are happy to help you choose the right product.",
     adress: "Address",
     phone: "Phone",
     email: "Email",
@@ -155,7 +158,8 @@ const en: Translation = {
   gardenGallery: {
     title: "Our products in your gardens",
     subtitle: "Inspiration for your home",
-    description: "See how our concrete products look in real gardens. Each piece is handmade and tailored to your wishes.",
+    description:
+      "See how our concrete products look in real gardens. Each piece is handmade and tailored to your wishes.",
     viewAll: "View full gallery",
   },
   featuredProducts: {
@@ -177,7 +181,7 @@ const en: Translation = {
     next: "Next",
     page: "Page",
     of: "of",
-  }
+  },
 };
 
 const de: Translation = {
@@ -222,7 +226,8 @@ const de: Translation = {
   contact: {
     title: "Kontakt",
     subtitle: "Besuchen Sie uns oder rufen Sie uns an",
-    description: "Wir befinden uns in Benedikt in den Slowenischen Hügeln. Sie sind herzlich eingeladen, uns persönlich zu besuchen, anzurufen oder zu schreiben — wir helfen Ihnen gerne bei der Auswahl des richtigen Produkts.",
+    description:
+      "Wir befinden uns in Benedikt in den Slowenischen Hügeln. Sie sind herzlich eingeladen, uns persönlich zu besuchen, anzurufen oder zu schreiben — wir helfen Ihnen gerne bei der Auswahl des richtigen Produkts.",
     adress: "Adresse",
     phone: "Telefon",
     email: "E-Mail",
@@ -245,7 +250,8 @@ const de: Translation = {
   gardenGallery: {
     title: "Unsere Produkte in Ihren Gärten",
     subtitle: "Inspiration für Ihr Zuhause",
-    description: "Sehen Sie, wie unsere Betonprodukte in echten Gärten aussehen. Jedes Stück wird handgefertigt und nach Ihren Wünschen angepasst.",
+    description:
+      "Sehen Sie, wie unsere Betonprodukte in echten Gärten aussehen. Jedes Stück wird handgefertigt und nach Ihren Wünschen angepasst.",
     viewAll: "Gesamte Galerie ansehen",
   },
   featuredProducts: {
@@ -267,7 +273,7 @@ const de: Translation = {
     next: "Weiter",
     page: "Seite",
     of: "von",
-  }
+  },
 };
 
 export const translations = { sl, en, de };

@@ -44,28 +44,29 @@ export default function Categories() {
   ];
 
   return (
-    <section className="bg-white dark:bg-gray-800 py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24 dark:bg-gray-800">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
         {/* Bento grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:h-[580px]">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:h-[580px] lg:grid-cols-3 lg:grid-rows-2">
           <CategoryCard {...categories[0]} />
 
           <CategoryCard {...categories[1]} />
 
           {/* Editorial text + CTA panel */}
-          <div className="rounded-2xl bg-surface dark:bg-gray-700 p-8 flex flex-col justify-between min-h-[220px]">
+          <div className="flex min-h-[220px] flex-col justify-between rounded-2xl bg-surface p-8 dark:bg-gray-700">
             <div>
-              <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-4">
+              <p className="mb-4 text-xs font-medium tracking-[0.2em] text-primary uppercase">
                 {t.subtitle}
               </p>
-              <h2 className={`text-4xl font-bold leading-tight text-stone-800 dark:text-white font-display`}>
+              <h2
+                className={`font-display text-4xl leading-tight font-bold text-stone-800 dark:text-white`}
+              >
                 {t.title}
               </h2>
             </div>
             <a
               href="/products"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-secondary transition-colors duration-200 w-fit mt-6"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-secondary"
             >
               {t.categories.allProducts} &rarr;
             </a>
@@ -75,7 +76,6 @@ export default function Categories() {
 
           <CategoryCard {...categories[3]} />
         </div>
-
       </div>
     </section>
   );

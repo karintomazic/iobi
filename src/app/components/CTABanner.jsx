@@ -9,24 +9,26 @@ export default function CTABanner() {
   const t = translations[language].ctaBanner;
 
   return (
-    <section className="bg-white dark:bg-gray-800 py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-8">
+    <section className="bg-white py-16 sm:py-20 dark:bg-gray-800">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 sm:flex-row lg:px-8">
         <div>
-          <h2 className={`text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white font-display`}>
+          <h2
+            className={`font-display text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white`}
+          >
             {t.title}
           </h2>
-          <p className="mt-3 text-gray-600 dark:text-gray-300 text-base max-w-xl">{t.subtitle}</p>
+          <p className="mt-3 max-w-xl text-base text-gray-600 dark:text-gray-300">{t.subtitle}</p>
         </div>
-        <div className="flex gap-3 shrink-0">
+        <div className="flex shrink-0 gap-3">
           <Link
             href="/products"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-secondary transition-colors duration-200"
+            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-secondary"
           >
             {t.button1}
           </Link>
           <Link
             href="/contact"
-            className="rounded-full bg-white border-2 border-stone-300 px-6 py-3 text-sm font-semibold text-stone-600 hover:border-primary hover:text-primary transition-colors duration-200"
+            className="rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary"
           >
             {t.button2}
           </Link>

@@ -3,9 +3,9 @@ import HeroImages from "./HeroImages";
 
 export default function Hero() {
   return (
-    <section className="bg-surface dark:bg-gray-900 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-        <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-8">
+    <section className="overflow-hidden bg-surface dark:bg-gray-900">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-8">
           <HeroContent />
           <HeroImages />
         </div>

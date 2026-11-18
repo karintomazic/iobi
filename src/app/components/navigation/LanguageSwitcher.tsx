@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from "../../context/LanguageContext";
 import { languages } from "../../data/translations";
 
 export default function LanguageSwitcher() {
@@ -14,15 +14,13 @@ export default function LanguageSwitcher() {
             onClick={() => changeLanguage(code)}
             className={`transition-colors duration-150 ${
               language === code
-                ? 'text-primary font-bold'
-                : 'text-stone-400 dark:text-gray-500 font-medium hover:text-stone-600 dark:hover:text-gray-300'
+                ? "font-bold text-primary"
+                : "font-medium text-stone-400 hover:text-stone-600 dark:text-gray-500 dark:hover:text-gray-300"
             }`}
           >
             {code}
           </button>
-          {i < languages.length - 1 && (
-            <span className="text-stone-200 dark:text-gray-700">|</span>
-          )}
+          {i < languages.length - 1 && <span className="text-stone-200 dark:text-gray-700">|</span>}
         </span>
       ))}
     </div>

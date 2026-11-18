@@ -20,7 +20,7 @@ export default function NavigationLinks({ className, onNavigate }) {
             key={item.id}
             href={item.href}
             onClick={onNavigate}
-            className={`pb-0.5 text-base font-medium tracking-wide text-stone-600 dark:text-gray-300 border-b-2 hover:text-primary hover:border-primary transition-all duration-150 ${className} ${
+            className={`border-b-2 pb-0.5 text-base font-medium tracking-wide text-stone-600 transition-all duration-150 hover:border-primary hover:text-primary dark:text-gray-300 ${className} ${
               isActive ? "border-primary text-primary" : "border-transparent"
             }`}
           >
@@ -31,4 +31,3 @@ export default function NavigationLinks({ className, onNavigate }) {
     </>
   );
 }
-

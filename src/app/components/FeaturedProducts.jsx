@@ -13,7 +13,7 @@ const isDev = process.env.NEXT_PUBLIC_ENVIRONMENT === "dev";
 const pb = new PocketBase(
   isDev
     ? `${process.env.NEXT_PUBLIC_POCKETBASE_URL}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`
-    : process.env.NEXT_PUBLIC_POCKETBASE_URL
+    : process.env.NEXT_PUBLIC_POCKETBASE_URL,
 );
 
 export default function FeaturedProducts() {
@@ -33,18 +33,20 @@ export default function FeaturedProducts() {
   if (!loading && items.length === 0) return null;
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-12">
+        <div className="mb-12 flex items-end justify-between">
           <div>
             <p className="text-base font-semibold text-primary">{t.subtitle}</p>
-            <h2 className={`mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white font-display`}>
+            <h2
+              className={`mt-2 font-display text-4xl font-bold tracking-tight text-gray-900 dark:text-white`}
+            >
               {t.title}
             </h2>
           </div>
           <Link
             href="/products"
-            className="hidden sm:inline-flex rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
+            className="hidden rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary sm:inline-flex dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
           >
             {t.viewAll}
           </Link>
@@ -53,7 +55,10 @@ export default function FeaturedProducts() {
         {loading ? (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="h-80 rounded-2xl bg-gray-200 dark:bg-gray-800 animate-pulse" />
+              <div
+                key={i}
+                className="h-80 animate-pulse rounded-2xl bg-gray-200 dark:bg-gray-800"
+              />
             ))}
           </div>
         ) : (
@@ -66,10 +71,10 @@ export default function FeaturedProducts() {
           </Gallery>
         )}
 
-        <div className="mt-10 sm:hidden text-center">
+        <div className="mt-10 text-center sm:hidden">
           <Link
             href="/products"
-            className="inline-flex rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
+            className="inline-flex rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
           >
             {t.viewAll}
           </Link>

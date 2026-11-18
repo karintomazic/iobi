@@ -1,7 +1,7 @@
 import "./globals.css";
 import { openSans, playfairDisplay } from "./utils/fonts";
 import { LanguageProvider } from "./context/LanguageContext";
-import { ThemeProvider } from "./context/ThemeContext";
+import { themeScript } from "@/lib/theme";
 import Navigation from "./components/navigation/Navigation";
 
 export const metadata = {
@@ -14,14 +14,16 @@ export default function RootLayout({ children }) {
     <html
       lang="sl"
       className={`${openSans.variable} ${playfairDisplay.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="font-sans">
-        <ThemeProvider>
-          <LanguageProvider>
-            <Navigation />
-            <div className="pt-[76px]">{children}</div>
-          </LanguageProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          <Navigation />
+          <div className="pt-19">{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 type MobileMenuButtonProps = {
   onClick: () => void;
-}
+};
 export default function MobileMenuButton({ onClick }: MobileMenuButtonProps) {
   return (
     <>

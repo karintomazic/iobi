@@ -25,15 +25,7 @@ if (!url) {
 }
 
 // The keys the site uses in its URLs and translations
-const CATEGORIES = [
-  "fontane",
-  "korita",
-  "palcki",
-  "zivali",
-  "angelcki",
-  "kipci",
-  "stebri",
-];
+const CATEGORIES = ["fontane", "korita", "palcki", "zivali", "angelcki", "kipci", "stebri"];
 
 // Clearly marked as TEST, so they're easy to find and delete later
 const PRODUCTS = [

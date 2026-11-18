@@ -9,28 +9,28 @@ export default function HeroContent() {
 
   return (
     <div className="relative w-full lg:w-1/2 lg:shrink-0">
-      <div className="inline-flex items-center gap-2 bg-white border border-primary/40 text-primary text-xs tracking-[0.18em] uppercase px-4 py-1.5 rounded-full mb-8">
-        <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+      <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-white px-4 py-1.5 text-xs tracking-[0.18em] text-primary uppercase">
+        <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
         {t.badge}
       </div>
       <h1
-        className={`text-5xl sm:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight text-stone-800 dark:text-white font-display`}
+        className={`font-display text-5xl leading-[1.05] font-bold tracking-tight text-stone-800 sm:text-6xl xl:text-7xl dark:text-white`}
       >
         {t.title}
       </h1>
-      <p className="mt-6 text-base leading-relaxed text-stone-500 dark:text-gray-400 max-w-md">
+      <p className="mt-6 max-w-md text-base leading-relaxed text-stone-500 dark:text-gray-400">
         {t.subtitle}
       </p>
       <div className="mt-10 flex flex-wrap gap-4">
         <a
           href="/products"
-          className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-secondary transition-colors duration-200"
+          className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-secondary"
         >
           {t.heroButton}
         </a>
         <a
           href="/contact"
-          className="rounded-full bg-white dark:bg-gray-900 border-2 border-stone-300 dark:border-gray-600 px-6 py-3 text-sm font-semibold text-stone-600 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors duration-200"
+          className="rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
         >
           {t.heroButton2}
         </a>
