@@ -1,6 +1,10 @@
 import Icon from "../Icon";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-export default function MobileMenuButton({ onClick }) {
+
+type MobileMenuButtonProps = {
+  onClick: () => void;
+}
+export default function MobileMenuButton({ onClick }: MobileMenuButtonProps) {
   return (
     <>
       <button

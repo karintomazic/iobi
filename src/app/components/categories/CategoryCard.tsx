@@ -1,8 +1,17 @@
 import Link from "next/link";
 
-export default function CategoryCard({ src, alt, overlayText, description, classes, href }) {
+type CategoryCardProps = {
+  src: string;
+  alt: string;
+  overlayText: string;
+  description?: string;
+  classes?: string;
+  href: string;
+}
+
+export default function CategoryCard({ src, alt, overlayText, description, classes, href }: CategoryCardProps) {
   return (
-    <Link href={href} className={`relative group h-full min-h-[220px] block ${classes}`}>
+    <Link href={href} className={`relative group h-full min-h-[220px] block ${classes ?? ""}`}>
       <div className="relative h-full overflow-hidden rounded-2xl">
         <img
           src={src}
