@@ -39,6 +39,9 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
 - [ ] **6. Storybook and tests**
   - [ ] Storybook 10 + Vitest + MSW (fake PocketBase), a story for every component
   - [ ] Interaction tests (filters, pagination, mobile menu), axe accessibility checks
+  - [ ] Playwright end-to-end tests for the main flows (homepage → category → page 2,
+        switching language, dark mode), axe check on every page
+  - [ ] GitHub Actions: lint, type check, Vitest and Playwright on every push
 - [ ] **7. Accessibility, images, SEO**
   - [ ] Contrast: white text on `#7a9a6b` is 3.2:1 (needs 4.5:1). `#5c7a4e` passes (4.8:1)
   - [ ] Labels for icon-only buttons (pagination arrows, theme toggle), skip link, focus styles
