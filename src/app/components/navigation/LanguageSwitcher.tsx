@@ -1,8 +1,7 @@
 "use client";
 
 import { useLanguage } from '../../context/LanguageContext';
-
-const languages = ['sl', 'en', 'de'];
+import { languages } from "../../data/translations";
 
 export default function LanguageSwitcher() {
   const { language, changeLanguage } = useLanguage();
