@@ -3,13 +3,19 @@ import { openSans, playfairDisplay } from "./utils/fonts";
 import { LanguageProvider } from "./context/LanguageContext";
 import { themeScript } from "@/lib/theme";
 import Navigation from "./components/navigation/Navigation";
+import { ReactNode } from "react";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "IOBI",
   description: "Izdelovanje okrasnih betonskih izdelkov",
 };
 
-export default function RootLayout({ children }) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="sl"

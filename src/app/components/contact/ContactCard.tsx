@@ -1,6 +1,14 @@
 import Icon from "../Icon";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-export default function ContactCard({ link, icon, title, content }) {
+type ContactCardProps = {
+  link?: string;
+  icon: IconDefinition;
+  title: string;
+  content: string;
+};
+
+export default function ContactCard({ link, icon, title, content }: ContactCardProps) {
   const wrapperClass =
     "group rounded-2xl border border-stone-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:shadow-md transition-all duration-200";
 

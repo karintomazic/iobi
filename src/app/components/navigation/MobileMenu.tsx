@@ -8,7 +8,12 @@ import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
 
-export default function MobileMenu({ isOpen, onClose }) {
+type MobileMenuProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
+
+export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const { language } = useLanguage();
   return (
     <>

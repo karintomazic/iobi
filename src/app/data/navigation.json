@@ -1,22 +1,22 @@
 [
   {
     "id": "home",
-    "name": { "sl": "Domov", "de": "Startseite" },
+    "name": { "sl": "Domov", "de": "Startseite", "en": "Home" },
     "href": "/"
   },
   {
     "id": "izdelki",
-    "name": { "sl": "Izdelki", "de": "Produkte" },
+    "name": { "sl": "Izdelki", "de": "Produkte", "en": "Products" },
     "href": "/products"
   },
   {
     "id": "gallery",
-    "name": { "sl": "Galerija", "de": "Galerie" },
+    "name": { "sl": "Galerija", "de": "Galerie", "en": "Gallery" },
     "href": "/gallery"
   },
   {
     "id": "contact",
-    "name": { "sl": "Kontakt", "de": "Kontakt" },
+    "name": { "sl": "Kontakt", "de": "Kontakt", "en": "Contact" },
     "href": "/contact"
   }
 ]

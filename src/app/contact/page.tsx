@@ -57,12 +57,7 @@ export default function ContactPage() {
                 title={t.email}
                 content="tomazics@gmail.com"
               />
-              <ContactCard
-                link=""
-                icon={faClock}
-                title={t.workHours}
-                content={t.workHoursContent}
-              />
+              <ContactCard icon={faClock} title={t.workHours} content={t.workHoursContent} />
             </div>
 
             {/* Map card */}
