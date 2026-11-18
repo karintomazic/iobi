@@ -6,14 +6,10 @@ import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { getImageUrl as getProductImageUrl } from "@/lib/pocketbase";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-const isDev = process.env.NEXT_PUBLIC_ENVIRONMENT === "dev";
-const baseUrl = isDev
-  ? `${process.env.NEXT_PUBLIC_POCKETBASE_URL}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`
-  : process.env.NEXT_PUBLIC_POCKETBASE_URL;
 
 export default function ImageWithLoader({ item }) {
   const { language } = useLanguage();
@@ -26,7 +22,7 @@ export default function ImageWithLoader({ item }) {
   const [dimensions, setDimensions] = useState(() => images.map(() => null));
   const [hasError, setHasError] = useState(false);
 
-  const getImageUrl = (image) => `${baseUrl}/api/files/${item.collectionId}/${item.id}/${image}`;
+  const getImageUrl = (image) => getProductImageUrl(item, image);
 
   const handleImageLoad = (event, index) => {
     const { naturalWidth: width, naturalHeight: height } = event.target;

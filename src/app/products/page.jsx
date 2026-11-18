@@ -1,17 +1,9 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import PocketBase from "pocketbase";
-
 import Footer from "../components/Footer";
 import ProductList from "./ProductList";
-
-const isDev = process.env.NEXT_PUBLIC_ENVIRONMENT === "dev";
-const pb = new PocketBase(
-  isDev
-    ? `${process.env.NEXT_PUBLIC_POCKETBASE_URL}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`
-    : process.env.NEXT_PUBLIC_POCKETBASE_URL
-);
+import { pb } from "@/lib/pocketbase";
 
 function ProductsContent() {
   const searchParams = useSearchParams();
