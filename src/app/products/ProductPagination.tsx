@@ -1,11 +1,25 @@
 "use client";
 
-export default function ProductPagination({ currentPage, totalPages, onNextPage, onPreviousPage }) {
+interface ProductPaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onNextPage: () => void;
+  onPreviousPage: () => void;
+}
+
+export default function ProductPagination({
+  currentPage,
+  totalPages,
+  onNextPage,
+  onPreviousPage,
+}: ProductPaginationProps) {
   if (totalPages <= 1) return null;
 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  const getVisiblePages = () => {
+  type PageItem = number | "...";
+
+  const getVisiblePages = (): PageItem[] => {
     if (totalPages <= 7) return pages;
     if (currentPage <= 4) return [...pages.slice(0, 5), "...", totalPages];
     if (currentPage >= totalPages - 3) return [1, "...", ...pages.slice(totalPages - 5)];
