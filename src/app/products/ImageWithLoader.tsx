@@ -1,36 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { Item } from "react-photoswipe-gallery";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { getImageUrl as getProductImageUrl } from "@/lib/pocketbase";
+import { getImageUrl as getProductImageUrl, type ProductRecord } from "@/lib/pocketbase";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function ImageWithLoader({ item }) {
+interface ImageWithLoaderProps {
+  item: ProductRecord;
+}
+
+interface ImageSize {
+  width: number;
+  height: number;
+}
+
+export default function ImageWithLoader({ item }: ImageWithLoaderProps) {
   const { language } = useLanguage();
   const t = translations[language].errors;
   const tp = translations[language].products;
 
-  const images = Array.isArray(item.product_image) ? item.product_image : [item.product_image];
+  const images = item.product_image;
 
   const [loadingStates, setLoadingStates] = useState(() => images.map(() => true));
-  const [dimensions, setDimensions] = useState(() => images.map(() => null));
+  const [dimensions, setDimensions] = useState<(ImageSize | null)[]>(() => images.map(() => null));
   const [hasError, setHasError] = useState(false);
 
-  const getImageUrl = (image) => getProductImageUrl(item, image);
+  const getImageUrl = (image: string) => getProductImageUrl(item, image);
 
-  const handleImageLoad = (event, index) => {
-    const { naturalWidth: width, naturalHeight: height } = event.target;
+  const handleImageLoad = (event: SyntheticEvent<HTMLImageElement>, index: number) => {
+    const { naturalWidth: width, naturalHeight: height } = event.currentTarget;
     setDimensions((prev) => prev.map((d, i) => (i === index ? { width, height } : d)));
     setLoadingStates((prev) => prev.map((s, i) => (i === index ? false : s)));
   };
 
-  const handleImageError = (error, index) => {
+  const handleImageError = (error: SyntheticEvent<HTMLImageElement>, index: number) => {
     console.error("Failed to load image", error);
     setLoadingStates((prev) => prev.map((s, i) => (i === index ? false : s)));
     setHasError(true);
