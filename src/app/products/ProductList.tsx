@@ -5,7 +5,8 @@ import ProductPagination from "./ProductPagination";
 import ProductCards from "./ProductCards";
 import CategoryFilters from "./CategoryFilters";
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
+import { translations, isCategoryKey } from "../data/translations";
+import { type CategoryRecord, type ProductRecord } from "@/lib/pocketbase";
 
 function SkeletonGrid() {
   return (
@@ -51,6 +52,20 @@ function EmptyState() {
   );
 }
 
+interface ProductListProps {
+  onNextPage: () => void;
+  onPreviousPage: () => void;
+  totalPages: number;
+  totalItems: number;
+  currentPage: number;
+  items: ProductRecord[];
+  loading: boolean;
+  categories: CategoryRecord[];
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
+  setCurrentPage: (page: number) => void;
+}
+
 export default function ProductList({
   onNextPage,
   onPreviousPage,
@@ -63,12 +78,12 @@ export default function ProductList({
   selectedCategory,
   setSelectedCategory,
   setCurrentPage,
-}) {
+}: ProductListProps) {
   const { language } = useLanguage();
   const t = translations[language].categories;
   const tp = translations[language].products;
   const [visible, setVisible] = useState(true);
-  const topRef = useRef(null);
+  const topRef = useRef<HTMLDivElement>(null);
 
   const activeCategory = categories.find((c) => c.id === selectedCategory);
 
@@ -119,8 +134,10 @@ export default function ProductList({
                 {totalItems} {totalItems === 1 ? tp.itemSingular : tp.itemPlural}
                 {activeCategory && (
                   <span className="font-normal text-stone-400">
-                    {" "}
-                    · {t.categories[activeCategory.category] || activeCategory.category}
+                    ·
+                    {isCategoryKey(activeCategory.category)
+                      ? t.categories[activeCategory.category]
+                      : activeCategory.category}
                   </span>
                 )}
               </span>
