@@ -134,7 +134,7 @@ export default function ProductList({
                 {totalItems} {totalItems === 1 ? tp.itemSingular : tp.itemPlural}
                 {activeCategory && (
                   <span className="font-normal text-stone-400">
-                    ·
+                    {" · "}
                     {isCategoryKey(activeCategory.category)
                       ? t.categories[activeCategory.category]
                       : activeCategory.category}
