@@ -1,5 +1,14 @@
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
+import { translations, isCategoryKey } from "../data/translations";
+import { type CategoryRecord } from "@/lib/pocketbase";
+
+interface CategoryFiltersProps {
+  categories: CategoryRecord[];
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
+  setCurrentPage: (count: number) => void;
+  sidebar?: boolean;
+}
 
 export default function CategoryFilters({
   categories,
@@ -7,11 +16,11 @@ export default function CategoryFilters({
   setSelectedCategory,
   setCurrentPage,
   sidebar = false,
-}) {
+}: CategoryFiltersProps) {
   const { language } = useLanguage();
   const categoriesText = translations[language].categories;
 
-  const handleSelect = (value) => {
+  const handleSelect = (value: string) => {
     const next = selectedCategory === value ? "" : value;
     setSelectedCategory(next);
     setCurrentPage(1);
@@ -21,7 +30,7 @@ export default function CategoryFilters({
     { id: "", label: categoriesText.categories.allProducts },
     ...categories.map((cat) => ({
       id: cat.id,
-      label: categoriesText.categories[cat.category] || cat.category,
+      label: isCategoryKey(cat.category) ? categoriesText.categories[cat.category] : cat.category,
     })),
   ];
 

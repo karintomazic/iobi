@@ -287,3 +287,9 @@ export const languages = Object.keys(translations) as Language[];
 export function isLanguage(value: string | null): value is Language {
   return languages.includes(value as Language);
 }
+
+export type CategoryKey = keyof Translation["categories"]["categories"];
+
+export function isCategoryKey(value: string): value is CategoryKey {
+  return Object.hasOwn(sl.categories.categories, value);
+}
