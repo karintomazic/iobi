@@ -3,18 +3,18 @@ import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Footer from "../components/Footer";
 import ProductList from "./ProductList";
-import { pb } from "@/lib/pocketbase";
+import { pb, type CategoryRecord, type ProductRecord } from "@/lib/pocketbase";
 
 function ProductsContent() {
   const searchParams = useSearchParams();
-  const [items, setItems] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState<ProductRecord[]>([]);
+  const [categories, setCategories] = useState<CategoryRecord[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<null | string>(null);
 
   const PAGE_SIZE = 20;
 
