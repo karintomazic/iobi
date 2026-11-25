@@ -66,7 +66,8 @@ export default function GalleryPage() {
                           alt={image.alt}
                           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => {
-                            e.target.parentElement.parentElement.style.display = "none";
+                            const card = e.currentTarget.parentElement?.parentElement;
+                            if (card) card.style.display = "none";
                           }}
                         />
                       </div>
