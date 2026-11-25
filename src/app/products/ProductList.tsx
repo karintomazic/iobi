@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import ProductPagination from "./ProductPagination";
 import ProductCards from "./ProductCards";
 import CategoryFilters from "./CategoryFilters";
@@ -82,16 +82,9 @@ export default function ProductList({
   const { language } = useLanguage();
   const t = translations[language].categories;
   const tp = translations[language].products;
-  const [visible, setVisible] = useState(true);
   const topRef = useRef<HTMLDivElement>(null);
 
   const activeCategory = categories.find((c) => c.id === selectedCategory);
-
-  useEffect(() => {
-    setVisible(false);
-    const timer = setTimeout(() => setVisible(true), 200);
-    return () => clearTimeout(timer);
-  }, [items]);
 
   useEffect(() => {
     if (currentPage > 1) {
@@ -161,9 +154,7 @@ export default function ProductList({
           ) : items.length === 0 ? (
             <EmptyState />
           ) : (
-            <div
-              className={`transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
-            >
+            <div className="animate-fade-in motion-reduce:animate-none">
               <ProductCards items={items} />
               <ProductPagination
                 currentPage={currentPage}

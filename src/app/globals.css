@@ -13,6 +13,7 @@
   --color-secondary: #5c7a4e;
   --color-accent: #c4956a;
   --color-surface: #edf2e8;
+  --animate-fade-in: fade-in 300ms ease-out;
 }
 
 @layer base {
@@ -35,4 +36,13 @@
 
 .swiper .swiper-pagination-bullet-active {
   background: var(--color-primary);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
