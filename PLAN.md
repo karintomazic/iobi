@@ -19,10 +19,10 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
         Photoswipe Gallery 4, Font Awesome 7, ESLint 9 (flat config)
   - [x] Remove unused packages
   - [x] Brand colours and fonts as Tailwind theme tokens
-- [ ] **3. TypeScript**
-  - [ ] Rename files to `.ts` / `.tsx`, strict mode
-  - [ ] Types for PocketBase records (`products`, `category`) and for the translations
-  - [ ] One PocketBase client in `lib/pocketbase.ts` (right now it's created in 3 files)
+- [x] **3. TypeScript**
+  - [x] Rename files to `.ts` / `.tsx`, strict mode
+  - [x] Types for PocketBase records (`products`, `category`) and for the translations
+  - [x] One PocketBase client in `lib/pocketbase.ts`
 - [ ] **4. Fix bugs**
   - [ ] Pagination: clicking page 5 on page 1 goes to page 2
   - [ ] Product cards show made-up size/weight ("50 × 30 × 25 cm", "12 kg") when the product has none
@@ -31,9 +31,10 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
   - [ ] Category and page in the URL, so Back and shared links work
   - [ ] Race condition when switching categories quickly
   - [ ] Hardcoded Slovenian or English text (footer, empty state, errors, "Poglej", image alt texts)
-  - [ ] English names missing in `navigation.json`
+  - [x] English names missing in `navigation.json`
   - [ ] Dark mode flash on load (theme is read from localStorage after the first paint)
   - [ ] Contact details (phone, email, address, maps link) in one place instead of five
+  - [ ] PocketBase filter: use `pb.filter()` instead of putting the value straight into the string
 - [ ] **5. Languages in the URL** (`/sl`, `/en`, `/de`)
   - [ ] Google can index all three languages, correct `<html lang>`, no language flash
 - [ ] **6. Storybook and tests**

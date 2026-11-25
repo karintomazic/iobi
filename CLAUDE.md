@@ -10,16 +10,18 @@ against the code.
 
 - **Frontend**: Next.js 16 (App Router, Turbopack), React 19, Tailwind CSS v4
 - **Backend**: PocketBase (v0.42 on the server, SDK `pocketbase` 0.29), hosted on Coolify
-- **Language**: JavaScript for now. TypeScript is step 3 in `PLAN.md`.
+- **Language**: TypeScript, strict mode. No JavaScript in `src` (`allowJs` is off).
 - **Libraries**: Headless UI 2 (mobile menu dialog), Swiper (product image slider),
   react-photoswipe-gallery (lightbox), Font Awesome 7 (icons)
 
 ## Development
 
 ```bash
-npm run dev     # http://localhost:3000
+npm run dev        # http://localhost:3000
 npm run build
-npm run lint    # eslint . (flat config in eslint.config.mjs)
+npm run lint       # eslint . (flat config in eslint.config.mjs)
+npm run typecheck  # tsc --noEmit
+npm run format     # prettier --write .
 ```
 
 ### PocketBase
@@ -45,6 +47,13 @@ That's for a local Docker PocketBase (`docker compose up`), which isn't used rig
 
 ## Architecture
 
+### PocketBase client and types
+
+`src/lib/pocketbase.ts` holds the one PocketBase client (`pb`) the whole app uses, the record
+types (`ProductRecord`, `CategoryRecord`) and `getImageUrl()`. `pb.collection("products")` is
+typed, so results come back as `ProductRecord`. When a collection gets a new field, add it to
+the record type there. Never create another `new PocketBase(...)`.
+
 ### PocketBase collections
 
 - `category`: `category` (text, unique). The key used in URLs and translations:
@@ -64,10 +73,11 @@ Rules: everyone can read, only superusers can write.
 
 ### i18n
 
-UI strings are in `src/app/data/translations.jsx`, keyed by `sl`, `en`, `de`. The language
+UI strings are in `src/app/data/translations.ts`, keyed by `sl`, `en`, `de`. The language
 is kept in `localStorage` through `LanguageContext` (default `sl`). Use them with
-`translations[language].section`. Menu labels are in `src/app/data/navigation.json`.
-Moving languages into the URL is step 5 in `PLAN.md`.
+`translations[language].section`. Before using a string from outside (localStorage,
+PocketBase) as a key, check it with `isLanguage()` or `isCategoryKey()`. Menu labels are in
+`src/app/data/navigation.json`. Moving languages into the URL is step 5 in `PLAN.md`.
 
 ### Styling
 
@@ -75,12 +85,12 @@ Moving languages into the URL is step 5 in `PLAN.md`.
 - Theme tokens: `bg-primary`, `text-secondary`, `bg-accent`, `bg-surface` (light green page
   background). Use them instead of hex codes.
 - Fonts: `font-sans` (Open Sans, body) and `font-display` (Playfair Display, headings). They
-  come from `next/font` in `src/app/utils/fonts.jsx`.
+  come from `next/font` in `src/app/utils/fonts.ts`.
 - Dark mode: the `dark` class on `<html>`, set by `ThemeContext`.
-- Icons: use `src/app/components/Icon.jsx`, not `FontAwesomeIcon` directly. It turns off Font
+- Icons: use `src/app/components/Icon.tsx`, not `FontAwesomeIcon` directly. It turns off Font
   Awesome's own CSS, which globals.css loads in Tailwind's base layer instead.
 
 ### Product images
 
-PocketBase file URL: `${baseUrl}/api/files/${record.collectionId}/${record.id}/${fileName}`.
-Product cards use Swiper for several images and Photoswipe for the lightbox.
+Use `getImageUrl(product, fileName, thumb?)` from `src/lib/pocketbase.ts`. Don't build file
+URLs by hand. Product cards use Swiper for several images and Photoswipe for the lightbox.
