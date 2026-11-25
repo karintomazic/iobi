@@ -42,6 +42,9 @@ That's for a local Docker PocketBase (`docker compose up`), which isn't used rig
   every collection not in the file, including the system ones.
 - `scripts/seed-test-data.mjs`: adds the 7 categories and 3 TEST products. It asks for a
   superuser login: `node scripts/seed-test-data.mjs`.
+- `scripts/import-products.mjs`: adds the real products from `scripts/products-import.json`
+  (name, category, photo numbers) with photos from a folder of web-sized copies. Price, size
+  and weight are left empty for the client to fill in. Same login, skips existing names.
 - Never change records in the hosted PocketBase without asking. The client will add the
   real products there.
 
