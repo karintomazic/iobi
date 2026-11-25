@@ -1,25 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import PocketBase from "pocketbase";
 import { Gallery } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 import ImageWithLoader from "../products/ImageWithLoader";
-
-const isDev = process.env.NEXT_PUBLIC_ENVIRONMENT === "dev";
-const pb = new PocketBase(
-  isDev
-    ? `${process.env.NEXT_PUBLIC_POCKETBASE_URL}:${process.env.NEXT_PUBLIC_PB_LOCAL_PORT}`
-    : process.env.NEXT_PUBLIC_POCKETBASE_URL,
-);
+import { pb, type ProductRecord } from "@/lib/pocketbase";
 
 export default function FeaturedProducts() {
   const { language } = useLanguage();
   const t = translations[language].featuredProducts;
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<ProductRecord[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

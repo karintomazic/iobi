@@ -49,7 +49,7 @@ export default function GardenGallery() {
               alt={galleryImages[0].alt}
               className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               onError={(e) => {
-                e.target.style.display = "none";
+                e.currentTarget.style.display = "none";
               }}
             />
           </div>
@@ -62,7 +62,7 @@ export default function GardenGallery() {
                 alt={galleryImages[1].alt}
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 onError={(e) => {
-                  e.target.style.display = "none";
+                  e.currentTarget.style.display = "none";
                 }}
               />
             </div>
@@ -72,7 +72,7 @@ export default function GardenGallery() {
                 alt={galleryImages[2].alt}
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 onError={(e) => {
-                  e.target.style.display = "none";
+                  e.currentTarget.style.display = "none";
                 }}
               />
             </div>
