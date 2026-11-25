@@ -53,8 +53,7 @@ function EmptyState() {
 }
 
 interface ProductListProps {
-  onNextPage: () => void;
-  onPreviousPage: () => void;
+  onPageChange: (page: number) => void;
   totalPages: number;
   totalItems: number;
   currentPage: number;
@@ -67,8 +66,7 @@ interface ProductListProps {
 }
 
 export default function ProductList({
-  onNextPage,
-  onPreviousPage,
+  onPageChange,
   totalPages,
   totalItems,
   currentPage,
@@ -159,8 +157,7 @@ export default function ProductList({
               <ProductPagination
                 currentPage={currentPage}
                 totalPages={totalPages}
-                onNextPage={onNextPage}
-                onPreviousPage={onPreviousPage}
+                onPageChange={onPageChange}
               />
             </div>
           )}

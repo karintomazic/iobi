@@ -70,16 +70,8 @@ function ProductsContent() {
     fetchProducts();
   }, [selectedCategory, currentPage]);
 
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -94,8 +86,7 @@ function ProductsContent() {
         )}
         <section>
           <ProductList
-            onNextPage={handleNextPage}
-            onPreviousPage={handlePreviousPage}
+            onPageChange={handlePageChange}
             loading={loading}
             totalPages={totalPages}
             totalItems={totalItems}

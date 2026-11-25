@@ -3,15 +3,13 @@
 interface ProductPaginationProps {
   currentPage: number;
   totalPages: number;
-  onNextPage: () => void;
-  onPreviousPage: () => void;
+  onPageChange: (page: number) => void;
 }
 
 export default function ProductPagination({
   currentPage,
   totalPages,
-  onNextPage,
-  onPreviousPage,
+  onPageChange,
 }: ProductPaginationProps) {
   if (totalPages <= 1) return null;
 
@@ -31,7 +29,7 @@ export default function ProductPagination({
   return (
     <div className="mt-12 flex items-center justify-center gap-1.5">
       <button
-        onClick={onPreviousPage}
+        onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-stone-300 bg-white text-stone-500 transition-colors duration-200 hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-stone-300 disabled:hover:text-stone-500"
       >
@@ -57,10 +55,7 @@ export default function ProductPagination({
         ) : (
           <button
             key={p}
-            onClick={() => {
-              if (p > currentPage) onNextPage();
-              else if (p < currentPage) onPreviousPage();
-            }}
+            onClick={() => onPageChange(p)}
             className={`h-9 w-9 rounded-full text-sm font-semibold transition-colors duration-200 ${
               p === currentPage
                 ? "bg-primary text-white"
@@ -73,7 +68,7 @@ export default function ProductPagination({
       )}
 
       <button
-        onClick={onNextPage}
+        onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-stone-300 bg-white text-stone-500 transition-colors duration-200 hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-stone-300 disabled:hover:text-stone-500"
       >
