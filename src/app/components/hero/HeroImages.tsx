@@ -1,8 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
+
+interface ImageSize {
+  width: number;
+  height: number;
+}
 
 const images = [
   {
@@ -49,12 +54,13 @@ const mobileImages = [
 ];
 
 export default function HeroImages() {
-  const [dims, setDims] = useState({});
+  const [dims, setDims] = useState<Record<string, ImageSize>>({});
 
-  const handleLoad = (e, src) => {
+  const handleLoad = (e: SyntheticEvent<HTMLImageElement>, src: string) => {
+    const { naturalWidth: width, naturalHeight: height } = e.currentTarget;
     setDims((prev) => ({
       ...prev,
-      [src]: { width: e.target.naturalWidth, height: e.target.naturalHeight },
+      [src]: { width, height },
     }));
   };
 
