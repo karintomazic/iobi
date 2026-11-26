@@ -30,7 +30,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300"
               onClick={onClose}
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">{translations[language].navigation.closeMenu}</span>
               <Icon className="h-6 w-6" aria-hidden="true" icon={faXmark} />
             </button>
           </div>

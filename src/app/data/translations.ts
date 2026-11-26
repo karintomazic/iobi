@@ -4,6 +4,9 @@ const sl = {
     about: "Izdelki",
     contact: "Kontakt",
     callUs: "Pokličite nas",
+    openMenu: "Odpri meni",
+    closeMenu: "Zapri meni",
+    toggleTheme: "Preklopi temni način",
   },
   hero: {
     badge: "Ročno Izdelano",
@@ -51,6 +54,8 @@ const sl = {
   },
   errors: {
     imageLoad: "Napaka pri nalaganju slike",
+    categoriesLoad: "Napaka pri nalaganju kategorij. Prosimo, poskusite znova.",
+    productsLoad: "Napaka pri nalaganju izdelkov. Prosimo, poskusite znova.",
   },
   products: {
     price: "Cena",
@@ -60,6 +65,8 @@ const sl = {
     productId: "Šifra",
     itemSingular: "izdelek",
     itemPlural: "izdelkov",
+    emptyTitle: "V tej kategoriji trenutno ni izdelkov",
+    emptyHint: "Poskusite izbrati drugo kategorijo",
   },
   gardenGallery: {
     title: "Naši izdelki v vaših vrtovih",
@@ -80,7 +87,9 @@ const sl = {
     button2: "Kontaktirajte nas",
   },
   footerText: {
-    text: "© 2025 Stojan Tomažič s.p. - vse pravice pridržane",
+    text: "Stojan Tomažič s.p. - vse pravice pridržane",
+    tagline: "Ročno z ljubeznijo",
+    description: "Ročno izdelani betonski okrasni izdelki iz Benedikta v Slovenskih goricah.",
   },
   pagination: {
     previous: "Nazaj",
@@ -98,6 +107,9 @@ const en: Translation = {
     about: "Products",
     contact: "Contact",
     callUs: "Call us",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    toggleTheme: "Toggle dark mode",
   },
   hero: {
     badge: "Handcrafted",
@@ -145,6 +157,8 @@ const en: Translation = {
   },
   errors: {
     imageLoad: "Error loading image",
+    categoriesLoad: "Could not load the categories. Please try again.",
+    productsLoad: "Could not load the products. Please try again.",
   },
   products: {
     price: "Price",
@@ -154,6 +168,8 @@ const en: Translation = {
     productId: "Product ID",
     itemSingular: "product",
     itemPlural: "products",
+    emptyTitle: "There are no products in this category yet",
+    emptyHint: "Try choosing another category",
   },
   gardenGallery: {
     title: "Our products in your gardens",
@@ -174,7 +190,9 @@ const en: Translation = {
     button2: "Contact us",
   },
   footerText: {
-    text: "© 2025 Stojan Tomažič s.p. - All rights reserved",
+    text: "Stojan Tomažič s.p. - All rights reserved",
+    tagline: "Handmade with love",
+    description: "Handmade decorative concrete products from Benedikt in the Slovenian Hills.",
   },
   pagination: {
     previous: "Previous",
@@ -190,6 +208,9 @@ const de: Translation = {
     about: "Produkte",
     contact: "Kontakt",
     callUs: "Rufen Sie uns an",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
+    toggleTheme: "Dunkelmodus umschalten",
   },
   hero: {
     badge: "Handgefertigt",
@@ -237,6 +258,8 @@ const de: Translation = {
   },
   errors: {
     imageLoad: "Fehler beim Laden des Bildes",
+    categoriesLoad: "Die Kategorien konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
+    productsLoad: "Die Produkte konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
   },
   products: {
     price: "Preis",
@@ -246,6 +269,8 @@ const de: Translation = {
     productId: "Artikelnummer",
     itemSingular: "Produkt",
     itemPlural: "Produkte",
+    emptyTitle: "In dieser Kategorie gibt es derzeit keine Produkte",
+    emptyHint: "Wählen Sie eine andere Kategorie",
   },
   gardenGallery: {
     title: "Unsere Produkte in Ihren Gärten",
@@ -266,7 +291,9 @@ const de: Translation = {
     button2: "Kontakt",
   },
   footerText: {
-    text: "© 2025 Stojan Tomažič s.p. - Alle Rechte vorbehalten!",
+    text: "Stojan Tomažič s.p. - Alle Rechte vorbehalten",
+    tagline: "Mit Liebe handgemacht",
+    description: "Handgefertigte Betondekorationen aus Benedikt in den Slowenischen Hügeln.",
   },
   pagination: {
     previous: "Zurück",

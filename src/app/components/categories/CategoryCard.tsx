@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
 type CategoryCardProps = {
   src: string;
@@ -17,6 +19,9 @@ export default function CategoryCard({
   classes,
   href,
 }: CategoryCardProps) {
+  const { language } = useLanguage();
+  const t = translations[language].categories;
+
   return (
     <Link href={href} className={`group relative block h-full min-h-[220px] ${classes ?? ""}`}>
       <div className="relative h-full overflow-hidden rounded-2xl">
@@ -34,7 +39,7 @@ export default function CategoryCard({
           <div className="flex items-center justify-between">
             <span className="text-xl font-semibold text-white drop-shadow-sm">{overlayText}</span>
             <span className="translate-x-2 rounded-full bg-white/20 px-3 py-1 text-xs whitespace-nowrap text-white opacity-0 backdrop-blur-xs transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-              Poglej &rarr;
+              {t.viewCategory} &rarr;
             </span>
           </div>
         </div>

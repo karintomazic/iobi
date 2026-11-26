@@ -28,6 +28,9 @@ function SkeletonGrid() {
 }
 
 function EmptyState() {
+  const { language } = useLanguage();
+  const tp = translations[language].products;
+
   return (
     <div className="flex flex-col items-center justify-center py-24 text-center">
       <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-stone-100">
@@ -46,8 +49,8 @@ function EmptyState() {
           />
         </svg>
       </div>
-      <p className="text-lg font-semibold text-stone-700">V tej kategoriji trenutno ni izdelkov</p>
-      <p className="mt-1 text-sm text-stone-400">Poskusite izbrati drugo kategorijo</p>
+      <p className="text-lg font-semibold text-stone-700">{tp.emptyTitle}</p>
+      <p className="mt-1 text-sm text-stone-400">{tp.emptyHint}</p>
     </div>
   );
 }

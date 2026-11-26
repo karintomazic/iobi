@@ -4,6 +4,8 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Footer from "../components/Footer";
 import ProductList from "./ProductList";
 import { pb, type CategoryRecord, type ProductRecord } from "@/lib/pocketbase";
+import { translations } from "../data/translations";
+import { useLanguage } from "../context/LanguageContext";
 
 function ProductsContent() {
   const router = useRouter();
@@ -17,7 +19,10 @@ function ProductsContent() {
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<null | string>(null);
+  const [error, setError] = useState<"categoriesLoad" | "productsLoad" | null>(null);
+
+  const { language } = useLanguage();
+  const errorTexts = translations[language].errors;
 
   const PAGE_SIZE = 20;
 
@@ -47,7 +52,7 @@ function ProductsContent() {
         setCategories(categoryRecords.items);
       } catch (err) {
         console.error("Error fetching categories:", err);
-        setError("Napaka pri nalaganju kategorij. Prosimo, poskusite znova.");
+        setError("categoriesLoad");
       } finally {
         setLoading(false);
       }
@@ -78,7 +83,7 @@ function ProductsContent() {
       } catch (err) {
         if (ignore) return;
         console.error("Error fetching products:", err);
-        setError("Napaka pri nalaganju izdelkov. Prosimo, poskusite znova.");
+        setError("productsLoad");
       } finally {
         if (!ignore) setLoading(false);
       }
@@ -104,7 +109,7 @@ function ProductsContent() {
         {error && (
           <div className="mx-auto max-w-7xl px-6 py-8">
             <div className="rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
-              {error}
+              {errorTexts[error]}
             </div>
           </div>
         )}

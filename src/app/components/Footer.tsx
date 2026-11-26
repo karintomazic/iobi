@@ -14,9 +14,9 @@ export default function Footer() {
         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white">
           <img src="/img/iobi_logo.png" alt="IOBI" className="h-12 w-12 object-contain" />
         </div>
-        <p className={`mb-3 font-display text-2xl font-bold text-white`}>Ročno z ljubeznijo</p>
+        <p className={`mb-3 font-display text-2xl font-bold text-white`}>{footerText.tagline}</p>
         <p className="mb-10 max-w-xs text-sm leading-relaxed text-white/70">
-          Ročno izdelani betonski okrasni izdelki iz Benedikta v Slovenskih goricah.
+          {footerText.description}
         </p>
 
         <nav className="mb-10 flex flex-wrap justify-center gap-6">
@@ -56,7 +56,9 @@ export default function Footer() {
         </div>
 
         <div className="flex w-full items-center justify-between border-t border-white/10 pt-8">
-          <p className="text-xs text-white/50">{footerText.text}</p>
+          <p className="text-xs text-white/50">
+            © {new Date().getFullYear()} {footerText.text}
+          </p>
           <a
             href={contact.facebook}
             target="_blank"

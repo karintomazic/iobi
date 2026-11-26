@@ -122,7 +122,7 @@ export default function ImageWithLoader({ item }: ImageWithLoaderProps) {
         <div className="mt-3 flex items-center justify-between">
           {price && <p className="text-lg font-semibold text-primary">{price}</p>}
           <a
-            href={`${contact.emailLink}?subject=$${encodeURIComponent(`${item.product_name} - Šifra: ${item.id}`)}`}
+            href={`${contact.emailLink}?subject=${encodeURIComponent(`${item.product_name} - ${tp.productId}: ${item.id}`)}`}
             className="rounded-lg bg-primary px-3 py-1.5 text-sm text-white transition-colors duration-150 hover:bg-secondary"
           >
             {tp.inquire}
