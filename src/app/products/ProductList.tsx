@@ -54,6 +54,7 @@ function EmptyState() {
 
 interface ProductListProps {
   onPageChange: (page: number) => void;
+  onCategoryChange: (category: string) => void;
   totalPages: number;
   totalItems: number;
   currentPage: number;
@@ -61,12 +62,11 @@ interface ProductListProps {
   loading: boolean;
   categories: CategoryRecord[];
   selectedCategory: string;
-  setSelectedCategory: (category: string) => void;
-  setCurrentPage: (page: number) => void;
 }
 
 export default function ProductList({
   onPageChange,
+  onCategoryChange,
   totalPages,
   totalItems,
   currentPage,
@@ -74,15 +74,13 @@ export default function ProductList({
   loading,
   categories,
   selectedCategory,
-  setSelectedCategory,
-  setCurrentPage,
 }: ProductListProps) {
   const { language } = useLanguage();
   const t = translations[language].categories;
   const tp = translations[language].products;
   const topRef = useRef<HTMLDivElement>(null);
 
-  const activeCategory = categories.find((c) => c.id === selectedCategory);
+  const activeCategory = categories.find((c) => c.category === selectedCategory);
 
   useEffect(() => {
     if (currentPage > 1) {
@@ -103,8 +101,7 @@ export default function ProductList({
         <CategoryFilters
           categories={categories}
           selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          setCurrentPage={setCurrentPage}
+          onCategoryChange={onCategoryChange}
         />
       </div>
 
@@ -138,8 +135,7 @@ export default function ProductList({
             <CategoryFilters
               categories={categories}
               selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-              setCurrentPage={setCurrentPage}
+              onCategoryChange={onCategoryChange}
               sidebar
             />
           </div>

@@ -1,22 +1,40 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Footer from "../components/Footer";
 import ProductList from "./ProductList";
 import { pb, type CategoryRecord, type ProductRecord } from "@/lib/pocketbase";
 
 function ProductsContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
+
+  const selectedCategory = searchParams.get("category") ?? "";
+  const currentPage = Number(searchParams.get("page")) || 1;
+
   const [items, setItems] = useState<ProductRecord[]>([]);
   const [categories, setCategories] = useState<CategoryRecord[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<null | string>(null);
 
   const PAGE_SIZE = 20;
+
+  const updateUrl = (category: string, page: number) => {
+    const params = new URLSearchParams();
+
+    if (category) {
+      params.set("category", category);
+    }
+
+    if (page > 1) {
+      params.set("page", String(page));
+    }
+
+    const query = params.toString();
+    router.push(query ? `/products?${query}` : "/products", { scroll: false });
+  };
 
   // Fetch categories on component mount
   useEffect(() => {
@@ -27,14 +45,6 @@ function ProductsContent() {
           requestKey: null,
         });
         setCategories(categoryRecords.items);
-
-        const categoryParam = searchParams.get("category");
-
-        if (categoryParam) {
-          const match = categoryRecords.items.find((cat) => cat.category === categoryParam);
-
-          if (match) setSelectedCategory(match.id);
-        }
       } catch (err) {
         console.error("Error fetching categories:", err);
         setError("Napaka pri nalaganju kategorij. Prosimo, poskusite znova.");
@@ -50,7 +60,9 @@ function ProductsContent() {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const filter = selectedCategory ? `category.id ?= "${selectedCategory}"` : "";
+        const filter = selectedCategory
+          ? pb.filter("category.category = {:category}", { category: selectedCategory })
+          : "";
 
         const records = await pb.collection("products").getList(currentPage, PAGE_SIZE, {
           requestKey: null,
@@ -71,7 +83,11 @@ function ProductsContent() {
   }, [selectedCategory, currentPage]);
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    updateUrl(selectedCategory, page);
+  };
+
+  const handleCategoryChange = (category: string) => {
+    updateUrl(category, 1);
   };
 
   return (
@@ -87,6 +103,7 @@ function ProductsContent() {
         <section>
           <ProductList
             onPageChange={handlePageChange}
+            onCategoryChange={handleCategoryChange}
             loading={loading}
             totalPages={totalPages}
             totalItems={totalItems}
@@ -94,8 +111,6 @@ function ProductsContent() {
             items={items}
             categories={categories}
             selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            setCurrentPage={setCurrentPage}
           />
         </section>
       </main>

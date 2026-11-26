@@ -5,31 +5,28 @@ import { type CategoryRecord } from "@/lib/pocketbase";
 interface CategoryFiltersProps {
   categories: CategoryRecord[];
   selectedCategory: string;
-  setSelectedCategory: (category: string) => void;
-  setCurrentPage: (count: number) => void;
   sidebar?: boolean;
+  onCategoryChange: (category: string) => void;
 }
 
 export default function CategoryFilters({
   categories,
   selectedCategory,
-  setSelectedCategory,
-  setCurrentPage,
   sidebar = false,
+  onCategoryChange,
 }: CategoryFiltersProps) {
   const { language } = useLanguage();
   const categoriesText = translations[language].categories;
 
   const handleSelect = (value: string) => {
     const next = selectedCategory === value ? "" : value;
-    setSelectedCategory(next);
-    setCurrentPage(1);
+    onCategoryChange(next);
   };
 
   const allFilters = [
     { id: "", label: categoriesText.categories.allProducts },
     ...categories.map((cat) => ({
-      id: cat.id,
+      id: cat.category,
       label: isCategoryKey(cat.category) ? categoriesText.categories[cat.category] : cat.category,
     })),
   ];
