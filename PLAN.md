@@ -25,9 +25,9 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
   - [x] One PocketBase client in `lib/pocketbase.ts`
 - [ ] **4. Fix bugs**
   - [x] Pagination: clicking page 5 on page 1 goes to page 2
-  - [ ] Product cards show made-up size/weight ("50 × 30 × 25 cm", "12 kg") when the product has none
-  - [ ] Price format: "85,50 €", not "85.5 €"
-  - [ ] Homepage "featured products" should use the `featured` field, not the first 4
+  - [x] Product cards show made-up size/weight ("50 × 30 × 25 cm", "12 kg") when the product has none
+  - [x] Price format: "85,50 €", not "85.5 €"
+  - [x] Homepage "featured products" should use the `featured` field, not the first 4
   - [ ] Category and page in the URL, so Back and shared links work
   - [ ] Race condition when switching categories quickly
   - [ ] Hardcoded Slovenian or English text (footer, empty state, errors, "Poglej", image alt texts)

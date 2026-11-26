@@ -17,7 +17,7 @@ export default function FeaturedProducts() {
 
   useEffect(() => {
     pb.collection("products")
-      .getList(1, 4, { requestKey: null })
+      .getList(1, 4, { filter: "featured = true", sort: "-updated", requestKey: null })
       .then((res) => setItems(res.items))
       .catch(console.error)
       .finally(() => setLoading(false));
