@@ -7,6 +7,7 @@ import { translations } from "../data/translations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { getImageUrl as getProductImageUrl, type ProductRecord } from "@/lib/pocketbase";
+import { formatPrice } from "@/lib/format";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -44,6 +45,8 @@ export default function ImageWithLoader({ item }: ImageWithLoaderProps) {
     setLoadingStates((prev) => prev.map((s, i) => (i === index ? false : s)));
     setHasError(true);
   };
+
+  const price = formatPrice(item.price, "sl");
 
   return (
     <div className="group rounded-[20px] border border-stone-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
@@ -104,19 +107,19 @@ export default function ImageWithLoader({ item }: ImageWithLoaderProps) {
           </span>
         </div>
         <div className="mt-2 flex flex-col gap-0.5">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {tp.size}:{" "}
-            <span className="text-gray-700 dark:text-gray-200">
-              {item.size || "50 × 30 × 25 cm"}
-            </span>
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {tp.weight}:{" "}
-            <span className="text-gray-700 dark:text-gray-200">{item.weight || "12 kg"}</span>
-          </p>
+          {item.size && (
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {tp.size}: <span className="text-gray-700 dark:text-gray-200">{item.size}</span>
+            </p>
+          )}
+          {item.weight && (
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {tp.weight}: <span className="text-gray-700 dark:text-gray-200">{item.weight}</span>
+            </p>
+          )}
         </div>
         <div className="mt-3 flex items-center justify-between">
-          <p className="text-lg font-semibold text-primary">{item.price} €</p>
+          {price && <p className="text-lg font-semibold text-primary">{price}</p>}
           <a
             href={`mailto:tomazics@gmail.com?subject=${encodeURIComponent(`${item.product_name} - Šifra: ${item.id}`)}`}
             className="rounded-lg bg-primary px-3 py-1.5 text-sm text-white transition-colors duration-150 hover:bg-secondary"

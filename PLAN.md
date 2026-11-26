@@ -24,7 +24,7 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
   - [x] Types for PocketBase records (`products`, `category`) and for the translations
   - [x] One PocketBase client in `lib/pocketbase.ts`
 - [ ] **4. Fix bugs**
-  - [ ] Pagination: clicking page 5 on page 1 goes to page 2
+  - [x] Pagination: clicking page 5 on page 1 goes to page 2
   - [ ] Product cards show made-up size/weight ("50 × 30 × 25 cm", "12 kg") when the product has none
   - [ ] Price format: "85,50 €", not "85.5 €"
   - [ ] Homepage "featured products" should use the `featured` field, not the first 4
