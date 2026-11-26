@@ -33,8 +33,8 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
   - [ ] Hardcoded Slovenian or English text (footer, empty state, errors, "Poglej", image alt texts)
   - [x] English names missing in `navigation.json`
   - [ ] Dark mode flash on load (theme is read from localStorage after the first paint)
-  - [ ] Contact details (phone, email, address, maps link) in one place instead of five
-  - [ ] PocketBase filter: use `pb.filter()` instead of putting the value straight into the string
+  - [x] Contact details (phone, email, address, maps link) in one place instead of five
+  - [x] PocketBase filter: use `pb.filter()` instead of putting the value straight into the string
 - [ ] **5. Languages in the URL** (`/sl`, `/en`, `/de`)
   - [ ] Google can index all three languages, correct `<html lang>`, no language flash
 - [ ] **6. Storybook and tests**

@@ -9,6 +9,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import Icon from "../Icon";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { contact } from "@/app/data/contact";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,11 +51,11 @@ export default function Navigation() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="tel:+38641814262"
+            href={contact.phoneLink}
             className="flex items-center gap-1.5 text-sm text-stone-400 transition-colors duration-150 hover:text-primary dark:text-gray-500"
           >
             <Icon icon={faPhone} className="h-2.5 w-2.5" />
-            <span>+386 41 814 262</span>
+            <span>{contact.phone}</span>
           </a>
           <span className="h-4 w-px bg-stone-200 dark:bg-gray-700" />
           <ThemeToggle />

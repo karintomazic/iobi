@@ -12,9 +12,7 @@ import {
   faPhone,
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
-
-const MAPS_URL =
-  "https://www.google.com/maps/dir/46.5926691,15.8582616/Drvanja+29,+2234+Benedikt/@46.6149404,15.8415657,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x476f6d40fd067adf:0xe2e2db5c83e11dc3!2m2!1d15.8831273!2d46.6351533?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D";
+import { contact } from "@/app/data/contact";
 
 export default function ContactPage() {
   const { language } = useLanguage();
@@ -40,29 +38,29 @@ export default function ContactPage() {
             {/* Contact cards */}
             <div className="grid grid-cols-1 content-start gap-4 sm:grid-cols-2">
               <ContactCard
-                link={MAPS_URL}
+                link={contact.directionsLink}
                 icon={faLocationDot}
                 title={t.adress}
-                content="Drvanja 29, 2234 Benedikt"
+                content={contact.address}
               />
               <ContactCard
-                link="tel:+38641814262"
+                link={contact.phoneLink}
                 icon={faPhone}
                 title={t.phone}
-                content="+386 41 814 262"
+                content={contact.phone}
               />
               <ContactCard
-                link="mailto:tomazics@gmail.com"
+                link={contact.emailLink}
                 icon={faEnvelope}
                 title={t.email}
-                content="tomazics@gmail.com"
+                content={contact.email}
               />
               <ContactCard icon={faClock} title={t.workHours} content={t.workHoursContent} />
             </div>
 
             {/* Map card */}
             <a
-              href={MAPS_URL}
+              href={contact.directionsLink}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xs transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
@@ -72,9 +70,11 @@ export default function ContactPage() {
                   <Icon icon={faLocationDot} className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-gray-900 dark:text-white">Drvanja 29</p>
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {contact.street}
+                  </p>
                   <p className="mt-0.5 text-sm text-stone-500 dark:text-gray-300">
-                    2234 Benedikt, Slovenija
+                    {contact.city}, {contact.country}
                   </p>
                 </div>
                 <div className="mt-2 inline-flex items-center gap-2 rounded-full border-2 border-primary px-5 py-2 text-sm font-semibold text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">

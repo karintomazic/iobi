@@ -7,6 +7,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
+import { contact } from "@/app/data/contact";
 
 type MobileMenuProps = {
   isOpen: boolean;
@@ -47,20 +48,22 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <ThemeToggle />
                 </div>
                 <a
-                  href="tel:+38641814262"
+                  href={contact.phoneLink}
                   className="flex items-center gap-2 text-sm font-medium text-primary"
                 >
                   <Icon icon={faPhone} className="h-3 w-3" />
-                  <span>{translations[language].navigation.callUs}: +386 41 814 262</span>
+                  <span>
+                    {translations[language].navigation.callUs}: {contact.phone}
+                  </span>
                 </a>
                 <a
-                  href="https://maps.google.com/?q=Drvanja+29,+2234+Benedikt"
+                  href={contact.mapLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm font-medium text-primary"
                 >
                   <Icon icon={faLocationDot} className="h-3 w-3" />
-                  <span>Drvanja 29, 2234 Benedikt</span>
+                  <span>{contact.address}</span>
                 </a>
               </div>
             </div>

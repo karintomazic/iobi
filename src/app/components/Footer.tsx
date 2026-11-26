@@ -2,6 +2,7 @@
 
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import { contact } from "@/app/data/contact";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -37,27 +38,27 @@ export default function Footer() {
 
         <div className="mb-12 flex flex-wrap justify-center gap-4 text-sm text-white/70 sm:gap-8">
           <a
-            href="https://maps.google.com/?q=Drvanja+29,+2234+Benedikt"
+            href={contact.mapLink}
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-white"
           >
-            Drvanja 29, 2234 Benedikt
+            {contact.address}
           </a>
           <span className="hidden text-white/30 sm:inline">·</span>
-          <a href="tel:+38641814262" className="transition-colors hover:text-white">
-            +386 41 814 262
+          <a href={contact.phoneLink} className="transition-colors hover:text-white">
+            {contact.phone}
           </a>
           <span className="hidden text-white/30 sm:inline">·</span>
-          <a href="mailto:tomazics@gmail.com" className="transition-colors hover:text-white">
-            tomazics@gmail.com
+          <a href={contact.emailLink} className="transition-colors hover:text-white">
+            {contact.email}
           </a>
         </div>
 
         <div className="flex w-full items-center justify-between border-t border-white/10 pt-8">
           <p className="text-xs text-white/50">{footerText.text}</p>
           <a
-            href="https://www.facebook.com/tomazicstojan/?locale=sl_SI"
+            href={contact.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/50 transition-colors duration-200 hover:text-white"
