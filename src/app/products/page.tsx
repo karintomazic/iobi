@@ -57,6 +57,8 @@ function ProductsContent() {
 
   // Fetch products whenever selectedCategory or currentPage changes
   useEffect(() => {
+    let ignore = false;
+
     const fetchProducts = async () => {
       setLoading(true);
       try {
@@ -69,17 +71,23 @@ function ProductsContent() {
           filter: filter,
         });
 
+        if (ignore) return;
         setItems(records.items);
         setTotalItems(records.totalItems);
         setTotalPages(records.totalPages || Math.ceil(records.totalItems / PAGE_SIZE));
       } catch (err) {
+        if (ignore) return;
         console.error("Error fetching products:", err);
         setError("Napaka pri nalaganju izdelkov. Prosimo, poskusite znova.");
       } finally {
-        setLoading(false);
+        if (!ignore) setLoading(false);
       }
     };
     fetchProducts();
+
+    return () => {
+      ignore = true;
+    };
   }, [selectedCategory, currentPage]);
 
   const handlePageChange = (page: number) => {
