@@ -6,7 +6,6 @@ const sl = {
     callUs: "Pokličite nas",
     openMenu: "Odpri meni",
     closeMenu: "Zapri meni",
-    toggleTheme: "Preklopi temni način",
   },
   hero: {
     badge: "Ročno Izdelano",
@@ -122,7 +121,6 @@ const en: Translation = {
     callUs: "Call us",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    toggleTheme: "Toggle dark mode",
   },
   hero: {
     badge: "Handcrafted",
@@ -236,7 +234,6 @@ const de: Translation = {
     callUs: "Rufen Sie uns an",
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
-    toggleTheme: "Dunkelmodus umschalten",
   },
   hero: {
     badge: "Handgefertigt",

@@ -6,7 +6,6 @@ import NavigationLinks from "./NavigationLinks";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileMenu from "./MobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
 import Icon from "../Icon";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { contact } from "@/app/data/contact";
@@ -58,7 +57,7 @@ export default function Navigation() {
             <span>{contact.phone}</span>
           </a>
           <span className="h-4 w-px bg-stone-200 dark:bg-gray-700" />
-          <ThemeToggle />
+
           <LanguageSwitcher />
         </div>
       </nav>

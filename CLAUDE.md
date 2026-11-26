@@ -89,7 +89,8 @@ PocketBase) as a key, check it with `isLanguage()` or `isCategoryKey()`. Menu la
   background). Use them instead of hex codes.
 - Fonts: `font-sans` (Open Sans, body) and `font-display` (Playfair Display, headings). They
   come from `next/font` in `src/app/utils/fonts.ts`.
-- Dark mode: the `dark` class on `<html>`, set by `ThemeContext`.
+- Dark mode follows the visitor's system setting (`prefers-color-scheme`), Tailwind v4's
+  default for `dark:`. There's no toggle button, no script and nothing in localStorage.
 - Icons: use `src/app/components/Icon.tsx`, not `FontAwesomeIcon` directly. It turns off Font
   Awesome's own CSS, which globals.css loads in Tailwind's base layer instead.
 

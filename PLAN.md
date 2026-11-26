@@ -23,16 +23,16 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
   - [x] Rename files to `.ts` / `.tsx`, strict mode
   - [x] Types for PocketBase records (`products`, `category`) and for the translations
   - [x] One PocketBase client in `lib/pocketbase.ts`
-- [ ] **4. Fix bugs**
+- [x] **4. Fix bugs**
   - [x] Pagination: clicking page 5 on page 1 goes to page 2
   - [x] Product cards show made-up size/weight ("50 × 30 × 25 cm", "12 kg") when the product has none
   - [x] Price format: "85,50 €", not "85.5 €"
   - [x] Homepage "featured products" should use the `featured` field, not the first 4
   - [x] Category and page in the URL, so Back and shared links work
   - [x] Race condition when switching categories quickly
-  - [ ] Hardcoded Slovenian or English text (footer, empty state, errors, "Poglej", image alt texts)
+  - [x] Hardcoded Slovenian or English text (footer, empty state, errors, "Poglej", image alt texts)
   - [x] English names missing in `navigation.json`
-  - [ ] Dark mode flash on load (theme is read from localStorage after the first paint)
+  - [x] Dark mode flash on load (theme is read from localStorage after the first paint)
   - [x] Contact details (phone, email, address, maps link) in one place instead of five
   - [x] PocketBase filter: use `pb.filter()` instead of putting the value straight into the string
 - [ ] **5. Languages in the URL** (`/sl`, `/en`, `/de`)
@@ -45,7 +45,7 @@ All work happens on the `redesign` branch and is merged into `main` when finishe
   - [ ] GitHub Actions: lint, type check, Vitest and Playwright on every push
 - [ ] **7. Accessibility, images, SEO**
   - [ ] Contrast: white text on `#7a9a6b` is 3.2:1 (needs 4.5:1). `#5c7a4e` passes (4.8:1)
-  - [ ] Labels for icon-only buttons (pagination arrows, theme toggle), skip link, focus styles
+  - [ ] Labels for icon-only buttons (pagination arrows), skip link, focus styles
   - [ ] `next/image` for all images
   - [ ] Title and description per page, sitemap, Open Graph image, 404 page
 - [ ] **8. Finish**

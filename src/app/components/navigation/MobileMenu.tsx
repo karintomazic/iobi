@@ -4,7 +4,6 @@ import Icon from "../Icon";
 import { faXmark, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import NavigationLinks from "./NavigationLinks";
 import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
 import { contact } from "@/app/data/contact";
@@ -43,10 +42,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 />
               </div>
               <div className="flex flex-col gap-4 py-6">
-                <div className="flex items-center gap-3">
-                  <LanguageSwitcher />
-                  <ThemeToggle />
-                </div>
+                <LanguageSwitcher />
                 <a
                   href={contact.phoneLink}
                   className="flex items-center gap-2 text-sm font-medium text-primary"
