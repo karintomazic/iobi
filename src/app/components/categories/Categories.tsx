@@ -7,11 +7,12 @@ import { translations } from "../../data/translations";
 export default function Categories() {
   const { language } = useLanguage();
   const t = translations[language].categories;
+  const alts = translations[language].imageAlts;
 
   const categories = [
     {
       src: "/img/category-2.jpg",
-      alt: "Fontane",
+      alt: alts.category2,
       overlayText: t.categories.fontane,
       description: t.descriptions.fontane,
       href: "/products?category=fontane",
@@ -19,7 +20,7 @@ export default function Categories() {
     },
     {
       src: "/img/category-1.jpg",
-      alt: "Korita",
+      alt: alts.category1,
       overlayText: t.categories.korita,
       description: t.descriptions.korita,
       href: "/products?category=korita",
@@ -27,7 +28,7 @@ export default function Categories() {
     },
     {
       src: "/img/category-3.jpg",
-      alt: "Palčki",
+      alt: alts.category3,
       overlayText: t.categories.palcki,
       description: t.descriptions.palcki,
       href: "/products?category=palcki",
@@ -35,7 +36,7 @@ export default function Categories() {
     },
     {
       src: "/img/category-4.jpg",
-      alt: "Živali",
+      alt: alts.category4,
       overlayText: t.categories.zivali,
       description: t.descriptions.zivali,
       href: "/products?category=zivali",

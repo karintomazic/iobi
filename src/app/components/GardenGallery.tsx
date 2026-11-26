@@ -3,16 +3,17 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
-const galleryImages = [
-  { src: "/img/category-1.jpg", alt: "Betonska klop v vrtu" },
-  { src: "/img/category-2.jpg", alt: "Fontana v vrtu" },
-  { src: "/img/category-3.jpg", alt: "Okrasni kip v vrtu" },
-  { src: "/img/category-4.jpg", alt: "Betonski žar v vrtu" },
-];
-
 export default function GardenGallery() {
   const { language } = useLanguage();
   const t = translations[language].gardenGallery;
+  const alts = translations[language].imageAlts;
+
+  const galleryImages = [
+    { src: "/img/category-1.jpg", alt: alts.category1 },
+    { src: "/img/category-2.jpg", alt: alts.category2 },
+    { src: "/img/category-3.jpg", alt: alts.category3 },
+    { src: "/img/category-4.jpg", alt: alts.category4 },
+  ];
 
   return (
     <section id="gallery" className="bg-surface py-16 sm:py-24 dark:bg-gray-900">

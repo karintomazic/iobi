@@ -82,7 +82,7 @@ export default function ImageWithLoader({ item }: ImageWithLoaderProps) {
                         ref={ref}
                         onClick={open}
                         src={getImageUrl(image)}
-                        alt={`${item.product_name} - Image ${index + 1}`}
+                        alt={`${item.product_name} - ${tp.image} ${index + 1}`}
                         className={`h-[400px] w-full cursor-pointer rounded-[16px] object-cover object-center transition-opacity duration-300 ${
                           loadingStates[index] ? "opacity-0" : "opacity-100"
                         }`}

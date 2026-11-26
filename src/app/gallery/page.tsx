@@ -6,22 +6,23 @@ import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 
-const allImages = [
-  { src: "/img/hero_img1.jpg", alt: "Betonski okras v vrtu", w: 800, h: 600 },
-  { src: "/img/category-1.jpg", alt: "Betonska klop v vrtu", w: 800, h: 600 },
-  { src: "/img/hero_img2.jpg", alt: "Ročno izdelan betonski kos", w: 800, h: 600 },
-  { src: "/img/category-2.jpg", alt: "Fontana v vrtu", w: 800, h: 600 },
-  { src: "/img/hero_img3.jpg", alt: "Betonska dekoracija", w: 800, h: 600 },
-  { src: "/img/category-3.jpg", alt: "Okrasni kip v vrtu", w: 800, h: 600 },
-  { src: "/img/hero_img4.jpg", alt: "Vrtni kos iz betona", w: 800, h: 600 },
-  { src: "/img/category-4.jpg", alt: "Betonski žar v vrtu", w: 800, h: 600 },
-  { src: "/img/hero_img5.jpg", alt: "Ročno izdelana dekoracija", w: 800, h: 600 },
-  { src: "/img/hero_img6.jpg", alt: "Betonski okras za vrt", w: 800, h: 600 },
-];
-
 export default function GalleryPage() {
   const { language } = useLanguage();
   const t = translations[language].gardenGallery;
+  const alts = translations[language].imageAlts;
+
+  const allImages = [
+    { src: "/img/hero_img1.jpg", alt: alts.hero1, w: 800, h: 600 },
+    { src: "/img/category-1.jpg", alt: alts.category1, w: 800, h: 600 },
+    { src: "/img/hero_img2.jpg", alt: alts.hero2, w: 800, h: 600 },
+    { src: "/img/category-2.jpg", alt: alts.category2, w: 800, h: 600 },
+    { src: "/img/hero_img3.jpg", alt: alts.hero3, w: 800, h: 600 },
+    { src: "/img/category-3.jpg", alt: alts.category3, w: 800, h: 600 },
+    { src: "/img/hero_img4.jpg", alt: alts.hero4, w: 800, h: 600 },
+    { src: "/img/category-4.jpg", alt: alts.category4, w: 800, h: 600 },
+    { src: "/img/hero_img5.jpg", alt: alts.hero5, w: 800, h: 600 },
+    { src: "/img/hero_img6.jpg", alt: alts.hero6, w: 800, h: 600 },
+  ];
 
   return (
     <>
