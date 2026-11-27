@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import ProductPagination from "./ProductPagination";
 import ProductCards from "./ProductCards";
 import CategoryFilters from "./CategoryFilters";
-import { useLanguage } from "../context/LanguageContext";
-import { translations, isCategoryKey } from "../data/translations";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations, isCategoryKey } from "@/app/data/translations";
 import { type CategoryRecord, type ProductRecord } from "@/lib/pocketbase";
 
 function SkeletonGrid() {

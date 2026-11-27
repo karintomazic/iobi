@@ -1,10 +1,10 @@
 "use client";
 
-import Footer from "../components/Footer";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
-import ContactCard from "../components/contact/ContactCard";
-import Icon from "../components/Icon";
+import Footer from "@/app/components/Footer";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/data/translations";
+import ContactCard from "@/app/components/contact/ContactCard";
+import Icon from "@/app/components/Icon";
 import {
   faEnvelope,
   faClock,

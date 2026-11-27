@@ -1,5 +1,5 @@
-import { useLanguage } from "../context/LanguageContext";
-import { translations, isCategoryKey } from "../data/translations";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations, isCategoryKey } from "@/app/data/translations";
 import { type CategoryRecord } from "@/lib/pocketbase";
 
 interface CategoryFiltersProps {

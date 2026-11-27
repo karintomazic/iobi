@@ -2,8 +2,8 @@
 
 import { useState, type SyntheticEvent } from "react";
 import { Item } from "react-photoswipe-gallery";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/data/translations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { getImageUrl as getProductImageUrl, type ProductRecord } from "@/lib/pocketbase";

@@ -2,9 +2,9 @@
 
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
-import Footer from "../components/Footer";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../data/translations";
+import Footer from "@/app/components/Footer";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/data/translations";
 
 export default function GalleryPage() {
   const { language } = useLanguage();

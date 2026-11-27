@@ -1,11 +1,11 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Footer from "../components/Footer";
+import Footer from "@/app/components/Footer";
 import ProductList from "./ProductList";
 import { pb, type CategoryRecord, type ProductRecord } from "@/lib/pocketbase";
-import { translations } from "../data/translations";
-import { useLanguage } from "../context/LanguageContext";
+import { translations } from "@/app/data/translations";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 function ProductsContent() {
   const router = useRouter();

@@ -6,7 +6,7 @@ import "photoswipe/dist/photoswipe.css";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
-import ImageWithLoader from "../products/ImageWithLoader";
+import ImageWithLoader from "@/app/[lang]/products/ImageWithLoader";
 import { pb, type ProductRecord } from "@/lib/pocketbase";
 
 export default function FeaturedProducts() {

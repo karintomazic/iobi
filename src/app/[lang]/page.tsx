@@ -1,9 +1,9 @@
-import Hero from "./components/hero/Hero";
-import FeaturedProducts from "./components/FeaturedProducts";
-import Categories from "./components/categories/Categories";
-import GardenGallery from "./components/GardenGallery";
-import CTABanner from "./components/CTABanner";
-import Footer from "./components/Footer";
+import Hero from "@/app/components/hero/Hero";
+import FeaturedProducts from "@/app/components/FeaturedProducts";
+import Categories from "@/app/components/categories/Categories";
+import GardenGallery from "@/app/components/GardenGallery";
+import CTABanner from "@/app/components/CTABanner";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
