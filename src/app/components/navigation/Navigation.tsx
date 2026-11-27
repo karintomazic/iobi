@@ -9,10 +9,12 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import Icon from "../Icon";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { contact } from "@/app/data/contact";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -34,7 +36,7 @@ export default function Navigation() {
         }`}
         aria-label="Global"
       >
-        <Link href="/" className="shrink-0">
+        <Link href={`/${language}`} className="shrink-0">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-surface dark:bg-gray-800">
             <img src="/img/iobi_logo.png" alt="IOBI" className="h-8 w-8 object-contain" />
           </div>

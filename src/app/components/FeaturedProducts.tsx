@@ -38,7 +38,7 @@ export default function FeaturedProducts() {
             </h2>
           </div>
           <Link
-            href="/products"
+            href={`/${language}/products`}
             className="hidden rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary sm:inline-flex dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
           >
             {t.viewAll}
@@ -66,7 +66,7 @@ export default function FeaturedProducts() {
 
         <div className="mt-10 text-center sm:hidden">
           <Link
-            href="/products"
+            href={`/${language}/products`}
             className="inline-flex rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
           >
             {t.viewAll}

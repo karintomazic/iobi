@@ -2,6 +2,7 @@
 
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import Link from "next/link";
 
 export default function GardenGallery() {
   const { language } = useLanguage();
@@ -33,12 +34,12 @@ export default function GardenGallery() {
               {t.description}
             </p>
           </div>
-          <a
-            href="/gallery"
+          <Link
+            href={`/${language}/gallery`}
             className="shrink-0 rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
           >
             {t.viewAll}
-          </a>
+          </Link>
         </div>
 
         {/* Image grid */}

@@ -21,8 +21,8 @@ export function LanguageProvider({ language, children }: LanguageProviderProps) 
   const router = useRouter();
 
   const changeLanguage = (newLanguage: Language) => {
-    const pathWithLanguage = pathname.slice(3);
-    router.push(`/${newLanguage}${pathWithLanguage}${window.location.search}`);
+    const pathWithoutLanguage = pathname.slice(3);
+    router.push(`/${newLanguage}${pathWithoutLanguage}${window.location.search}`);
   };
 
   return (

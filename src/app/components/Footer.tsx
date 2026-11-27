@@ -3,6 +3,8 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
 import { contact } from "@/app/data/contact";
+import navigationData from "../data/navigation.json";
+import Link from "next/link";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -20,20 +22,19 @@ export default function Footer() {
         </p>
 
         <nav className="mb-10 flex flex-wrap justify-center gap-6">
-          {[
-            ["Domov", "/"],
-            ["Izdelki", "/products"],
-            ["Galerija", "/gallery"],
-            ["Kontakt", "/contact"],
-          ].map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="text-sm text-white/70 transition-colors duration-200 hover:text-white"
-            >
-              {label}
-            </a>
-          ))}
+          {navigationData.map((item) => {
+            const href = item.href === "/" ? `/${language}` : `/${language}${item.href}`;
+
+            return (
+              <Link
+                key={item.id}
+                href={href}
+                className="text-sm text-white/70 transition-colors duration-200 hover:text-white"
+              >
+                {item.name[language]}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="mb-12 flex flex-wrap justify-center gap-4 text-sm text-white/70 sm:gap-8">

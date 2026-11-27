@@ -3,6 +3,7 @@
 import CategoryCard from "./CategoryCard";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
+import Link from "next/link";
 
 export default function Categories() {
   const { language } = useLanguage();
@@ -15,7 +16,7 @@ export default function Categories() {
       alt: alts.category2,
       overlayText: t.categories.fontane,
       description: t.descriptions.fontane,
-      href: "/products?category=fontane",
+      href: `/${language}/products?category=fontane`,
       classes: "lg:row-span-2",
     },
     {
@@ -23,7 +24,7 @@ export default function Categories() {
       alt: alts.category1,
       overlayText: t.categories.korita,
       description: t.descriptions.korita,
-      href: "/products?category=korita",
+      href: `/${language}/products?category=korita`,
       classes: "",
     },
     {
@@ -31,7 +32,7 @@ export default function Categories() {
       alt: alts.category3,
       overlayText: t.categories.palcki,
       description: t.descriptions.palcki,
-      href: "/products?category=palcki",
+      href: `/${language}/products?category=palcki`,
       classes: "",
     },
     {
@@ -39,7 +40,7 @@ export default function Categories() {
       alt: alts.category4,
       overlayText: t.categories.zivali,
       description: t.descriptions.zivali,
-      href: "/products?category=zivali",
+      href: `/${language}/products?category=zivali`,
       classes: "",
     },
   ];
@@ -65,12 +66,12 @@ export default function Categories() {
                 {t.title}
               </h2>
             </div>
-            <a
-              href="/products"
+            <Link
+              href={`/${language}/products`}
               className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-secondary"
             >
               {t.categories.allProducts} &rarr;
-            </a>
+            </Link>
           </div>
 
           <CategoryCard {...categories[2]} />

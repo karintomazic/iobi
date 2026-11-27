@@ -21,13 +21,13 @@ export default function CTABanner() {
         </div>
         <div className="flex shrink-0 gap-3">
           <Link
-            href="/products"
+            href={`/${language}/products`}
             className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-secondary"
           >
             {t.button1}
           </Link>
           <Link
-            href="/contact"
+            href={`/${language}/contact`}
             className="rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary"
           >
             {t.button2}

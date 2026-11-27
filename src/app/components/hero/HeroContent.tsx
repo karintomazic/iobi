@@ -2,6 +2,7 @@
 
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
+import Link from "next/link";
 
 export default function HeroContent() {
   const { language } = useLanguage();
@@ -22,18 +23,18 @@ export default function HeroContent() {
         {t.subtitle}
       </p>
       <div className="mt-10 flex flex-wrap gap-4">
-        <a
-          href="/products"
+        <Link
+          href={`/${language}/products`}
           className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-secondary"
         >
           {t.heroButton}
-        </a>
-        <a
-          href="/contact"
+        </Link>
+        <Link
+          href={`/${language}/contact`}
           className="rounded-full border-2 border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-600 transition-colors duration-200 hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300"
         >
           {t.heroButton2}
-        </a>
+        </Link>
       </div>
     </div>
   );

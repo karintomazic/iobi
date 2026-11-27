@@ -38,7 +38,9 @@ function ProductsContent() {
     }
 
     const query = params.toString();
-    router.push(query ? `/products?${query}` : "/products", { scroll: false });
+    router.push(query ? `/${language}/products?${query}` : `/${language}/products`, {
+      scroll: false,
+    });
   };
 
   // Fetch categories on component mount

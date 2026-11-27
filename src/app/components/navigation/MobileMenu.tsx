@@ -21,7 +21,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-white/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5" onClick={onClose}>
+            <Link href={`/${language}`} className="-m-1.5 p-1.5" onClick={onClose}>
               <img className="h-20 w-auto" src="/img/iobi_logo.png" alt="IOBI" />
             </Link>
             <button
