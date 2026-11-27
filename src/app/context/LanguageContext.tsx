@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { isLanguage, type Language } from "../data/translations";
+import { createContext, useContext, type ReactNode } from "react";
+import { type Language } from "../data/translations";
+import { usePathname, useRouter } from "next/navigation";
 
 type LanguageContextValue = {
   language: Language;
@@ -10,19 +11,18 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("sl");
+type LanguageProviderProps = {
+  language: Language;
+  children: ReactNode;
+};
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (isLanguage(savedLanguage)) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+export function LanguageProvider({ language, children }: LanguageProviderProps) {
+  const pathname = usePathname();
+  const router = useRouter();
 
   const changeLanguage = (newLanguage: Language) => {
-    setLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage);
+    const pathWithLanguage = pathname.slice(3);
+    router.push(`/${newLanguage}${pathWithLanguage}${window.location.search}`);
   };
 
   return (

@@ -23,7 +23,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   return (
     <html lang={lang} className={`${openSans.variable} ${playfairDisplay.variable}`}>
       <body className="font-sans">
-        <LanguageProvider>
+        <LanguageProvider language={lang}>
           <Navigation />
           <div className="pt-19">{children}</div>
         </LanguageProvider>
